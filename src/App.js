@@ -17,6 +17,9 @@ import {
 import MainMenu from './components/MainMenu';
 import GantiPassword from './components/GantiPassword';
 import FormLemburDriver from './components/FormLemburDriver';
+import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
+import TimePicker from './components/cobacoba/TimePicker'
+
 
 class App extends Component{
   state={loggedIn: null}
@@ -45,7 +48,7 @@ class App extends Component{
   renderContent(){
       switch (this.state.loggedIn) {
       case true:
-        return (<FormLemburDriver />);
+        return (<MainMenu />);
       case false:
         return <LoginForm />;
       default:
