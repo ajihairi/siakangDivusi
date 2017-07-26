@@ -1,23 +1,44 @@
 import React,{Component} from 'react';
 import { View, Image} from 'react-native';
-import { Container, Header, Title, Icon, Right, Left, Content, Form,Label, Input, Item, InputListItem, List, Body, Text, Button} from 'native-base';
+import { 
+  Container,
+  Header, 
+  Title, 
+  Icon, 
+  Right, 
+  Left, 
+  Content, 
+  Form,
+  Label, 
+  Input, 
+  Item, 
+  InputListItem, 
+  List, 
+  Body, 
+  Text, 
+  Button} from 'native-base';
 
 
-const GantiPassword =()=>{
+class GantiPassword extends Component{
+   constructor(props){
+      super(props);
+    }
 
+  render(){
   return(
     <Container style={styles.splashScreens}>
+
     <Header>
-        <Left>
-          <Button transparent onPress={() => this.props.navigation.goBack()}>
-            <Icon name="arrow-back" />
-          </Button>
-        </Left>
-        <Body style={{ flex: 3 }}>
-          <Title>Ganti Password LDAP</Title>
-        </Body>
-        <Right />
-      </Header>
+            <Left>
+              <Button transparent onPress={() => this.props.navigation.goBack()}>
+                <Icon name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
+              <Title style={{width:180}}>Ganti Password LDAP</Title>
+            </Body>
+            <Right />
+          </Header>
 
       <Content>
         <Form>
@@ -45,6 +66,7 @@ const GantiPassword =()=>{
     </Container>
 
   );
+}
 }
 
 const styles ={

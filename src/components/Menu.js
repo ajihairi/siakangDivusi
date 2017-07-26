@@ -1,7 +1,12 @@
 import React,{Component} from 'react';
-import { View, Image} from 'react-native';
+import { View, Image, TouchableHighlight} from 'react-native';
 import { Container, Text,Content, H1, Button, Icon, Col, Row, Grid} from 'native-base';
 import firebase from 'firebase'
+
+import {Actions} from 'react-native-router-flux';
+
+import FormLemburDriver from './FormLemburDriver';
+
 const Menu =()=>{
   return(
     <Container style={styles.splashScreens}>
@@ -22,7 +27,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent onPress={()=> Actions.keyLemburDriver()}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/lemburdriver.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Lembur Driver</Text>
@@ -98,7 +103,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={() => firebase.auth().signOut()}>
+                        <Button primary transparent >
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/logout.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Log Out </Text>

@@ -5,6 +5,7 @@ import {
   Content,
   H1
 } from 'native-base';
+import LoginForm from './components/LoginForm';
 import firebase from 'firebase';
 import SplashScreen from './components/SplashScreen';
 import {
@@ -16,17 +17,38 @@ import {
 import MainMenu from './components/MainMenu';
 import GantiPassword from './components/GantiPassword';
 import FormLemburDriver from './components/FormLemburDriver';
-import LoginForm from './components/LoginForm'
-
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
 import TimePicker from './components/cobacoba/TimePicker'
 
 import {Router, Scene} from 'react-native-router-flux';
 
 class App extends Component{
+  state={loggedIn: null}
+
+  componentWillMount(){
+      firebase.initializeApp({
+      apiKey: "AIzaSyA6qAEhvX6cAKC8zzDAbDoO3a0szMyvMpA",
+      authDomain: "auth-388dd.firebaseapp.com",
+      databaseURL: "https://auth-388dd.firebaseio.com",
+      projectId: "auth-388dd",
+      storageBucket: "auth-388dd.appspot.com",
+      messagingSenderId: "388673715373"
+    });
+
+    firebase.auth().onAuthStateChanged((user) =>{
+      if (user){
+        this.setState({ loggedIn: true });
+      }
+      else {
+        this.setState({loggedIn: false });
+      }
+    });
+  }
 
 
   renderContent(){
+      switch (this.state.loggedIn) {
+      case true:
         return (
             <Router>
               <Scene key="root" 
@@ -35,15 +57,9 @@ class App extends Component{
                 hideNavBar={true}>
               
                 <Scene
-                key="keyMainMenu"
+                key="mainmenu"
                 component={MainMenu}
                 title="Si-Akang"
-                />
-
-                <Scene
-                key="keylogin"
-                component={LoginForm}
-                initial
                 />
 
                 <Scene
@@ -61,6 +77,13 @@ class App extends Component{
               </Scene>
             </Router>
         );
+      case false:
+        return <LoginForm />;
+      default:
+        return (<View style={styles.spinnerPosition}>
+                    <Spinner size="large" />
+                  </View>);
+    }
   }
 
   render(){

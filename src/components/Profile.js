@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import { View, Image} from 'react-native';
 import { Container, Content, H1, ListItem, List, Body, Text, Button} from 'native-base';
 
+
+import {Actions} from 'react-native-router-flux';
 const Profile =()=>{
 
   return(
@@ -56,7 +58,7 @@ const Profile =()=>{
             <Text note> 1234</Text>
             </Body>
           </ListItem>
-          <Button block success style={{margin:10}} onPress={() => this.props.navigation.GantiPassword()}>
+          <Button block success style={{margin:10}} onPress={()=> Actions.keyGantiPassword()}>
             <Text>Ganti Password</Text>
             </Button>
         </List>

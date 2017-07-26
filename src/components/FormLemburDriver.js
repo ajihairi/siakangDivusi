@@ -34,7 +34,8 @@ class FormLemburDriver extends Component{
   constructor(props) {
       super(props);
       this.state = {
-        selected1: "key1"
+        selected1: "key1",
+        selected2: "keya"
       };
     }
     onValueChange(value: string) {
@@ -43,10 +44,15 @@ class FormLemburDriver extends Component{
       });
     }
 
+    _onValueChange(value: string) {
+      this.setState({
+        selected2: value
+      });
+    }
 
     render() {
       return (
-        <Container>
+        <Container style={{backgroundColor: 'white'}}>
           <Header>
             <Left>
               <Button transparent onPress={() => this.props.navigation.goBack()}>
@@ -58,8 +64,7 @@ class FormLemburDriver extends Component{
             </Body>
             <Right />
           </Header>
-
-
+          
           <Content>
             <Form style={{padding:15}}>
               <Text note> Pekerjaan </Text>
@@ -102,61 +107,122 @@ class FormLemburDriver extends Component{
               onDateChange={(date) => {this.setState({date: date})}}
               />
               <ListItem style={{justifyContent:"flex-start", alignItems:"flex-start"}}>
-                <CheckBox checked={this.state.checked}
-                onPress={()=>this.setState({ checked: !this.state.checked})}/>
-                  <List style={{marginLeft:10}}>
+                <CheckBox checked={this.state.checked1}
+                onPress={()=>this.setState({ checked1: !this.state.checked1})}/>
+                <List style={{marginLeft:10}}>
                   <Text style={{marginBottom:10}}>Waktu Pagi</Text>
-                  <DatePicker
-                    style={{width: 265}}
-                    showIcon={false}
-                    date={this.state.time}
-                    mode="time"
-                    format="HH:mm"
-                    confirmBtnText="Confirm"
-                    cancelBtnText="Cancel"
-                    minuteInterval={10}
-                    onDateChange={(time) => {this.setState({time: time});}}
-                  /></List>
+                  <View style={{flexDirection:'row', alignItems: 'center'}}>
+                      <DatePicker
+                        showIcon={false}
+                        date={this.state.time1}
+                        mode="time"
+                        format="HH:mm"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        minuteInterval={10}
+
+                        style={{width:100}}
+
+                        onDateChange={(time1) => {this.setState({time1: time1});}}
+                      />
+
+                      <Text style={{marginLeft: 20, marginRight: 20}}>s/d</Text>
+                      
+                      <DatePicker
+                        showIcon={false}
+                        date={this.state.time2}
+                        mode="time"
+                        format="HH:mm"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        minuteInterval={10}
+
+                        style={{width:100}}
+
+                        onDateChange={(time2) => {this.setState({time2: time2});}}
+                      />
+                      </View>
+                  </List>
               </ListItem>
 
               <ListItem style={{justifyContent:"flex-start", alignItems:"flex-start", marginBottom: 10}}>
-                <CheckBox checked={this.state.checked}
-                onPress={()=>this.setState({ checked: !this.state.checked})}/>
+                <CheckBox checked={this.state.checked2}
+                onPress={()=>this.setState({ checked2: !this.state.checked2})}/>
                   <List style={{marginLeft:10}}>
                     <Text style={{marginBottom:10}}>Waktu Malam</Text>
-                    <DatePicker
-                      style={{width: 265}}
-                      showIcon={false}
-                      date={this.state.time}
-                      mode="time"
-                      format="HH:mm"
-                      confirmBtnText="Confirm"
-                      cancelBtnText="Cancel"
-                      minuteInterval={10}
-                      onDateChange={(time) => {this.setState({time: time});}}
-                    />
+                    <View style={{flexDirection:'row', alignItems: 'center'}}>
+                      <DatePicker
+                        style={{width: 265}}
+                        showIcon={false}
+                        date={this.state.time3}
+                        mode="time"
+                        format="HH:mm"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        minuteInterval={10}
+
+                        style={{width:100}}
+
+                        onDateChange={(time3) => {this.setState({time3: time3});}}
+                      />
+
+                       <Text style={{marginLeft: 20, marginRight: 20}}>s/d</Text>
+
+                       <DatePicker
+                        showIcon={false}
+                        date={this.state.time4}
+                        mode="time"
+                        format="HH:mm"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        minuteInterval={10}
+
+                        style={{width:100}}
+
+                        onDateChange={(time4) => {this.setState({time4: time4});}}
+                      />
+                    </View>
                   </List>
               </ListItem>
                 <List>
                   <Text note>Rincian</Text>
                   <FormItem regular style={{marginTop: 5, marginLeft: 23, width:300, marginBottom:10}}>
-                  <AutoGrowingTextInput placeholder={'Your Message'} style={{fontSize: 16, width:300, paddingLeft:5}} />
+                  <AutoGrowingTextInput value={this.state.textValue1} placeholder={'Your Message'} style={{fontSize: 16, width:300, paddingLeft:5}} />
                   </FormItem>
                 </List>
 
                   <List>
                     <Text note>Yang Menugaskan</Text>
-                    <FormItem regular style={{marginTop: 5, marginLeft: 23, width:300}}>
-                  <AutoGrowingTextInput placeholder={'Input Name'} style={{fontSize: 16, width:300, paddingLeft:5}} />
+                    <FormItem style={{marginTop: 5}}>
+                     <Picker
+                    iosHeader="Select  Name"
+                    mode="dropdown"
+                    selectedValue={this.state.selected2}
+                    onValueChange={this._onValueChange.bind(this)}
+                    >
+                    <Item label="Pa Siapa" value="keya" />
+                    <Item label="Bu Siapa" value="keyb" />
+                    <Item label="Pa Anu" value="keyc" />
+                    <Item label="Bu ini" value="keyd" />
+                    <Item label="Ibu Negara" value="keye" />
+                  </Picker>
                     </FormItem>
                   </List>
 
                   <List style={{flexDirection: 'row', marginTop: 30,  alignItems: 'center', justifyContent: 'center'}}>
-                    <Button primary style={{width:150, justifyContent: 'center', alignItems: 'center', marginRight: 4}}>
-                      <Text> Simpan </Text>
-                    </Button>
-                    <Button danger style={{width:150, justifyContent: 'center', alignItems: 'center', marginLeft: 4}}>
+                    
+                    <Button danger 
+                    style={{width:150, 
+                      justifyContent: 'center', 
+                      alignItems: 'center', 
+                      marginRight: 4}}
+
+                      onPress={() => this.props.navigation.goBack()}>
                       <Text> Batal </Text>
+                    </Button>
+
+                    <Button primary style={{width:150, justifyContent: 'center', alignItems: 'center', marginLeft: 4}}>
+                      <Text> Submit </Text>
                     </Button>
 
                   </List>

@@ -4,13 +4,15 @@ import Menu from './Menu';
 import {View} from 'react-native';
 import Profile from './Profile';
 
-const MainMenu =()=>{
+import {Router, Scene} from 'react-native-router-flux';
+
+ MainMenu =()=>{
 
     return (
 
       <Container >
         <Tabs initialPage={0} >
-          <Tab heading="Menu" >
+          <Tab heading="Menu">
             <Menu />
           </Tab>
           <Tab heading="Profile">
