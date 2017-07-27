@@ -18,6 +18,10 @@ import GantiPassword from './components/GantiPassword';
 import FormLemburDriver from './components/FormLemburDriver';
 import LoginForm from './components/LoginForm';
 import Kehadiran from './components/Kehadiran/Kehadiran';
+import LaporanHarian from './components/Kehadiran/laporanHarian/LaporanHarian';
+import formPenugasanLembur from './components/formPenugasanLembur';
+import formCuti from './components/formCuti';
+
 
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
 import TimePicker from './components/cobacoba/TimePicker';
@@ -129,6 +133,24 @@ class App extends Component{
                     key = "detailbawahan"
                     component = { DetailBawahan }
                     title= "Detail Activitas Bawahan"               
+                />
+
+                <Scene
+                key="keyLaporanHarian"
+                component={LaporanHarian}
+                title="Laporan Harian"
+                />
+
+                <Scene
+                key="keyPenugasanLembur"
+                component={formPenugasanLembur}
+                title="Penugasan Lembur"
+                />
+
+                <Scene
+                key="keyPengajuanCuti"
+                component={formCuti}
+                title="Pengajuan Cuti"
                 />
 
               </Scene>
