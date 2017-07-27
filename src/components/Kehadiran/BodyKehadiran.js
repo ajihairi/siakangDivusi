@@ -17,6 +17,25 @@ import {
 } from 'native-base';import ListKehadiran from './ListKehadiran';
 
 export default class BodyKehadiran extends Component {
+     constructor(props) {
+      super(props);
+      this.state = {
+        selected1: "key1",
+        selected2: "keya"
+      };
+    }
+    onValueChange(value: string) {
+      this.setState({
+        selected1: value
+      });
+    }
+
+    _onValueChange(value: string) {
+      this.setState({
+        selected2: value
+      });
+    }
+    
     render() {
         const { SearchStyle, ViewStyle, ButtonStyle, TextStyle, ListStyle} = styles;
 
@@ -25,10 +44,10 @@ export default class BodyKehadiran extends Component {
                 <Content>
                     <Item>
                 <Left>
-                    <Button style={ButtonStyle}>
+                    <Button style={ButtonStyle} onPress={()=> Actions.keyPengajuanCuti()}>
                     <Text>Ajukan Cuti</Text>     
                     </Button>
-                    <Button style={ButtonStyle} >
+                    <Button style={ButtonStyle} onPress={()=> Actions.keyPenugasanLembur()} >
                     <Text>penugasan lembur</Text>                    
                     </Button>
                     
@@ -45,7 +64,7 @@ export default class BodyKehadiran extends Component {
                    
                     <ListKehadiran />                        
                 </Content>
-                <Button style={ButtonStyle} block rounded>
+                <Button onPress={() => this.props.navigation.goBack()} style={ButtonStyle} block>
                     <Text style={TextStyle}>Back</Text>
                 </Button>
             </Container>
