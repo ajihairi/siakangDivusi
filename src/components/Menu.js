@@ -50,7 +50,7 @@ const Menu =()=>{
                 <Grid style={{marginBottom:70}}>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent onPress={()=> Actions.kinerja()}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/laporankinerja.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Kinerja </Text>
@@ -60,7 +60,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent onPress={()=> Actions.appspj()}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/laporanspj.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan SPJ </Text>
@@ -70,7 +70,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent onPress={()=> Actions.applemburdriver()}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/lapranlemburdriver.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Lembur Driver </Text>
@@ -93,7 +93,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent onPress={()=> Actions.persetujuan()}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/persetujuan.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Persetujuan</Text>

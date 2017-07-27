@@ -1,0 +1,38 @@
+[
+    {
+        "id_kinerja" : 1,
+        "tanggal" : "03/07/2017",
+        "jamKerja" : "08.00",
+        "jamSelesai" : "13.00",
+        "totalJamKerja" : "5",
+        "alasanKehadiran" : "Hadir"
+    }, {
+        "id_kinerja" : 2,
+        "tanggal" : "04/07/2017",
+        "jamKerja" : "08.30",
+        "jamSelesai" : "16.30", 
+        "totalJamKerja" : "8",
+        "alasanKehadiran" : "Hadir"
+    }, {
+        "id_kinerja" : 3,
+        "tanggal" : "05/07/2017",
+        "jamKerja" : "09.00",
+        "jamSelesai" : "18.00",
+        "totalJamKerja" : "9",
+        "alasanKehadiran" : "Hadir"
+    }, {
+        "id_kinerja" : 4,
+        "tanggal" : "06/07/2017",
+        "jamKerja" : "09.30",
+        "jamSelesai" : "16.30",
+        "totalJamKerja" : "7",
+        "alasanKehadiran" : "Hadir"
+    }, {
+        "id_kinerja" : 5,
+        "tanggal" : "07/07/2017",
+        "jamKerja" : "10.00",
+        "jamSelesai" : "20.00",
+        "totalJamKerja" : "10",
+        "alasanKehadiran" : "Hadir"
+    }
+]
