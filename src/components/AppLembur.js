@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Header, Left, Body, Title, Icon, Button , Right} from 'native-base';
+import { Container, Header, Left, Body, Title, Icon, Button, Right } from 'native-base';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import { Actions } from 'react-native-router-flux';
-import BodySPJ from './spj/BodySPJ';
+import BodyLembur from './lembur/BodyLembur';
 
-export default class AppSPJ extends Component {
+export default class AppLembur extends Component {
     render() {
     return (
       <Provider store={createStore(reducers)}>
@@ -18,15 +18,15 @@ export default class AppSPJ extends Component {
               </Button>
             </Left>
             <Body>
-              <Title>Laporan SPJ</Title>
+              <Title>Laporan Lembur</Title>
             </Body>
             <Right />
           </Header>
-          <BodySPJ />
+          <BodyLembur />
         </Container>
       </Provider>
     );
   }
 }
 
-module.export = AppSPJ;
+module.export = AppLembur;

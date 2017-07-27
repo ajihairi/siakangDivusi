@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
 import { connect } from 'react-redux';
-import ItemKehadiran from './ItemKehadiran';
+import ItemLemburDriver from './ItemLemburDriver';
 import { Actions } from 'react-native-router-flux';
 
-class ListKehadiran extends Component {
+class ListLemburDriver extends Component {
     componentWillMount() {
         const ds = new  ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
         });
 
-        this.dataSource = ds.cloneWithRows(this.props.librarieskehadiran);
+        this.dataSource = ds.cloneWithRows(this.props.librarieslemburdriver);
     }
 
     renderRow(library) {
-        return <ItemKehadiran 
+        return <ItemLemburDriver 
         library={library}
         />;
     }
@@ -30,7 +30,7 @@ class ListKehadiran extends Component {
 }
 
 const mapStateToProps = state => {
-    return { librarieskehadiran: state.librarieskehadiran };
+    return { librarieslemburdriver: state.librarieslemburdriver };
 };
 
-export default connect (mapStateToProps)(ListKehadiran);
+export default connect (mapStateToProps)(ListLemburDriver);

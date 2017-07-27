@@ -17,7 +17,7 @@ import MainMenu from './components/MainMenu';
 import GantiPassword from './components/GantiPassword';
 import FormLemburDriver from './components/FormLemburDriver';
 import LoginForm from './components/LoginForm';
-import Kehadiran from './components/Kehadiran/Kehadiran';
+import Kehadiran from './components/Kehadiran';
 import LaporanHarian from './components/Kehadiran/laporanHarian/LaporanHarian';
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
@@ -28,11 +28,13 @@ import TimePicker from './components/cobacoba/TimePicker';
 
 import {Router, Scene} from 'react-native-router-flux';
 
-import DetailLemburDriver from './components/src/components/lemburdriver/DetailLemburDriver';
-import DetailSPJ from './components/src/components/spj/DetailSPJ';
-import DetailBawahan from './components/src/components/kinerja/DetailBawahan';
+import DetailLemburDriver from './components/lemburdriver/DetailLemburDriver';
+import DetailLembur from './components/lembur/DetailLembur';
+import DetailSPJ from './components/spj/DetailSPJ';
+import DetailBawahan from './components/kinerja/DetailBawahan';
 import AppKinerja from './components/AppKinerja';
 import AppLemburDriver from './components/AppLemburDriver';
+import AppLembur from './components/AppLembur';
 import AppSPJ from './components/AppSPJ';
 import AppPersetujuan from './components/AppPersetujuan';
 
@@ -51,13 +53,13 @@ class App extends Component{
                 key="keyMainMenu"
                 component={MainMenu}
                 title="Si-Akang"
-                initial
+                
                 />
 
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                
+                initial
                 />
 
                 <Scene
@@ -85,6 +87,12 @@ class App extends Component{
                 />
                 
                 <Scene
+                  key = "applembur"
+                  component = { AppLembur }
+                  title= "Laporan Lembur"
+                />
+
+                <Scene
                     key = "appspj"
                     component = { AppSPJ }
                     title= "Laporan SPJ"
@@ -106,7 +114,13 @@ class App extends Component{
                 <Scene
                     key = "detaillemburdriver"
                     component = { DetailLemburDriver }
-                    title= "Detail Lembur Driver"               
+                    title= "Detail Laporan Lembur Driver"               
+                />
+
+                <Scene
+                    key = "detaillembur"
+                    component = { DetailLembur }
+                    title= "Detail Laporan Lembur"               
                 />
 
                 <Scene

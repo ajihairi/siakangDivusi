@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Container, Header, Left, Body, Title, Icon, Button, Right} from 'native-base';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducers from './src/reducers';
+import reducers from './reducers';
 import { Actions } from 'react-native-router-flux';
-import BodyPersetujuan from './src/components/persetujuan/BodyPersetujuan';
+import BodyPersetujuan from './persetujuan/BodyPersetujuan';
 
 export default class AppPersetujuan extends Component {
     render() {

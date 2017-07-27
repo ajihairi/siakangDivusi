@@ -24,17 +24,6 @@ export default class BodyKehadiran extends Component {
         selected2: "keya"
       };
     }
-    onValueChange(value: string) {
-      this.setState({
-        selected1: value
-      });
-    }
-
-    _onValueChange(value: string) {
-      this.setState({
-        selected2: value
-      });
-    }
     
     render() {
         const { SearchStyle, ViewStyle, ButtonStyle, TextStyle, ListStyle} = styles;
@@ -64,7 +53,7 @@ export default class BodyKehadiran extends Component {
                    
                     <ListKehadiran />                        
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} style={ButtonStyle} block>
+                <Button onPress={() => Actions.keyMainMenu()} style={ButtonStyle} block>
                     <Text style={TextStyle}>Back</Text>
                 </Button>
             </Container>
@@ -75,15 +64,13 @@ export default class BodyKehadiran extends Component {
 const styles = {
   SearchStyle: {
     marginTop: 10,
- 
   },
   ButtonStyle: {
     marginTop: 5,
     alignItems: 'center',
     position: 'relative',
     marginBottom:5,
-    width: 150,
-    alignItems: 'center'
+    width: 150
   },
   TextStyle: {
     color:'#fff',

@@ -11,38 +11,30 @@ import {
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-export default class DetailLemburDriver extends Component {
+export default class DetailLembur extends Component {
     render() {
         return (
             <Container>
                 <Content>
                     <Form>
                         <Item stackedLabel>
-                            <Label>ID SPJ :</Label>
-                            <Label/>
-                        </Item>
-                        <Item stackedLabel>
                             <Label>Nama Pekerjaan :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Tanggal Mulai :</Label>
+                            <Label>Tanggal Lembur :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Tanggal Selesai :</Label>
+                            <Label>Jam Mulai :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
+                            <Label>Jam Selesai :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Durasi :</Label>
-                            <Label/>
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Perjalanan Dinas :</Label>
+                            <Label>Hasil kerja :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
@@ -51,7 +43,7 @@ export default class DetailLemburDriver extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.applemburdriver()} block>
+                <Button onPress={() => Actions.applembur()} block>
                    <Text>Back</Text>
                 </Button>
             </Container>

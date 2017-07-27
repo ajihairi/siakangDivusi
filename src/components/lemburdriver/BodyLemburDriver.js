@@ -28,7 +28,10 @@ export default class BodyLemburDriver extends Component {
                 <Content>
                     <Item style={SearchStyle} rounded>
                         <Icon name="ios-search" />
-                        <Input placeholder="Search" />
+                        <Input 
+                            placeholder="Search" 
+                            onChangeText={(text) => filterSearch(text)}
+                        />
                         <Icon name="ios-people" />
                     </Item>
                     <Button style={ButtonStyle} block rounded>

@@ -11,43 +11,43 @@ import {
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-export default class DetailBawahan extends Component {
+export default class DetailLemburDriver extends Component {
     render() {
         return (
             <Container>
                 <Content>
                     <Form>
                         <Item stackedLabel>
-                            <Label>Tanggal :</Label>
-                            <Label/>
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Jam Kerja :</Label>
+                            <Label>Nama Pekerjaan :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Total Jam Kerja :</Label>
+                            <Label>Tanggal Lembur :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Status Kehadiran :</Label>
+                            <Label>Jenis Lembur :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Alasan Kehadiran :</Label>
+                            <Label>Jam Mulai :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Activitas :</Label>
+                            <Label>Jam Selesai :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Mood :</Label>
+                            <Label>Hasil kerja :</Label>
+                            <Label/>
+                        </Item>
+                        <Item stackedLabel last>
+                            <Label>Status Pembayaran :</Label>
                             <Label/>
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.appkinerja()} block>
+                <Button onPress={() => Actions.applemburdriver()} block>
                    <Text>Back</Text>
                 </Button>
             </Container>
