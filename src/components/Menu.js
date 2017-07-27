@@ -6,7 +6,7 @@ import firebase from 'firebase'
 import {Actions} from 'react-native-router-flux';
 
 import FormLemburDriver from './FormLemburDriver';
-import Kehadiran from './Kehadiran/Kehadiran';
+import Kehadiran from './Kehadiran';
 const Menu =()=>{
   return(
     <Container style={styles.splashScreens}>

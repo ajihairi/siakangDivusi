@@ -17,7 +17,7 @@ import MainMenu from './components/MainMenu';
 import GantiPassword from './components/GantiPassword';
 import FormLemburDriver from './components/FormLemburDriver';
 import LoginForm from './components/LoginForm';
-import Kehadiran from './components/Kehadiran/Kehadiran';
+import Kehadiran from './components/Kehadiran';
 import LaporanHarian from './components/Kehadiran/laporanHarian/LaporanHarian';
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
@@ -53,13 +53,13 @@ class App extends Component{
                 key="keyMainMenu"
                 component={MainMenu}
                 title="Si-Akang"
-                initial
+                
                 />
 
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                
+                initial
                 />
 
                 <Scene

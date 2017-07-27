@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import { Actions } from 'react-native-router-flux';
-import BodyKehadiran from './BodyKehadiran';
+import BodyKehadiran from './Kehadiran/BodyKehadiran';
 
 export default class Kehadiran extends Component {
     render() {

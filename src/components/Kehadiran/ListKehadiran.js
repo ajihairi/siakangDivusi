@@ -10,7 +10,7 @@ class ListKehadiran extends Component {
             rowHasChanged: (r1, r2) => r1 !== r2
         });
 
-        this.dataSource = ds.cloneWithRows(this.props.librariesspj);
+        this.dataSource = ds.cloneWithRows(this.props.librarieskehadiran);
     }
 
     renderRow(library) {
@@ -30,7 +30,7 @@ class ListKehadiran extends Component {
 }
 
 const mapStateToProps = state => {
-    return { librariesspj: state.librariesspj };
+    return { librarieskehadiran: state.librarieskehadiran };
 };
 
 export default connect (mapStateToProps)(ListKehadiran);
