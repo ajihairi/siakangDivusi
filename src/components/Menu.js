@@ -17,7 +17,7 @@ const Menu =()=>{
                 <Grid style={{marginTop:50,marginBottom:70}}>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/jadwal.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Kehadiran</Text>
@@ -27,7 +27,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.keyLemburDriver()}>
+                        <Button primary transparent onPress={()=> Actions.keyLemburDriver()} style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/lemburdriver.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Lembur Driver</Text>
@@ -37,7 +37,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/perjalanan.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Perjalanan</Text>
@@ -50,7 +50,7 @@ const Menu =()=>{
                 <Grid style={{marginBottom:70}}>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/laporankinerja.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Kinerja </Text>
@@ -60,7 +60,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/laporanspj.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan SPJ </Text>
@@ -70,7 +70,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/lapranlemburdriver.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Lembur Driver </Text>
@@ -80,11 +80,11 @@ const Menu =()=>{
                   </Col>
                 </Grid>
 
-                <Grid>
+                <Grid style={{height:250}}>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
-                          <Container style={styles.buttonContainer}>
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
+                          <Container style={styles.buttonContainer} >
                             <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Lembur </Text>
                           </Container>
@@ -93,7 +93,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/persetujuan.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Persetujuan</Text>
@@ -103,7 +103,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent >
+                        <Button primary transparent style={{alignItems:'flex-start', height:200}}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/logout.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Log Out </Text>

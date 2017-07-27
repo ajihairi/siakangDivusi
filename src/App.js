@@ -49,15 +49,12 @@ class App extends Component{
                 <Scene
                 key="keyLemburDriver"
                 component={FormLemburDriver}
-                title="Lembur Driver"
                 />
 
                 <Scene
                 key="keyGantiPassword"
                 component={GantiPassword}
-                title="Ganti Password LDAP"
                 />
-              
               </Scene>
             </Router>
         );
