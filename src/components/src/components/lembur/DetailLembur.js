@@ -11,7 +11,7 @@ import {
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-export default class DetailLemburDriver extends Component {
+export default class DetailLembur extends Component {
     render() {
         return (
             <Container>
@@ -23,10 +23,6 @@ export default class DetailLemburDriver extends Component {
                         </Item>
                         <Item stackedLabel last>
                             <Label>Tanggal Lembur :</Label>
-                            <Label/>
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Jenis Lembur :</Label>
                             <Label/>
                         </Item>
                         <Item stackedLabel last>
@@ -47,7 +43,7 @@ export default class DetailLemburDriver extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.applemburdriver()} block>
+                <Button onPress={() => Actions.applembur()} block>
                    <Text>Back</Text>
                 </Button>
             </Container>

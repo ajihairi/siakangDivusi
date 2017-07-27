@@ -25,10 +25,12 @@ import TimePicker from './components/cobacoba/TimePicker';
 import {Router, Scene} from 'react-native-router-flux';
 
 import DetailLemburDriver from './components/src/components/lemburdriver/DetailLemburDriver';
+import DetailLembur from './components/src/components/lembur/DetailLembur';
 import DetailSPJ from './components/src/components/spj/DetailSPJ';
 import DetailBawahan from './components/src/components/kinerja/DetailBawahan';
 import AppKinerja from './components/AppKinerja';
 import AppLemburDriver from './components/AppLemburDriver';
+import AppLembur from './components/AppLembur';
 import AppSPJ from './components/AppSPJ';
 import AppPersetujuan from './components/AppPersetujuan';
 
@@ -81,6 +83,12 @@ class App extends Component{
                 />
                 
                 <Scene
+                  key = "applembur"
+                  component = { AppLembur }
+                  title= "Laporan Lembur"
+                />
+
+                <Scene
                     key = "appspj"
                     component = { AppSPJ }
                     title= "Laporan SPJ"
@@ -102,7 +110,13 @@ class App extends Component{
                 <Scene
                     key = "detaillemburdriver"
                     component = { DetailLemburDriver }
-                    title= "Detail Lembur Driver"               
+                    title= "Detail Laporan Lembur Driver"               
+                />
+
+                <Scene
+                    key = "detaillembur"
+                    component = { DetailLembur }
+                    title= "Detail Laporan Lembur"               
                 />
 
                 <Scene

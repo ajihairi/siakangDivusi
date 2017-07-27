@@ -17,9 +17,9 @@ import {
 } from 'native-base';
 // import ListLembur from './components/ListLembur';
 // import DetailLaporan from './components/DetailLaporan';
-import ListLemburDriver from './ListLemburDriver';
+import ListLembur from './ListLembur';
 
-export default class BodyLemburDriver extends Component {
+export default class BodyLembur extends Component {
     render() {
         const { SearchStyle, ViewStyle, ButtonStyle, TextStyle, ListStyle} = styles;
 
@@ -37,7 +37,7 @@ export default class BodyLemburDriver extends Component {
                     <Button style={ButtonStyle} block rounded>
                         <Text style={TextStyle}>Search</Text>
                     </Button>
-                    <ListLemburDriver />                        
+                    <ListLembur />                        
                 </Content>
                 <Button onPress={() => Actions.keyMainMenu()} style={ButtonStyle} block rounded>
                     <Text style={TextStyle}>Back</Text>
@@ -64,4 +64,4 @@ const styles = {
   }
 }
 
-module.export = BodyLemburDriver;
+module.export = BodyLembur;

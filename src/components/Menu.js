@@ -83,7 +83,7 @@ const Menu =()=>{
                 <Grid>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent onPress={()=> Actions.applembur()}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Lembur </Text>
