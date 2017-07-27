@@ -6,7 +6,7 @@ import firebase from 'firebase'
 import {Actions} from 'react-native-router-flux';
 
 import FormLemburDriver from './FormLemburDriver';
-
+import Kehadiran from './Kehadiran/Kehadiran';
 const Menu =()=>{
   return(
     <Container style={styles.splashScreens}>
@@ -17,7 +17,7 @@ const Menu =()=>{
                 <Grid style={{marginTop:50,marginBottom:70}}>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent>
+                        <Button primary transparent onPress={()=> Actions.keyKehadiran()}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/jadwal.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Kehadiran</Text>

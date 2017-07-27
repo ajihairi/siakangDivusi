@@ -16,10 +16,11 @@ import {
 import MainMenu from './components/MainMenu';
 import GantiPassword from './components/GantiPassword';
 import FormLemburDriver from './components/FormLemburDriver';
-import LoginForm from './components/LoginForm'
+import LoginForm from './components/LoginForm';
+import Kehadiran from './components/Kehadiran/Kehadiran';
 
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
-import TimePicker from './components/cobacoba/TimePicker'
+import TimePicker from './components/cobacoba/TimePicker';
 
 import {Router, Scene} from 'react-native-router-flux';
 
@@ -57,7 +58,13 @@ class App extends Component{
                 component={GantiPassword}
                 title="Ganti Password LDAP"
                 />
-              
+            
+                <Scene
+                key="keyKehadiran"
+                component={Kehadiran}
+                title="Kehadiran"
+                />
+
               </Scene>
             </Router>
         );
