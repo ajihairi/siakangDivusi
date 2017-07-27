@@ -47,7 +47,7 @@ export default class DetailBawahan extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.appkinerja()} block>
+                <Button onPress={() => Actions.kinerja()} block>
                    <Text>Back</Text>
                 </Button>
             </Container>

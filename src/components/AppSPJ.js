@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Container, Header, Left, Body, Title, Icon, Button , Right} from 'native-base';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducers from './src/reducers';
+import reducers from './reducers';
 import { Actions } from 'react-native-router-flux';
-import BodySPJ from './src/components/spj/BodySPJ';
+import BodySPJ from './spj/BodySPJ';
 
 export default class AppSPJ extends Component {
     render() {

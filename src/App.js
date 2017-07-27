@@ -28,10 +28,10 @@ import TimePicker from './components/cobacoba/TimePicker';
 
 import {Router, Scene} from 'react-native-router-flux';
 
-import DetailLemburDriver from './components/src/components/lemburdriver/DetailLemburDriver';
-import DetailLembur from './components/src/components/lembur/DetailLembur';
-import DetailSPJ from './components/src/components/spj/DetailSPJ';
-import DetailBawahan from './components/src/components/kinerja/DetailBawahan';
+import DetailLemburDriver from './components/lemburdriver/DetailLemburDriver';
+import DetailLembur from './components/lembur/DetailLembur';
+import DetailSPJ from './components/spj/DetailSPJ';
+import DetailBawahan from './components/kinerja/DetailBawahan';
 import AppKinerja from './components/AppKinerja';
 import AppLemburDriver from './components/AppLemburDriver';
 import AppLembur from './components/AppLembur';
