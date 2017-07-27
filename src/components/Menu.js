@@ -6,7 +6,7 @@ import firebase from 'firebase'
 import {Actions} from 'react-native-router-flux';
 
 import FormLemburDriver from './FormLemburDriver';
-
+import Kehadiran from './Kehadiran/Kehadiran';
 const Menu =()=>{
   return(
     <Container style={styles.splashScreens}>
@@ -17,7 +17,11 @@ const Menu =()=>{
                 <Grid style={{marginTop:50,marginBottom:70}}>
                   <Col>
                     <Container style={styles.buttonContainer}>
+<<<<<<< HEAD
                         <Button primary transparent style={{alignItems:'flex-start', height:200}}>
+=======
+                        <Button primary transparent onPress={()=> Actions.keyKehadiran()}>
+>>>>>>> master
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/jadwal.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Kehadiran</Text>
@@ -50,7 +54,11 @@ const Menu =()=>{
                 <Grid style={{marginBottom:70}}>
                   <Col>
                     <Container style={styles.buttonContainer}>
+<<<<<<< HEAD
                         <Button primary transparent style={{alignItems:'flex-start', height:200}}>
+=======
+                        <Button primary transparent onPress={()=> Actions.kinerja()}>
+>>>>>>> master
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/laporankinerja.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Kinerja </Text>
@@ -60,7 +68,11 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
+<<<<<<< HEAD
                         <Button primary transparent style={{alignItems:'flex-start', height:200}}>
+=======
+                        <Button primary transparent onPress={()=> Actions.appspj()}>
+>>>>>>> master
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/laporanspj.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan SPJ </Text>
@@ -70,7 +82,11 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
+<<<<<<< HEAD
                         <Button primary transparent style={{alignItems:'flex-start', height:200}}>
+=======
+                        <Button primary transparent onPress={()=> Actions.applemburdriver()}>
+>>>>>>> master
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/lapranlemburdriver.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Laporan Lembur Driver </Text>
@@ -93,7 +109,11 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
+<<<<<<< HEAD
                         <Button primary transparent style={{alignItems:'flex-start', height:200}}>
+=======
+                        <Button primary transparent onPress={()=> Actions.persetujuan()}>
+>>>>>>> master
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/persetujuan.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}>Persetujuan</Text>
