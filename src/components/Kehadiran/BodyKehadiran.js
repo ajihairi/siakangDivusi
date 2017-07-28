@@ -18,7 +18,7 @@ import {
     Header
 } from 'native-base';
 import ListKehadiran from './ListKehadiran';
-
+import Fabs from './Fabs';
 export default class BodyKehadiran extends Component {
      constructor(props) {
       super(props);
@@ -43,27 +43,8 @@ export default class BodyKehadiran extends Component {
                     <Text>Search</Text>
                   </Button>
                 </Header>
-                <View style={{backgroundColor: 'white'}}>
-                    <ListKehadiran />
-                        <Fab
-                            active={this.state.active}
-                            direction="up"
-                            style={{ backgroundColor: '#5067FF', marginBottom: 70 }}
-                            position="bottomRight"
-                            onPress={() => this.setState({ active: !this.state.active })}>
-                            <Icon name="add" />
-                            <Button 
-                            primary transparent 
-                            onPress={()=>Actions.keyPengajuanCuti()} style={{ backgroundColor:"#34A34F", marginBottom: 70}}>
-                              <Icon name="calendar" style={{color:'white'}} />
-                            </Button>
-                            <Button 
-                            primary transparent
-                            onPress={()=>Actions.keyPenugasanLembur()} style={{ backgroundColor:"gray", marginBottom: 70}}>
-                              <Icon name="clock" style={{color:'white'}} />
-                              </Button>
-                        </Fab>
-                </View>
+                <ListKehadiran />
+                <Fabs />
             </Container>
         );
     }

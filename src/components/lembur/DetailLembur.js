@@ -16,7 +16,7 @@ export default class DetailLembur extends Component {
         return (
             <Container>
                 <Content>
-                    <Form>
+                    <Form style={{marginTop: 30}}>
                         <Item stackedLabel>
                             <Label>Nama Pekerjaan :</Label>
                             <Label/>
@@ -43,7 +43,10 @@ export default class DetailLembur extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.applembur()} block>
+                <Button 
+                block 
+                onPress={() => this.props.navigation.goBack()} 
+                style={{marginRight: 10, marginLeft: 10, marginBottom: 15}}>
                    <Text>Back</Text>
                 </Button>
             </Container>

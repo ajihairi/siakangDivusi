@@ -16,7 +16,7 @@ export default class DetailSPJ extends Component {
         return (
             <Container>
                 <Content>
-                    <Form>
+                    <Form style={{marginTop: 30}}>
                         <Item stackedLabel>
                             <Label>ID SPJ</Label>
                             <Text></Text>
@@ -51,7 +51,10 @@ export default class DetailSPJ extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.appspj()} block>
+                <Button 
+                block 
+                onPress={() => this.props.navigation.goBack()} 
+                style={{marginRight: 10, marginLeft: 10, marginBottom: 15}}>
                    <Text>Back</Text>
                 </Button>
             </Container>

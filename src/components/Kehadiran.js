@@ -21,7 +21,8 @@ export default class Kehadiran extends Component {
             <Body>
               <Title>Kehadiran</Title>
             </Body>
-            <Right />
+            <Right/>
+
           </Header>
           <BodyKehadiran />
         </Container>
