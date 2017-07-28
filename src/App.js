@@ -21,7 +21,7 @@ import Kehadiran from './components/Kehadiran';
 import LaporanHarian from './components/Kehadiran/laporanHarian/LaporanHarian';
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
-
+import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
 
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
 import TimePicker from './components/cobacoba/TimePicker';
@@ -152,6 +152,13 @@ class App extends Component{
                 component={formCuti}
                 title="Pengajuan Cuti"
                 />
+
+              <Scene
+                key="keyDetailKehadiran"
+                component={DetailKehadiran}
+                title="Detail Kehadiran"
+                />
+
 
               </Scene>
             </Router>

@@ -19,7 +19,7 @@ class ItemKehadiran extends Component {
             <CardSection>
                 <Content >
                     <Item style={{height:40}}>
-                        <H1 onPress={() => Actions.detailKehadiran()}> {this.props.library.Tanggal}</H1>
+                        <H1 onPress={() => Actions.keyDetailKehadiran()}> {this.props.library.Tanggal}</H1>
                         <Right> 
                        <View style={{backgroundColor:'red'}}>
                              <Text>                            </Text>  
