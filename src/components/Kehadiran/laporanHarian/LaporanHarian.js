@@ -25,19 +25,19 @@ export default class laporanHarian extends Component {
             <Right />
           </Header>  
          <Tabs initialPage={0}>
-                        <Tab heading="Aktivitas">
+                        <Tab heading="Aktivitas"  >
                           <Aktivitas/>
                           </Tab>
-                        <Tab heading="Remote">
+                        <Tab heading="Remote" >
                           <Remote/>
                           </Tab>
-                        <Tab heading="Koreksi">
+                        <Tab heading="Koreksi" >
                           <Koreksi/>
                           </Tab>
-                        <Tab heading="Izin">
+                        <Tab heading="Izin" >
                           <Izin/>
                         </Tab>
-                        <Tab heading="Dinas">
+                        <Tab heading="Dinas" >
                           <Dinas/>
                         </Tab>
           </Tabs>
@@ -47,4 +47,10 @@ export default class laporanHarian extends Component {
         
     );
 }
+}
+
+const styles ={
+  tabStyle:{
+    width: 100
+  }
 }

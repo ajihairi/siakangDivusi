@@ -5,10 +5,10 @@ import { Text, Button,Container, Content, InputGroup, Item, Input, Picker } from
 class Aktivitas extends Component {
     render()
     {
-               const { SearchStyle, ViewStyle, buttonStyle, TextStyle, ListStyle} = styles;
+      const { SearchStyle, ViewStyle, buttonStyle, TextStyle, ListStyle} = styles;
 
       return (
-      <Container style={{paddingLeft : 10}}>
+      <Container style={{paddingLeft : 10, paddingTop: 10}}>
           <Content>
               
               <Text>tanggal</Text>
@@ -64,7 +64,7 @@ class Aktivitas extends Component {
             <Item style={SearchStyle} block >
             <Input placeholder='catatan' />
             </Item>
-            <Item style={{marginTop : 5,  justifyContent : 'center'}} >
+            <View style={{flexDirection: 'row', marginTop : 5,  justifyContent : 'center',  marginBottom: 15}} >
             <Button style={{justifyContent:"center", marginRight: 5, width: 150}} block>
              <Text>Back</Text>
             </Button>
@@ -72,7 +72,7 @@ class Aktivitas extends Component {
             <Button style={{justifyContent:'center',marginLeft: 5, width : 150 }} block>
            <Text>Next </Text>
           </Button>
-            </Item>
+            </View>
             </Content>
 
       </Container>

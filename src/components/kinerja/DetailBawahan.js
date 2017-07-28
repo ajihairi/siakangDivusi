@@ -47,7 +47,10 @@ export default class DetailBawahan extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} block>
+                <Button 
+                block 
+                onPress={() => this.props.navigation.goBack()} 
+                style={{marginRight: 10, marginLeft: 10, marginBottom: 15}}>
                    <Text>Back</Text>
                 </Button>
             </Container>

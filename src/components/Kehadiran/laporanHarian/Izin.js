@@ -7,15 +7,15 @@ class Koreksi extends Component {
     {
       return (
       <Container>
-          <Content>
+          <Content style={{paddingLeft : 10, paddingTop: 10}}>
             <ListItem>
-            <CheckBox checked={true} />
-            <Body>
+            <CheckBox checked={true}/>
+            <Body style={{marginLeft: 5}}>
               <Text>ajukan izin </Text>
               </Body>
-</ListItem>
- <Text>tipe izin</Text>
-<Picker
+          </ListItem>
+            <Text>tipe izin</Text>
+                <Picker
                     style ={{ margin : 12}}
                         selectedValue = {this.props.shift}
                         onValueChange = {value => this.props.employeeUpdate({prop:'shift', value: value})}
