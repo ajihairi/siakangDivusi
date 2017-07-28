@@ -65,14 +65,14 @@ class App extends Component{
                 <Scene
                 key="keyLemburDriver"
                 component={FormLemburDriver}
+                title="Lembur Driver"
                 />
 
                 <Scene
                 key="keyGantiPassword"
                 component={GantiPassword}
+                title="Ganti Password LDAP"
                 />
-<<<<<<< HEAD
-=======
             
                 <Scene
                 key="keyKehadiran"
@@ -153,7 +153,6 @@ class App extends Component{
                 title="Pengajuan Cuti"
                 />
 
->>>>>>> master
               </Scene>
             </Router>
         );

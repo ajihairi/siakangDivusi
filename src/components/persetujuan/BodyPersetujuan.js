@@ -17,7 +17,7 @@ export default class BodyPersetujuan extends Component {
               <Tab2 />
             </Tab>
             <Tab heading="SPJ">
-              <Tab3 />
+            <Tab3 />
             </Tab>
           </Tabs>
         </Content>

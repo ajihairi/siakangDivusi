@@ -60,7 +60,7 @@ class FormPenugasanLembur extends Component{
               </Button>
             </Left>
             <Body>
-              <Title>PenugasanLembur</Title>
+              <Title style={{width:200}}>Penugasan Lembur</Title>
             </Body>
             <Right />
           </Header>
@@ -82,7 +82,7 @@ class FormPenugasanLembur extends Component{
               </Picker>
               <Text note> Tanggal </Text>
               <DatePicker
-                style={{width: 300, marginTop:10, marginLeft:10}}
+                style={{width: 314, marginTop:10, marginLeft:10}}
                 date={this.state.date}
                 mode="date"
                 placeholder="select date"
