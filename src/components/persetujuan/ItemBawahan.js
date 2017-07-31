@@ -10,14 +10,14 @@ import {
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemLemburDriver extends Component {
+class ItemBawahan extends Component {
     render() {
         return(
             <CardSection>
                 <Content>
                     <Item>
                         <Body>
-                            <Label  onPress={() => Actions.detaillemburdriver()}> {this.props.library.namaKaryawan}</Label>
+                            <Label  onPress={() => Actions.detailRemote()}> {this.props.library.namaKaryawan}</Label>
                         </Body>
                     </Item>
                     <Item>
@@ -32,4 +32,4 @@ class ItemLemburDriver extends Component {
     }
 }
 
-export default ItemLemburDriver;
+export default ItemBawahan;

@@ -5,26 +5,32 @@ import {
     Right,
     Body,
     Label,
-    Text
+    Text,
+    H3,
+    Icon,
+    Left
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemLemburDriver extends Component {
+class ItemPribadi extends Component {
     render() {
         return(
             <CardSection>
                 <Content>
                     <Item>
-                        <Body>
-                            <Label  onPress={() => Actions.detaillemburdriver()}> {this.props.library.jenisPengajuan}</Label>
-                        </Body>
+                        
+                            <H3  onPress={() => Actions.detailRemote()}> {this.props.library.jenisPengajuan}</H3>
+                                 
                     </Item>
                     <Item>
                         <Text> {this.props.library.tanggalPengajuan}</Text>
+                        <Text>    s/d   </Text>
+                        <Text> {this.props.library.tanggalPengajuan}</Text>
                         <Right>
-                            <Text> {this.props.library.statusPengajuan}</Text>
+                           <Icon name='ios-checkmark-circle-outline' />
                         </Right>
+                        <Right><Text> {this.props.library.statusPengajuan}</Text></Right>
                     </Item>
                 </Content>
             </CardSection>
@@ -32,4 +38,4 @@ class ItemLemburDriver extends Component {
     }
 }
 
-export default ItemLemburDriver;
+export default ItemPribadi;
