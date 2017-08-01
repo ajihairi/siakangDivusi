@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Icon, Item, Container, Content, Input, Button, Text, Header} from 'native-base';
-import List1 from './List1';
+import ListPribadi from './ListPribadi';
 
-export default class Tab1 extends Component {
+export default class TabPribadi extends Component {
     render() {
         return (
             <Container>
@@ -18,11 +18,11 @@ export default class Tab1 extends Component {
                   </Button>
                 </Header>
                 <Content>
-                    <List1 />
+                    <ListPribadi />
                 </Content>
             </Container>
         );
     }
 }
 
-module.export = Tab1;
+module.export = TabPribadi;

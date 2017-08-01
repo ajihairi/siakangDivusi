@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Icon, Item, Container, Content, Input, Button, Text} from 'native-base';
-import List2 from './List2';
+import ListBawahan from './ListBawahan';
 import DatePicker from 'react-native-datepicker'
 
-export default class Tab2 extends Component {
+export default class TabBawahan extends Component {
     constructor(props){
         super(props)
         this.state = {date:"00-00-0000"}
@@ -67,11 +67,11 @@ export default class Tab2 extends Component {
                             <Text> Cari </Text>
                         </Icon>
                     </Button>
-                    <List2 />
+                    <ListBawahan />
                 </Content>
             </Container>
         );
     }
 }
 
-module.export = Tab2;
+module.export = TabBawahan;

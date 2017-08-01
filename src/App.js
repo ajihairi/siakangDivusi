@@ -28,6 +28,7 @@ import Izin from './components/Kehadiran/laporanHarian/Izin';
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
 import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
+import DetailPersetujuanPribadiRemote from './components/persetujuan/DetailPersetujuanPribadiRemote' ;
 
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
 import TimePicker from './components/cobacoba/TimePicker';
@@ -165,9 +166,10 @@ class App extends Component{
                 title="Detail Kehadiran"
                 />
 
-                <Scene
-                key="keyRemote"
-                component={Remote}
+              <Scene
+                key="detailRemote"
+                component={DetailPersetujuanPribadiRemote}
+                title="Detail Remote"
                 />
 
 

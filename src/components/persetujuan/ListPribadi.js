@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { ListView } from 'react-native';
 import { connect } from 'react-redux';
-import Item1 from './Item1';
+import ItemPribadi from './ItemPribadi';
 import { Actions } from 'react-native-router-flux';
 
-class List1 extends Component {
+class ListPribadi extends Component {
     componentWillMount() {
         const ds = new  ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
@@ -14,7 +14,7 @@ class List1 extends Component {
     }
 
     renderRow(library) {
-        return <Item1
+        return <ItemPribadi
         library={library}
         />;
     }
@@ -33,4 +33,4 @@ const mapStateToProps = state => {
     return { libraries1: state.libraries1 };
 };
 
-export default connect (mapStateToProps)(List1);
+export default connect (mapStateToProps)(ListPribadi);
