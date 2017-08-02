@@ -1,36 +1,38 @@
 import React, { Component } from 'react';
-import { ListView } from 'react-native';
-import { connect } from 'react-redux';
-import ItemActivitas from './ItemActivitas';
-import { Actions } from 'react-native-router-flux';
+import { 
+    Container,
+    Content,
+    List,
+    ListItem,
+    Text,
+    Label,
+    Item
+ } from 'native-base';
 
-class ListHari extends Component {
-    componentWillMount() {
-        const ds = new  ListView.DataSource({
-            rowHasChanged: (r1, r2) => r1 !== r2
-        });
-
-        this.dataSource = ds.cloneWithRows(this.props.librariesbawahan);
-    }
-
-    renderRow(library) {
-        return <ItemActivitas 
-        library={library}
-        />;
-    }
-
+export default class ListActivitas extends Component {
     render() {
-        return(
-        <ListView
-            dataSource={this.dataSource}
-            renderRow={this.renderRow}
-        />
+        var activitas = ['Activitas 1','Activitas 2',
+        'Activitas 3','Activitas 4','Activitas 5'];
+
+        return (
+            <Container>
+                <Content>
+                    <List dataArray={activitas} block
+                        renderRow={(item) =>
+                        <ListItem avatar>
+                            <Item>
+                                <Text>{item}</Text>
+                            </Item>
+                            <Item>
+                                <Text note>Aktivitas bla bla bla</Text>
+                            </Item>
+                        </ListItem>
+                        }>
+                    </List>
+                </Content>
+            </Container>
         );
     }
 }
 
-const mapStateToProps = state => {
-    return { librariesbawahan: state.librariesbawahan };
-};
-
-export default connect (mapStateToProps)(ListHari);
+module.export = ListActivitas;

@@ -7,32 +7,34 @@ import {
     Label,
     Card,
     CardItem,
+    Left,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemSPJ extends Component {
+class ItemKinerja extends Component {
     render() {
-        let articles = this.props.data.map(function(articleData, index){
+        let articles = this.props.data.map(function (articleData, index) {
             return (
                 <Card>
                     <CardItem>
                         <Body>
                             <Item>
                                 <Body>
-                                    <Label onPress={() => Actions.detailspj()}>
-                                    {articleData.idSPJ}
-                                    </Label> 
-                                </Body>
-                            </Item>
-                            <Item>
-                                <Text>{articleData.namaPekerjaan}</Text>
-                                <Body>
-                                    <Text></Text>
+                                    <Label onPress={() => Actions.detailpribadi()}>
+                                        {articleData.tanggal}
+                                    </Label>
                                 </Body>
                                 <Right>
-                                    <Text>{articleData.tujuan}</Text>
+                                    <Text>{articleData.statusKehadiran}</Text>
+                                </Right>
+                            </Item>
+                            <Item>
+                                <Text>{articleData.jamMasuk}</Text>
+                                <Text> s.d {articleData.jamKeluar}</Text>
+                                <Right>
+                                    <Text>{articleData.totalJam}</Text>
                                 </Right>
                             </Item>
                         </Body>
@@ -40,8 +42,7 @@ class ItemSPJ extends Component {
                 </Card>
             )
         });
-
-        return(
+        return (
             <Content>
                 {articles}
             </Content>
@@ -49,4 +50,4 @@ class ItemSPJ extends Component {
     }
 }
 
-export default ItemSPJ;
+export default ItemKinerja;

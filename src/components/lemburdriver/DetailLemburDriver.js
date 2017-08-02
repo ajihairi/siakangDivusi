@@ -13,41 +13,52 @@ import { Actions } from 'react-native-router-flux';
 
 export default class DetailLemburDriver extends Component {
     render() {
+        const { 
+            namaPekerjaan,
+            Pemograman,
+            tanggal,
+            jenisLembur,
+            jamMulai,
+            jamSelesai,
+            hasilKerja,
+            statusPembayaran 
+        } = this.props.library;
+
         return (
             <Container>
                 <Content>
                     <Form>
                         <Item stackedLabel>
                             <Label>Nama Pekerjaan :</Label>
-                            <Label/>
+                            <Text> {namaPekerjaan}</Text>
                         </Item>
                         <Item stackedLabel last>
                             <Label>Tanggal Lembur :</Label>
-                            <Label/>
+                            <Text> {tanggal}</Text>
                         </Item>
                         <Item stackedLabel last>
                             <Label>Jenis Lembur :</Label>
-                            <Label/>
+                            <Text> {jenisLembur}</Text>
                         </Item>
                         <Item stackedLabel last>
                             <Label>Jam Mulai :</Label>
-                            <Label/>
+                            <Text> {jamMulai}</Text>
                         </Item>
                         <Item stackedLabel last>
                             <Label>Jam Selesai :</Label>
-                            <Label/>
+                            <Text> {jamSelesai}</Text>
                         </Item>
                         <Item stackedLabel last>
                             <Label>Hasil kerja :</Label>
-                            <Label/>
+                            <Text> }{hasilKerja}</Text>
                         </Item>
                         <Item stackedLabel last>
                             <Label>Status Pembayaran :</Label>
-                            <Label/>
+                            <Text> {statusPembayaran}</Text>
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.applemburdriver()} block>
+                <Button onPress={() => this.props.navigation.goBack()} block>
                    <Text>Back</Text>
                 </Button>
             </Container>

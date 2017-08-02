@@ -32,6 +32,7 @@ import DetailLemburDriver from './components/lemburdriver/DetailLemburDriver';
 import DetailLembur from './components/lembur/DetailLembur';
 import DetailSPJ from './components/spj/DetailSPJ';
 import DetailBawahan from './components/kinerja/DetailBawahan';
+import DetailPribadi from './components/kinerja/DetailPribadi';
 import AppKinerja from './components/AppKinerja';
 import AppLemburDriver from './components/AppLemburDriver';
 import AppLembur from './components/AppLembur';
@@ -59,7 +60,7 @@ class App extends Component{
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                initial
+                
                 />
 
                 <Scene
@@ -84,6 +85,7 @@ class App extends Component{
                   key = "applemburdriver"
                   component = { AppLemburDriver }
                   title= "Laporan Lembur Driver"
+                  
                 />
                 
                 <Scene
@@ -102,7 +104,8 @@ class App extends Component{
                 <Scene
                     key = "kinerja"
                     component = { AppKinerja }
-                    title= "Kinerja"       
+                    title= "Kinerja" 
+                    initial      
                 />
 
                 <Scene
@@ -121,6 +124,12 @@ class App extends Component{
                     key = "detaillembur"
                     component = { DetailLembur }
                     title= "Detail Laporan Lembur"               
+                />
+
+                <Scene
+                    key = "detailpribadi"
+                    component = { DetailPribadi }
+                    title= "Detail Laporan Pribadi"               
                 />
 
                 <Scene

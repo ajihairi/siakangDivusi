@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, ListView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { 
     Container, 
@@ -15,9 +15,8 @@ import {
     Left,
     Body
 } from 'native-base';
-// import ListLembur from './components/ListLembur';
-// import DetailLaporan from './components/DetailLaporan';
 import ListLemburDriver from './ListLemburDriver';
+import LibraryLemburDriver from '../reducers/LibraryLemburDriver'
 
 export default class BodyLemburDriver extends Component {
     render() {
@@ -30,7 +29,6 @@ export default class BodyLemburDriver extends Component {
                         <Icon name="ios-search" />
                         <Input 
                             placeholder="Search" 
-                            onChangeText={(text) => filterSearch(text)}
                         />
                         <Icon name="ios-people" />
                     </Item>

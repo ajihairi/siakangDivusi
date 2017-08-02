@@ -51,7 +51,7 @@ export default class DetailKehadiran extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => Actions.appspj()} block>
+                <Button onPress={() => this.props.navigation.goBack()} block>
                    <Text>Back</Text>
                 </Button>
             </Container>
