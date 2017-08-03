@@ -4,14 +4,16 @@ import {
   Text, 
   View, 
   Image,
-  ActivityIndicatorIOS,
   AsyncStorage
 } from 'react-native';
 import { Button, Card, CardSection, Input, Spinner} from './common';
 //import LinearGradient from 'react-native-linear-gradient';
 import {Actions} from 'react-native-router-flux';
 import MainMenu from './MainMenu';
+import {create} from 'apisauce';
 
+
+const api = create({baseURL: 'https://www.makanbandung.com/api'})
 
 const ACCESS_TOKEN = 'access_token';
 class LoginForm extends Component {
@@ -19,63 +21,55 @@ class LoginForm extends Component {
     super();
 
     this.state = {
-      username: "",
-      password: "",
-      error: "",
-      showProgress: false,
+          username: "",
+          password: "",
+          error: "",
+          showProgress: false,
+        }
+  }
+  /*redirect(routeName, accessToken){
+      this.props.navigator.push({ 
+        name: routeName
+      });
     }
-  }
-  redirect(routeName, accessToken){
-    this.props.navigator.push({
-      name: routeName
-    });
-  }
-  storeToken(responseData){
-    AsyncStorage.setItem(ACCESS_TOKEN, responseData, (err)=> {
-      if(err){
-        console.log("an error");
-        throw err;
-      }
-      console.log("success");
-    }).catch((err)=> {
-        console.log("error is: " + err);
-    });
-  }
-  async onLoginPressed() {
-    this.setState({showProgress: true})
-    try {
-      let response = await fetch('https://www.makanbandung.com/api/login', {
-                              method: 'POST',
-                              headers: {
-                                'Accept': 'application/json',
-                                'Content-Type': 'application/json',
-                              },
-                              body: JSON.stringify({
-                                session:{
-                                  username: this.state.username,
-                                  password: this.state.password,
-                                }
-                              })
-                            });
-      let res = await response.text();
-      if (response.status >= 200 && response.status < 300) {
-          //Handle success
-          let accessToken = res;
-          console.log(accessToken);
-          //On success we will store the access_token in the AsyncStorage
-          this.storeToken(accessToken);
-          this.redirect('MainMenu');
-      } else {
-          //Handle error
-          let error = res;
-          throw error;
-      }
-    } catch(error) {
-        this.setState({error: error});
-        console.log("error " + error);
-        this.setState({showProgress: false});
+    storeToken(responseData){
+      AsyncStorage.setItem(ACCESS_TOKEN, responseData, (err)=> {
+        if(err){
+          console.log("an error");
+          throw err;
+        }
+        console.log("success");
+      }).catch((err)=> {
+          console.log("error is: " + err);
+      });
+    }*/
+    onLoginPressed() {
+
+      console.log(this.state);
+      this.setState({showProgress: true})
+      fetch("https://www.makanbandung.com/api/login", {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/x-www-form-urlencoded', // <-- Specifying the Content-Type
+        }),
+        body: "username=ivannugraha&password=ivan123" // <-- Post parameters
+      })
+      .then((response) => {
+        console.log(response)
+      })
+      .done()
+
+      // api.post('/login', {username: 'this.state.username', password: 'this.state.password'})
+      // .then(response => {
+      //   //handle success disini
+      //   console.log(response.body)
+      // })
+      // .catch(error => {
+      //   //handle error disni
+      //   console.log('error bos')
+      //   console.log(error)
+      // })
     }
-  }
   render(){
     return(
 
@@ -87,31 +81,28 @@ class LoginForm extends Component {
           <Input
           placeholder="username"
           label="Username"
-          onChangeText={ (text)=> this.setState({username: text}) }
-          />
+          onChangeText={ (text)=> this.setState({username: text}) }/>
         </CardSection>
 
         <CardSection>
           <Input
-            onChangeText={ (text)=> this.setState({password: text}) }
             secureTextEntry
             placeholder="password"
             label="Password"
+          onChangeText={ (text)=> this.setState({password: text}) }
           />
         </CardSection>
 
         <CardSection>
         <Text style={styles.error}>
-          {this.state.error}
+
         </Text>
           <Button onPress={this.onLoginPressed.bind(this)}>
             <Text>Log In</Text>
           </Button>
         </CardSection>
       </Card>
-      <Text style={styles.copyStyle}> Copyright (c) PT LAPI DIVUSI 2017 </Text>
-      <ActivityIndicatorIOS animating={this.state.showProgress} size="large" style={styles.loader} />
-      
+      <Text style={styles.copyStyle}> Copyright (c) PT LAPI DIVUSI 2017 </Text>      
       </View>
     );
   }
