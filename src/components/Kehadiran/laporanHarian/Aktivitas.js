@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {View, StyleSheet} from 'react-native';
 import { Text, Button,Container, Content, InputGroup, Item, Input, Picker } from 'native-base';
-
+import { Actions } from 'react-native-router-flux';
 class Aktivitas extends Component {
     render()
     {
@@ -64,15 +64,6 @@ class Aktivitas extends Component {
             <Item style={SearchStyle} block >
             <Input placeholder='catatan' />
             </Item>
-            <View style={{flexDirection: 'row', marginTop : 5,  justifyContent : 'center',  marginBottom: 15}} >
-            <Button style={{justifyContent:"center", marginRight: 5, width: 150}} block>
-             <Text>Back</Text>
-            </Button>
-          
-            <Button style={{justifyContent:'center',marginLeft: 5, width : 150 }} block>
-           <Text>Next </Text>
-          </Button>
-            </View>
             </Content>
 
       </Container>

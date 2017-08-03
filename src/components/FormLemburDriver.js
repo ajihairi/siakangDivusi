@@ -38,17 +38,6 @@ class FormLemburDriver extends Component{
         selected2: "keyb"
       };
     }
-    onValueChange(value: string) {
-      this.setState({
-        selected1: value
-      });
-    }
-
-    _onValueChange(value: string) {
-      this.setState({
-        selected2: value
-      });
-    }
 
     render() {
       return (
@@ -192,7 +181,7 @@ class FormLemburDriver extends Component{
                 </List>
 
                   <List>
-                    <Text note>Yang Menugaskan</Text>
+                    <Text note>ditugaskan oleh</Text>
                     <FormItem style={{marginTop: 5}}>
                      <Picker
                     iosHeader="Select  Name"

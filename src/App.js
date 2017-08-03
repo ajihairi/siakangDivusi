@@ -23,6 +23,10 @@ import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
 import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
 import DetailPersetujuanPribadiRemote from './components/persetujuan/DetailPersetujuanPribadiRemote' ;
+import Remote from './components/Kehadiran/laporanHarian/Remote';
+import Izin from './components/Kehadiran/laporanHarian/Izin';
+import Koreksi from './components/Kehadiran/laporanHarian/Koreksi';
+import Dinas from './components/Kehadiran/laporanHarian/Dinas';
 
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
 import TimePicker from './components/cobacoba/TimePicker';

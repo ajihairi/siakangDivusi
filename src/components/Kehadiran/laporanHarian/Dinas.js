@@ -26,11 +26,7 @@ class Koreksi extends Component {
                         <Picker.Item label="dll" value="Thursday" />
                     </Picker>
             <Item style={{marginTop : 5,  justifyContent : 'center'}} >
-            <Button style={{justifyContent:"center", marginRight: 5, width: 150}} block>
-             <Text>Back</Text>
-            </Button>
-          
-            <Button style={{justifyContent:'center',marginLeft: 5, width : 150 }} block>
+            <Button style={{justifyContent:'center',marginLeft: 5, width : 300 }} block>
            <Text>submit </Text>
           </Button>
             </Item>

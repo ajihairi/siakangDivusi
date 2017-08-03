@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {Text,View} from 'react-native';
 import { ListItem, Container, Content, InputGroup, Input, Picker, CheckBox, Body, Button, Item } from 'native-base';
-
+import { Actions } from 'react-native-router-flux';
 class Remote extends Component {
     render()
     {
@@ -25,16 +25,6 @@ class Remote extends Component {
              <Text>alasan remote</Text>
             <Item >
             <Input placeholder='alasan remote' />
-            </Item>
-
-            <Item style={{marginTop : 5,  justifyContent : 'center'}} >
-            <Button style={{justifyContent:"center", marginRight: 5, width: 150}} block>
-             <Text>Back</Text>
-            </Button>
-          
-            <Button style={{justifyContent:'center',marginLeft: 5, width : 150 }} block>
-           <Text>Next </Text>
-          </Button>
             </Item>     
             </Content>
       </Container>
