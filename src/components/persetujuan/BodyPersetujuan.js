@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Tab, Tabs } from 'native-base';
-import Tab1 from './Tab1';
-import Tab2 from './Tab2';
-import Tab3 from './Tab3';
+import { Container, Header, Content, Tab, Tabs,Item,Icon, Text, Button, Input } from 'native-base';
+import TabPribadi from './TabPribadi';
+import TabBawahan from './TabBawahan';
+import TabSPJ from './TabSPJ';
 
 export default class BodyPersetujuan extends Component {
     render() {
@@ -11,13 +11,13 @@ export default class BodyPersetujuan extends Component {
         <Content>
           <Tabs initialPage={0}>
             <Tab heading="Pribadi">
-              <Tab1 />
+              <TabPribadi />
             </Tab>
             <Tab heading="Bawahan">
-              <Tab2 />
+              <TabBawahan />
             </Tab>
             <Tab heading="SPJ">
-              <Tab3 />
+            <TabSPJ />
             </Tab>
           </Tabs>
         </Content>

@@ -5,26 +5,31 @@ import {
     Right,
     Body,
     Label,
+    Left,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemLemburDriver extends Component {
+class ItemActivitasBawahan extends Component {
     render() {
         return(
             <CardSection>
                 <Content>
                     <Item>
                         <Body>
-                            <Label  onPress={() => Actions.detaillemburdriver()}> {this.props.library.namaKaryawan}</Label>
+                            <Label onPress={() => Actions.detailbawahan()}>{this.props.library.tanggal}</Label>
                         </Body>
                     </Item>
                     <Item>
-                        <Text> {this.props.library.jenisPengajuan}</Text>
-                        <Right>
-                            <Text> {this.props.library.tanggalPengajuan}</Text>
-                        </Right>
+                        <Left>
+                            <Label>Activitas :</Label>
+                        </Left>
+                    </Item>
+                    <Item>
+                        <Left>
+                            <Text>{this.props.library.activitas}</Text>
+                        </Left>
                     </Item>
                 </Content>
             </CardSection>
@@ -32,4 +37,4 @@ class ItemLemburDriver extends Component {
     }
 }
 
-export default ItemLemburDriver;
+export default ItemActivitasBawahan;

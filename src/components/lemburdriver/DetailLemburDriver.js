@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { 
-    Container, 
-    Content, 
-    Form, 
-    Item, 
-    Input, 
-    Label, 
+import {
+    Container,
+    Content,
+    Form,
+    Item,
+    Input,
+    Label,
     Text,
     Button
 } from 'native-base';
@@ -13,7 +13,7 @@ import { Actions } from 'react-native-router-flux';
 
 export default class DetailLemburDriver extends Component {
     render() {
-        const { 
+        const {
             namaPekerjaan,
             Pemograman,
             tanggal,
@@ -21,13 +21,13 @@ export default class DetailLemburDriver extends Component {
             jamMulai,
             jamSelesai,
             hasilKerja,
-            statusPembayaran 
+            statusPembayaran
         } = this.props.library;
 
         return (
             <Container>
                 <Content>
-                    <Form>
+                    <Form style={{ marginTop: 30 }}>
                         <Item stackedLabel>
                             <Label>Nama Pekerjaan :</Label>
                             <Text> {namaPekerjaan}</Text>
@@ -58,8 +58,12 @@ export default class DetailLemburDriver extends Component {
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} block>
-                   <Text>Back</Text>
+                <Button
+                    block
+                    onPress={() => this.props.navigation.goBack()}
+                    style={{ marginRight: 10, marginLeft: 10, marginBottom: 15 }}
+                >
+                    <Text>Back</Text>
                 </Button>
             </Container>
         );

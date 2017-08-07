@@ -13,7 +13,8 @@ import {
     Text, 
     Right, 
     Left,
-    Body
+    Body,
+    Header
 } from 'native-base';
 // import ListLembur from './components/ListLembur';
 // import DetailLaporan from './components/DetailLaporan';
@@ -25,23 +26,19 @@ export default class BodyLembur extends Component {
 
         return (
             <Container>
+            <Header searchBar rounded>
+                  <Item>
+                    <Icon name="ios-search" />
+                    <Input placeholder="Search" />
+                    <Icon name="ios-people" />
+                  </Item>
+                  <Button transparent>
+                    <Text>Search</Text>
+                  </Button>
+                </Header>
                 <Content>
-                    <Item style={SearchStyle} rounded>
-                        <Icon name="ios-search" />
-                        <Input 
-                            placeholder="Search" 
-                            onChangeText={(text) => filterSearch(text)}
-                        />
-                        <Icon name="ios-people" />
-                    </Item>
-                    <Button style={ButtonStyle} block rounded>
-                        <Text style={TextStyle}>Search</Text>
-                    </Button>
                     <ListLembur />                        
                 </Content>
-                <Button onPress={() => Actions.keyMainMenu()} style={ButtonStyle} block rounded>
-                    <Text style={TextStyle}>Back</Text>
-                </Button>
             </Container>
         );
     }

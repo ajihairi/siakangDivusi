@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { 
-    Container, 
-    Content, 
-    Form, 
-    Item, 
-    Input, 
-    Label, 
+import {
+    Container,
+    Content,
+    Form,
+    Item,
+    Input,
+    Label,
     Text,
     Button
 } from 'native-base';
@@ -16,35 +16,39 @@ export default class DetailLembur extends Component {
         return (
             <Container>
                 <Content>
-                    <Form>
+                    <Form style={{ marginTop: 30 }}>
                         <Item stackedLabel>
                             <Label>Nama Pekerjaan :</Label>
-                            <Label/>
+                            <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Tanggal Lembur :</Label>
-                            <Label/>
+                            <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Jam Mulai :</Label>
-                            <Label/>
+                            <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Jam Selesai :</Label>
-                            <Label/>
+                            <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Hasil kerja :</Label>
-                            <Label/>
+                            <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Status Pembayaran :</Label>
-                            <Label/>
+                            <Label />
                         </Item>
                     </Form>
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} block>
-                   <Text>Back</Text>
+                <Button
+                    block
+                    onPress={() => this.props.navigation.goBack()}
+                    style={{ marginRight: 10, marginLeft: 10, marginBottom: 15 }}
+                >
+                    <Text>Back</Text>
                 </Button>
             </Container>
         );

@@ -38,17 +38,6 @@ class FormCuti extends Component{
         selected2: "keya"
       };
     }
-    onValueChange(value: string) {
-      this.setState({
-        selected1: value
-      });
-    }
-
-    _onValueChange(value: string) {
-      this.setState({
-        selected2: value
-      });
-    }
 
     render() {
       return (
@@ -60,7 +49,7 @@ class FormCuti extends Component{
               </Button>
             </Left>
             <Body>
-              <Title>Pengajuan Cuti</Title>
+              <Title style={{width:200}}>Pengajuan Cuti</Title>
             </Body>
             <Right />
           </Header>
@@ -74,13 +63,13 @@ class FormCuti extends Component{
                   </FormItem>
                 </List>
               <Text note> Tanggal </Text>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <DatePicker
                 style={{width: 150, marginTop:10, marginLeft:10}}
-                date={this.state.date}
+                date={this.state.date1}
                 mode="date"
                 placeholder="select date"
-                format="YYYY-MM-DD"
+                format="DD-MM-YYYY"
                 minDate="2017-01-01"
                 maxDate="2030-12-31"
                 confirmBtnText="Confirm"
@@ -98,15 +87,16 @@ class FormCuti extends Component{
                   }
                   }
                 }
-              onDateChange={(date) => {this.setState({date: date})}}
+              onDateChange={(date1) => {this.setState({date1: date1})}}
               />
-              <Text note> Tanggal </Text>
+              <Text> s/d </Text>
               <DatePicker
-                style={{width: 150, marginTop:10, marginLeft:10}}
-                date={this.state.date}
+              showIcon={false}
+                style={{width: 150, marginTop:10}}
+                date={this.state.date2}
                 mode="date"
                 placeholder="select date"
-                format="YYYY-MM-DD"
+                format="DD-MM-YYYY"
                 minDate="2017-01-01"
                 maxDate="2030-12-31"
                 confirmBtnText="Confirm"
@@ -120,11 +110,12 @@ class FormCuti extends Component{
                   marginLeft: 0
                   },
                   dateInput: {
-                  marginLeft: 36
+                  marginLeft: 0,
+                  marginRight:13
                   }
                   }
                 }
-              onDateChange={(date) => {this.setState({date: date})}}
+              onDateChange={(date2) => {this.setState({date2: date2})}}
               />
               </View>
               

@@ -7,13 +7,13 @@ class Remote extends Component {
     {
       return (
       <Container>
-          <Content>
+          <Content style={{paddingLeft: 10}}>
             <ListItem>
-            <CheckBox checked={true} />
-            <Body>
+            <CheckBox checked={true}/>
+            <Body style={{marginLeft: 5}}>
               <Text>ajukan remote </Text>
             </Body>
-</ListItem>
+            </ListItem>
              <Text>jam masuk</Text>
             <Item >
             <Input placeholder='jam masuk' />

@@ -18,7 +18,7 @@ export default class AppLembur extends Component {
               </Button>
             </Left>
             <Body>
-              <Title>Laporan Lembur</Title>
+              <Title style={{width:150}}>Laporan Lembur</Title>
             </Body>
             <Right />
           </Header>

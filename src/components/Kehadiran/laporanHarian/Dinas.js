@@ -7,10 +7,10 @@ class Koreksi extends Component {
     {
       return (
       <Container>
-          <Content>
+          <Content style={{paddingLeft : 10, paddingTop: 10}}>
             <ListItem>
-            <CheckBox checked={true} />
-            <Body>
+            <CheckBox checked={true}/>
+            <Body style={{marginLeft: 5}}>
               <Text>ajukan perjalanan dinas </Text>
             </Body>
 </ListItem>

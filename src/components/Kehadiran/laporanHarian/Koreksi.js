@@ -7,13 +7,14 @@ class Koreksi extends Component {
     {
       return (
       <Container>
-          <Content>
+          <Content style={{paddingLeft : 10, paddingTop: 10}}>
             <ListItem>
             <CheckBox checked={true} />
-            <Body>
+            
+            <Body style={{marginLeft: 5}}>
               <Text>ajukan koreksi</Text>
             </Body>
-</ListItem>
+            </ListItem>
              <Text>Jam masuk</Text>
             <Item  >
             <Input placeholder='jam masuk' />

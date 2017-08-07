@@ -13,7 +13,8 @@ import {
     Text, 
     Right, 
     Left,
-    Body
+    Body,
+    Header
 } from 'native-base';
 import ListLemburDriver from './ListLemburDriver';
 import LibraryLemburDriver from '../reducers/LibraryLemburDriver'
@@ -37,9 +38,6 @@ export default class BodyLemburDriver extends Component {
                     </Button>
                     <ListLemburDriver />                        
                 </Content>
-                <Button onPress={() => Actions.keyMainMenu()} style={ButtonStyle} block rounded>
-                    <Text style={TextStyle}>Back</Text>
-                </Button>
             </Container>
         );
     }

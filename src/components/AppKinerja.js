@@ -18,7 +18,7 @@ export default class AppKinerja extends Component {
               </Button>
             </Left>
             <Body>
-              <Title>Laporan Kinerja</Title>
+              <Title style={{width:150}}>Laporan Kinerja</Title>
             </Body>
             <Right />
           </Header>

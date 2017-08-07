@@ -5,31 +5,26 @@ import {
     Right,
     Body,
     Label,
-    Left,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemKinerja extends Component {
+class ItemBawahan extends Component {
     render() {
         return(
             <CardSection>
                 <Content>
                     <Item>
                         <Body>
-                            <Label onPress={() => Actions.detailbawahan()}>{this.props.library.tanggal}</Label>
+                            <Label  onPress={() => Actions.detailRemote()}> {this.props.library.namaKaryawan}</Label>
                         </Body>
                     </Item>
                     <Item>
-                        <Left>
-                            <Label>Activitas :</Label>
-                        </Left>
-                    </Item>
-                    <Item>
-                        <Left>
-                            <Text>{this.props.library.activitas}</Text>
-                        </Left>
+                        <Text> {this.props.library.jenisPengajuan}</Text>
+                        <Right>
+                            <Text> {this.props.library.tanggalPengajuan}</Text>
+                        </Right>
                     </Item>
                 </Content>
             </CardSection>
@@ -37,4 +32,4 @@ class ItemKinerja extends Component {
     }
 }
 
-export default ItemKinerja;
+export default ItemBawahan;

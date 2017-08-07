@@ -21,7 +21,8 @@ import Kehadiran from './components/Kehadiran';
 import LaporanHarian from './components/Kehadiran/laporanHarian/LaporanHarian';
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
-
+import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
+import DetailPersetujuanPribadiRemote from './components/persetujuan/DetailPersetujuanPribadiRemote' ;
 
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
 import TimePicker from './components/cobacoba/TimePicker';
@@ -54,7 +55,7 @@ class App extends Component{
                 key="keyMainMenu"
                 component={MainMenu}
                 title="Si-Akang"
-                
+                initial 
                 />
 
                 <Scene
@@ -105,7 +106,7 @@ class App extends Component{
                     key = "kinerja"
                     component = { AppKinerja }
                     title= "Kinerja" 
-                    initial      
+                         
                 />
 
                 <Scene
@@ -160,6 +161,18 @@ class App extends Component{
                 key="keyPengajuanCuti"
                 component={formCuti}
                 title="Pengajuan Cuti"
+                />
+
+              <Scene
+                key="keyDetailKehadiran"
+                component={DetailKehadiran}
+                title="Detail Kehadiran"
+                />
+
+              <Scene
+                key="detailRemote"
+                component={DetailPersetujuanPribadiRemote}
+                title="Detail Remote"
                 />
 
               </Scene>

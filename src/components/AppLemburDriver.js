@@ -18,7 +18,7 @@ export default class AppLemburDriver extends Component {
               </Button>
             </Left>
             <Body>
-              <Title>Laporan Lembur Driver</Title>
+              <Title style={{width: 200}}>Laporan Lembur Driver</Title>
             </Body>
             <Right />
           </Header>

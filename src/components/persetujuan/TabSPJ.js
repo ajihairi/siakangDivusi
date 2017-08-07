@@ -1,9 +1,11 @@
+// TAB 3 MAH GAADAAN    
+
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Icon, Item, Container, Content, Input, Button, Text} from 'native-base';
-import List1 from './List1';
 
-export default class Tab1 extends Component {
+
+export default class Tab3 extends Component {
     render() {
         return (
             <Container>
@@ -16,7 +18,7 @@ export default class Tab1 extends Component {
                     <Button block rounded>
                         <Text>Search</Text>
                     </Button>
-                    <List1 />
+                    
                 </Content>
                 <Button block>
                     <Text>Back</Text>
@@ -26,4 +28,5 @@ export default class Tab1 extends Component {
     }
 }
 
-module.export = Tab1;
+module.export = Tab3;
+

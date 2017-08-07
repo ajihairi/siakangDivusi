@@ -13,9 +13,12 @@ import {
     Text, 
     Right, 
     Left,
-    Body
-} from 'native-base';import ListKehadiran from './ListKehadiran';
-
+    Body,
+    Fab,
+    Header
+} from 'native-base';
+import ListKehadiran from './ListKehadiran';
+import Fabs from './Fabs';
 export default class BodyKehadiran extends Component {
      constructor(props) {
       super(props);
@@ -30,32 +33,18 @@ export default class BodyKehadiran extends Component {
 
         return (
             <Container>
-                <Content>
-                    <Item>
-                <Left>
-                    <Button style={ButtonStyle} onPress={()=> Actions.keyPengajuanCuti()}>
-                    <Text>Ajukan Cuti</Text>     
-                    </Button>
-                    <Button style={ButtonStyle} onPress={()=> Actions.keyPenugasanLembur()} >
-                    <Text>penugasan lembur</Text>                    
-                    </Button>
-                    
-                </Left>
-                <Right>
-                    <Item style={SearchStyle} rounded>
-                        <Icon name="ios-search" />
-                       
-                        <Input placeholder="Search" />
-                      
-                    </Item>
-                </Right>
-                </Item>
-                   
-                    <ListKehadiran />                        
-                </Content>
-                <Button onPress={() => Actions.keyMainMenu()} style={ButtonStyle} block>
-                    <Text style={TextStyle}>Back</Text>
-                </Button>
+                <Header searchBar rounded>
+                  <Item>
+                    <Icon name="ios-search" />
+                    <Input placeholder="Search" />
+                    <Icon name="ios-people" />
+                  </Item>
+                  <Button transparent>
+                    <Text>Search</Text>
+                  </Button>
+                </Header>
+                <ListKehadiran />
+                <Fabs />
             </Container>
         );
     }
@@ -64,13 +53,15 @@ export default class BodyKehadiran extends Component {
 const styles = {
   SearchStyle: {
     marginTop: 10,
+    paddingLeft: 5,
+    marginLeft: 15,
+    marginRight: 15,
   },
   ButtonStyle: {
     marginTop: 5,
     alignItems: 'center',
     position: 'relative',
-    marginBottom:5,
-    width: 150
+    marginBottom:5
   },
   TextStyle: {
     color:'#fff',

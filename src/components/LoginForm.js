@@ -6,6 +6,7 @@ import {Actions} from 'react-native-router-flux';
 
 
 class LoginForm extends Component {
+   
   render(){
     return(
 

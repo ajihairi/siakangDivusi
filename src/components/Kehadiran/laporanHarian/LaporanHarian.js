@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
-import { Container, Icon, Header, Button, Title, Left, Right, Content, Tabs, Tab, H1 } from 'native-base';
+import { Container, Icon, Header, Button, Title, Left, Right, Content, Tabs, Tab, H1, Body } from 'native-base';
 import Aktivitas from './Aktivitas';
 import Remote from './Remote';
 import Koreksi from './Koreksi';
@@ -13,23 +13,31 @@ export default class laporanHarian extends Component {
     return (
       
       <Container hasTabs>
-      <Header>
-      <H1>Laporan Harian</H1>
-      </Header>    
+     <Header>
+            <Left>
+              <Button transparent onPress={() => this.props.navigation.goBack()}>
+                <Icon name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
+              <Title>Lembur Driver</Title>
+            </Body>
+            <Right />
+          </Header>  
          <Tabs initialPage={0}>
-                        <Tab heading="Aktivitas">
+                        <Tab heading="Aktivitas"  >
                           <Aktivitas/>
                           </Tab>
-                        <Tab heading="Remote">
+                        <Tab heading="Remote" >
                           <Remote/>
                           </Tab>
-                        <Tab heading="Koreksi">
+                        <Tab heading="Koreksi" >
                           <Koreksi/>
                           </Tab>
-                        <Tab heading="Izin">
+                        <Tab heading="Izin" >
                           <Izin/>
                         </Tab>
-                        <Tab heading="Dinas">
+                        <Tab heading="Dinas" >
                           <Dinas/>
                         </Tab>
           </Tabs>
@@ -39,4 +47,10 @@ export default class laporanHarian extends Component {
         
     );
 }
+}
+
+const styles ={
+  tabStyle:{
+    width: 100
+  }
 }

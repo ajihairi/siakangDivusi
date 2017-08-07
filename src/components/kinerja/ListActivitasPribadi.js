@@ -13,11 +13,11 @@ import {
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemKinerja extends Component {
+class ListHariPribadi extends Component {
     render() {
         let articles = this.props.data.map(function (articleData, index) {
             return (
-                <Card>
+                <Card style={{flex: 1}}>
                     <CardItem>
                         <Body>
                             <Item>
@@ -50,4 +50,4 @@ class ItemKinerja extends Component {
     }
 }
 
-export default ItemKinerja;
+export default ListHariPribadi;

@@ -35,7 +35,7 @@ class FormLemburDriver extends Component{
       super(props);
       this.state = {
         selected1: "key1",
-        selected2: "keya"
+        selected2: "keyb"
       };
     }
     onValueChange(value: string) {

@@ -1,32 +1,20 @@
 import React, { Component } from 'react';
-import {
-    Container,
-    Content,
-    Text,
-    Item,
-    Icon,
-    Input,
-    Button,
-    Tabs,
-    Tab
-} from 'native-base';
-import ListHariBawahan from './ListHariBawahan';
-import ListActivitasBawahan from './ListActivitasBawahan';
-import {View} from 'react-native';
-import DatePicker from 'react-native-datepicker';
+import { View } from 'react-native';
+import { Icon, Item, Container, Content, Input, Button, Text} from 'native-base';
+import ListBawahan from './ListBawahan';
+import DatePicker from 'react-native-datepicker'
 
 export default class TabBawahan extends Component {
-
     constructor(props){
         super(props)
         this.state = {date:"00-00-0000"}
       }
 
-    render() {
+      render() {
         return (
             <Container>
                 <Content>
-                    <Item style={{marginRight:15, marginLeft: 15, marginTop: 20}}>
+                     <Item style={{marginRight:15, marginLeft: 15, marginTop: 20}}>
                         <Input placeholder='Nama Bawahan'/>
                         <Icon active name='person' />
                     </Item>
@@ -79,15 +67,7 @@ export default class TabBawahan extends Component {
                             <Text> Cari </Text>
                         </Icon>
                     </Button>
-                    <Text style={{marginLeft: 50}}>Lihat Berdasarkan</Text>
-                    <Tabs initialPage={0}>
-                        <Tab heading="Hari">
-                            <ListHariBawahan />
-                        </Tab>
-                        <Tab heading="Aktivitas">
-                            <ListActivitasBawahan />
-                        </Tab>
-                    </Tabs>
+                    <ListBawahan />
                 </Content>
             </Container>
         );
