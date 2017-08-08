@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View, ListView } from 'react-native';
 import {
     Icon,
     Item,
@@ -43,7 +43,12 @@ export default class TabPribadi extends Component {
         this.getData();
     }
 
-    renderRow(library) {
+    renderRowHari(library) {
+        return (
+            <ListHariPribadi library={library} />
+        )
+    }
+    renderRowActivitas(library) {
         return (
             <ListHariPribadi library={library} />
         )
@@ -116,11 +121,14 @@ export default class TabPribadi extends Component {
                             <Tab heading="Hari">
                                 <ListView
                                     dataSource={this.state.data}
-                                    renderRow={this.renderRow}
+                                    renderRowHari={this.renderRowHari}
                                 />
                             </Tab>
                             <Tab heading="Aktivitas">
-                                <ListActivitasPribadi data={this.state.data} />
+                                <ListView
+                                    dataSource={this.state.data}
+                                    renderRowActivitas={this.renderRowActivitas}
+                                />
                             </Tab>
                         </Tabs>
                     </Content>
