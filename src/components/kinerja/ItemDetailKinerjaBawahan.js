@@ -14,84 +14,75 @@ import {
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-export default class ItemDetailSPJ extends Component {
+export default class ItemDetailKinerjaBawahan extends Component {
     render() {
-
         const {
-            idSPJ,
-            namaPekerjaan,
-            statusPerjalananDinas,
-            statusPembayaran,
-            durasi,
-            jenisKota,
-            kotaTujuan,
-            tanggalSelesai,
-            tanggalMulai
+            hari,
+            tanggal,
+            jamMasuk,
+            jamKeluar,
+            totalJam,
+            statusKehadiran,
+            aktivitas,
+            mood
         } = this.props.library;
 
             return (
                 <View>
                     <Form>
                         <Item stackedLabel>
-                            <Label>ID SPJ :</Label>
+                            <Label>Hari :</Label>
                             <Label>
-                                <Text>{idSPJ}</Text>
+                                <Text>{hari}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel>
-                            <Label>Nama Pekerjaan :</Label>
+                            <Label>Tanggal :</Label>
                             <Label>
-                                <Text>{namaPekerjaan}</Text>
+                                <Text>{tanggal}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Tanggal Mulai :</Label>
+                            <Label>Jam Masuk :</Label>
                             <Label>
-                                <Text>{tanggalMulai}</Text>
+                                <Text>{jamMasuk}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Tanggal Selesai :</Label>
+                            <Label>Jam Keluar :</Label>
                             <Label>
-                                <Text>{tanggalSelesai}</Text>
+                                <Text>{jamKeluar}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
+                            <Label>Total Jam :</Label>
                             <Label>
-                                <Text>{kotaTujuan}</Text>
+                                <Text>{totalJam}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
+                            <Label>Status Kehadiran :</Label>
                             <Label>
-                                <Text>{jenisKota}</Text>
+                                <Text>{statusKehadiran}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Durasi :</Label>
+                            <Label>Aktivitas</Label>
                             <Label>
-                                <Text>{durasi}</Text>
+                                <Text>{aktivitas}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Status Pembayaran :</Label>
+                            <Label>Mood</Label>
                             <Label>
-                                <Text>{statusPembayaran}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Perjalanan Dinas :</Label>
-                            <Label>
-                                <Text>{statusPerjalananDinas}</Text>
+                                <Text>{mood}</Text>
                             </Label>
                             <Label />
                         </Item>

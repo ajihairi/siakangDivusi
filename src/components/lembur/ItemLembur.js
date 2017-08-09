@@ -12,19 +12,28 @@ import { Actions } from 'react-native-router-flux';
 
 class ItemLembur extends Component {
     render() {
-        return(
+        const {
+            tanggal,
+            jamMulai,
+            jamSelesai,
+            statusPembayaran
+        } = this.props.library;
+        return (
             <CardSection>
                 <Content>
                     <Item>
                         <Body>
-                            <Label  onPress={() => Actions.detaillembur()}> {this.props.library.tanggal}</Label>
+                            <Label onPress={() => Actions.detaillembur({tanggal: tanggal})}>
+                                {tanggal}
+                            </Label>
                         </Body>
                     </Item>
                     <Item>
-                        <Text> {this.props.library.jamMulai}</Text>
-                        <Text> - {this.props.library.jamSelesai}</Text>
+                        <Text> {jamMulai}</Text>
+                        {(jamMulai === null && jamSelesai === null) ? (<Text />) : (<Text> s/d </Text>)}
+                        <Text>{jamSelesai}</Text>
                         <Right>
-                            <Text> {this.props.library.statusPembayaran}</Text>
+                            <Text> {statusPembayaran}</Text>
                         </Right>
                     </Item>
                 </Content>
