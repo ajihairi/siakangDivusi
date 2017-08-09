@@ -26,9 +26,6 @@ export default class BodyKinerja extends Component {
             </Tab>
           </Tabs>
         </Content>
-        <Button onPress={() => Actions.keyMainMenu()} block>
-          <Text>Back</Text>
-        </Button>
       </Container>
     );
   }

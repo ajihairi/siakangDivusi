@@ -6,6 +6,9 @@ import {
     Right,
     Body,
     Label,
+    Card,
+    CardItem,
+    Left,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
@@ -17,77 +20,58 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 import DetailLemburDriver from './DetailLemburDriver';
 
 class ItemLemburDriver extends Component {
-    renderDiscription() {
-        const {library, selectLibraryId} = this.props;
-
-        if (library.id_lembur === selectLibraryId){
-            return(
-                <DetailLemburDriver 
-                    library={library}
-                />
-            );
-        }
-    }
     render() {
-        const {  
-            id_lembur,
-            namaPekerjaan,
-            Pemograman,
+        const {
             tanggal,
-            jenisLembur,
-            jamMulai,
-            jamSelesai,
-            hasilKerja,
-            statusPembayaran 
+            jamMulaiPagi,
+            jamSelesaiPagi,
+            jamMulaiMalam,
+            jamSelesaiMalam,
+            statusPembayaran
         } = this.props.library;
 
-        return(
-      
-            
-            <Content>
-                <CardSection>
-                    <View>
-                <TouchableWithoutFeedback
-                style = {{backgroundColor: 'red'}}
-                renderDiscription={this.renderDiscription} 
-                onPress={() => this.props.actions.selectLibrary(id_lembur)}         
-                            
-            >
-                <Item>    
-                            <Item>
-                                <Body>
-                                    <Label>
+        return (
+
+            <Card>
+                <CardItem>
+                    <Body>
+                        <Item>
+                            <Body>
+                                <Label
+                                    onPress={() => Actions.detaillemburdriver({ tanggal: tanggal })}
+                                >
                                     {tanggal}
-                                    </Label>
-                                </Body>
-                            </Item>
-                            <Item>
-                                <Text> {jamMulai}</Text>
-                                <Text> - {jamSelesai}</Text>
-                                <Body>
-                                    <Text> {jenisLembur}</Text>
-                                </Body>
-                                <Right>
-                                    <Text> {statusPembayaran}</Text>
-                                </Right>
-                            </Item>
-                                                       
-                </Item>
-                
-                </TouchableWithoutFeedback>
-                </View>
-                </CardSection>
-                </Content>
-            
-        
+                                </Label>
+                            </Body>
+                        </Item>
+                        <Item>
+                            <Left>
+                                <Item>
+                                    <Text>{jamMulaiPagi}</Text>
+                                    {(jamMulaiPagi === null && jamSelesaiPagi === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                    <Text>{jamSelesaiPagi}</Text>
+                                </Item>
+                                <Item>
+                                    <Text>{jamMulaiMalam}</Text>
+                                    {(jamMulaiMalam === null && jamSelesaiMalam === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                    <Text>{jamSelesaiMalam}</Text>
+                                </Item>
+                            </Left>
+                            <Right>
+                                <Text> {statusPembayaran}</Text>
+                            </Right>
+                        </Item>
+                    </Body>
+                </CardItem>
+            </Card>
         );
     }
 }
 
-const mapStateToProps= state => {
+const mapStateToProps = state => {
     return { selectLibraryId: state.selectLibraryId };
 }
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
     return {
         actions: bindActionCreators(lemburactions, dispatch)
     };

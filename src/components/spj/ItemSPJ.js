@@ -33,9 +33,8 @@ class ItemSPJ extends Component {
                         <Item>
                             <Body>
                                 <Label 
-                                onPress={() => Actions.detailspj(this.props.library.idSPJ)}
+                                onPress={() => Actions.detailspj({idSPJ : idSPJ})}
                                 >
-                                    
                                     {idSPJ}
                                 </Label>
                             </Body>

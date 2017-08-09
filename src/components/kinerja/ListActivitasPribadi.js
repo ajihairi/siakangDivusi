@@ -15,7 +15,13 @@ import { Actions } from 'react-native-router-flux';
 
 class ListHariPribadi extends Component {
     render() {
-        let articles = this.props.data.map(function (articleData, index) {
+        const {
+            tanggal,
+            statusKehadiran,
+            jamMasuk,
+            jamKeluar,
+            totalJam
+        } = this.props.library;
             return (
                 <Card style={{flex: 1}}>
                     <CardItem>
@@ -23,30 +29,24 @@ class ListHariPribadi extends Component {
                             <Item>
                                 <Body>
                                     <Label onPress={() => Actions.detailpribadi()}>
-                                        {articleData.tanggal}
+                                        {tanggal}
                                     </Label>
                                 </Body>
                                 <Right>
-                                    <Text>{articleData.statusKehadiran}</Text>
+                                    <Text>{statusKehadiran}</Text>
                                 </Right>
                             </Item>
                             <Item>
-                                <Text>{articleData.jamMasuk}</Text>
-                                <Text> s.d {articleData.jamKeluar}</Text>
+                                <Text>{jamMasuk}</Text>
+                                <Text> s.d {jamKeluar}</Text>
                                 <Right>
-                                    <Text>{articleData.totalJam}</Text>
+                                    <Text>{totalJam}</Text>
                                 </Right>
                             </Item>
                         </Body>
                     </CardItem>
                 </Card>
             )
-        });
-        return (
-            <Content>
-                {articles}
-            </Content>
-        );
     }
 }
 

@@ -12,80 +12,132 @@ import {
 } from 'native-base';
 import ListHariBawahan from './ListHariBawahan';
 import ListActivitasBawahan from './ListActivitasBawahan';
-import {View} from 'react-native';
+import { View, ListView } from 'react-native';
 import DatePicker from 'react-native-datepicker';
+
+var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
 export default class TabBawahan extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state = {date:"00-00-0000"}
-      }
+        this.state = {
+            date: "00-00-0000",
+            data: ds
+        }
+    }
+
+    getData() {
+        return fetch('https://www.makanbandung.com/api/performance_subordinate?tanggalAwal=01-01-2017&tanggalAkhir=01-12-2017&subordinate=93&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NjgsInVzZXJuYW1lX3Nlc3MiOiJpdmFubnVncmFoYSIsIm5hbWVfc2VzcyI6Ikl2YW4gTnVncmFoYSIsInJvbGVfbmFtZV9zZXNzIjoiS2FyeWF3YW4iLCJlbXBsb3llZV9uYW1lX3Nlc3MiOiJJdmFuIE51Z3JhaGEiLCJlbXBsb3llZV9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9pZF9zZXNzIjo2OCwiaXNfZHJpdmVyX3Nlc3MiOjAsInN1cGVydmlzb3JfbmFtZV9zZXNzIjoiSXZhbiBOdWdyYWhhIiwic3VwZXJ2aXNvcl9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9kZXBhcnRtZW50X3Nlc3MiOiJQcm9kdWN0IiwiY3JlZGl0cyI6MSwic3ViIjo2OCwiaXNzIjoiaHR0cHM6Ly93d3cubWFrYW5iYW5kdW5nLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE1MDE1NTQ0MjksImV4cCI6MTUzMzA5MDQyOSwibmJmIjoxNTAxNTU0NDI5LCJqdGkiOiJJNU9lMzM1Qjdpc2l4VFhXIn0.Vj5UKw092wECQexQqVO49aqSjXg2Sf6xH9IEQbwaIdk')
+            .then((response) => response.json())
+            .then((responseJson) => {
+
+                this.setState({
+                    data: ds.cloneWithRows(responseJson.data.kinerjaBawahan)
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    componentDidMount() {
+        this.getData();
+    }
+
+    renderRowHari(library) {
+        return (
+            <ListHariBawahan library={library} />
+        )
+    }
+
+    // renderRowActivitas(library) {
+    //     return (
+    //         <ListActivitasPribadi library={library} />
+    //     )
+    // }
 
     render() {
         return (
             <Container>
                 <Content>
-                    <Item style={{marginRight:15, marginLeft: 15, marginTop: 20}}>
-                        <Input placeholder='Nama Bawahan'/>
+                    <Item style={{ marginRight: 15, marginLeft: 15, marginTop: 20 }}>
+                        <Input placeholder='Nama Bawahan' />
                         <Icon active name='person' />
                     </Item>
-                    <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10}}>
-                  <DatePicker
-                    showIcon={false}
-                    style={{width: 180}}
-                    date={this.state.date1}
-                    mode="date"
-                    placeholder="pilih tanggal"
-                    format="DD-MM-YYYY"
-                    minDate="2017-01-01"
-                    maxDate="2030-12-31"
-                    confirmBtnText="Confirm"
-                    cancelBtnText="Cancel"
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
+                            <DatePicker
+                                style={{ width: 130, marginLeft: 10 }}
+                                date={this.state.date1}
+                                mode="date"
+                                placeholder="select date"
+                                format="DD-MM-YYYY"
+                                minDate="2017-01-01"
+                                maxDate="2030-12-31"
+                                confirmBtnText="Confirm"
+                                cancelBtnText="Cancel"
 
-                    customStyles={{
-                      dateInput: {
-                      marginLeft: 36
-                      }
-                      }
-                    }
-                  onDateChange={(date1) => {this.setState({date1: date1})}}
-                  />
-                  <Text style={{marginRight:5, marginLeft: 5}}> s/d </Text>
-                  <DatePicker
-                    showIcon={false}
-                    style={{width: 180, }}
-                    date={this.state.date2}
-                    mode="date"
-                    placeholder="pilih tanggal"
-                    format="DD-MM-YYYY"
-                    minDate="2017-01-01"
-                    maxDate="2030-12-31"
-                    confirmBtnText="Confirm"
-                    cancelBtnText="Cancel"
+                                customStyles={{
+                                    dateIcon: {
+                                        position: 'absolute',
+                                        left: 0,
+                                        top: 4,
+                                        marginLeft: 0
+                                    },
+                                    dateInput: {
+                                        marginLeft: 36
+                                    }
+                                }
+                                }
+                                onDateChange={(date1) => { this.setState({ date1: date1 }) }}
+                            />
+                            <Text style={{ marginRight: 5, marginLeft: 5 }}> s/d </Text>
+                            <DatePicker
+                                showIcon={false}
+                                style={{ width: 100 }}
+                                date={this.state.date2}
+                                mode="date"
+                                placeholder="select date"
+                                format="DD-MM-YYYY"
+                                minDate="2017-01-01"
+                                maxDate="2030-12-31"
+                                confirmBtnText="Confirm"
+                                cancelBtnText="Cancel"
 
-                    customStyles={{
-                      dateInput: {
-                      marginLeft: 0,
-                      marginRight:36
-                      }
-                      }
-                    }
-                  onDateChange={(date2) => {this.setState({date2: date2})}}
-                  />
-                  </View>
-                  <Button block info style={{marginLeft: 10, marginRight: 10, marginBottom : 15, marginTop: 15}}>
-                        <Icon large name="search" style={{color:"white"}}>
+                                customStyles={{
+                                    dateIcon: {
+                                        position: 'absolute',
+                                        left: 0,
+                                        top: 4,
+                                        marginLeft: 0
+                                    },
+                                    dateInput: {
+                                        marginLeft: 0,
+                                        marginRight: 5
+                                    }
+                                }
+                                }
+                                onDateChange={(date2) => { this.setState({ date2: date2 }) }}
+                            />
+                        </View>
+                    <Button block info style={{ marginLeft: 10, marginRight: 10, marginBottom: 15, marginTop: 15 }}>
+                        <Icon large name="search" style={{ color: "white" }}>
                             <Text> Cari </Text>
                         </Icon>
                     </Button>
-                    <Text style={{marginLeft: 50}}>Lihat Berdasarkan</Text>
+                    <Text style={{ marginLeft: 50 }}>Lihat Berdasarkan</Text>
                     <Tabs initialPage={0}>
                         <Tab heading="Hari">
-                            <ListHariBawahan />
+                            <ListView
+                                dataSource={this.state.data}
+                                renderRow={this.renderRowHari}
+                            />
                         </Tab>
                         <Tab heading="Aktivitas">
-                            <ListActivitasBawahan />
+                            {/*<ListView
+                                    dataSource={this.state.data}
+                                    renderRow={this.renderRowActivitas}
+                                />*/}
                         </Tab>
                     </Tabs>
                 </Content>

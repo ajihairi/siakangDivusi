@@ -48,9 +48,10 @@ export default class TabPribadi extends Component {
             <ListHariPribadi library={library} />
         )
     }
+
     renderRowActivitas(library) {
         return (
-            <ListHariPribadi library={library} />
+            <ListActivitasPribadi library={library} />
         )
     }
 
@@ -114,20 +115,22 @@ export default class TabPribadi extends Component {
                                 onDateChange={(date2) => { this.setState({ date2: date2 }) }}
                             />
                         </View>
-                        <Button primary transparent >
-                            <Icon large name="search" style={{ color: "dodgerblue" }} />
+                        <Button block info style={{ marginLeft: 10, marginRight: 10, marginBottom: 15, marginTop: 15 }}>
+                            <Icon large name="search" style={{ color: "white" }}>
+                                <Text> Cari </Text>
+                            </Icon>
                         </Button>
                         <Tabs initialPage={0}>
                             <Tab heading="Hari">
                                 <ListView
                                     dataSource={this.state.data}
-                                    renderRowHari={this.renderRowHari}
+                                    renderRow={this.renderRowHari}
                                 />
                             </Tab>
                             <Tab heading="Aktivitas">
                                 <ListView
                                     dataSource={this.state.data}
-                                    renderRowActivitas={this.renderRowActivitas}
+                                    renderRow={this.renderRowActivitas}
                                 />
                             </Tab>
                         </Tabs>

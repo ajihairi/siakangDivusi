@@ -1,36 +1,81 @@
 import React, { Component } from 'react';
-import { ListView } from 'react-native';
-import { connect } from 'react-redux';
-import ItemHariBawahan from './ItemHariBawahan';
+import { View } from 'react-native';
+import {
+    Item,
+    Content,
+    Right,
+    Body,
+    Label,
+    Text
+} from 'native-base';
+import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ListHari extends Component {
-    componentWillMount() {
-        const ds = new  ListView.DataSource({
-            rowHasChanged: (r1, r2) => r1 !== r2
-        });
-
-        this.dataSource = ds.cloneWithRows(this.props.librariesbawahan);
-    }
-
-    renderRow(library) {
-        return <ItemHariBawahan
-        library={library}
-        />;
-    }
-
+class ItemHariBawahan extends Component {
     render() {
-        return(
-        <ListView
-            dataSource={this.dataSource}
-            renderRow={this.renderRow}
-        />
+        const {
+            tanggal,
+            statusKehadiran,
+            jamMasuk,
+            jamKeluar,
+            totalJam
+        } = this.props.library;
+
+        return (
+            <CardSection>
+                <Content>
+                    <Item>
+                        <Body>
+                            <Label onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                {tanggal}
+                            </Label>
+                        </Body>
+                        <Right>
+                            {statusKehadiran === 'Hadir' ? (<View style={styles.Hadir} />) : null}
+                            {statusKehadiran === 'Tidak Hadir' ? (<View style={styles.TidakHadir} />) : null}
+                            {statusKehadiran === 'Libur' ? (<View style={styles.Libur} />) : null}
+                        </Right>
+                    </Item>
+                    <Item>
+                        <Text>{jamMasuk}</Text>
+                        {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text> s/d </Text>)}
+                        <Text>{jamKeluar}</Text>
+                        <Right>
+                            <Text>{totalJam}</Text>
+                        </Right>
+                    </Item>
+                </Content>
+            </CardSection>
         );
     }
 }
 
-const mapStateToProps = state => {
-    return { librariesbawahan: state.librariesbawahan };
-};
+const styles = {
+    Hadir: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'green'
+    },
+    TidakHadir: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'red'
+    },
+    Cuti: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'purple'
+    },
+    Libur: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'yellow'
+    },
+    PerjalananDinas: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'black'
+    },
+}
 
-export default connect (mapStateToProps)(ListHari);
+export default ItemHariBawahan;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import {
     Item,
     Content,
@@ -23,32 +24,63 @@ class ListHariPribadi extends Component {
             totalJam
         } = this.props.library;
 
-            return (
-                <Card style={{flex: 1}}>
-                    <CardItem>
-                        <Body>
-                            <Item>
-                                <Body>
-                                    <Label onPress={() => Actions.detailpribadi()}>
-                                        {tanggal}
-                                    </Label>
-                                </Body>
-                                <Right>
-                                    <Text>{statusKehadiran}</Text>
-                                </Right>
-                            </Item>
-                            <Item>
-                                <Text>{jamMasuk}</Text>
-                                <Text> s.d {jamKeluar}</Text>
-                                <Right>
-                                    <Text>{totalJam}</Text>
-                                </Right>
-                            </Item>
-                        </Body>
-                    </CardItem>
-                </Card>
-            )
+        return (
+            <Card style={{ flex: 1 }}>
+                <CardItem>
+                    <Body>
+                        <Item>
+                            <Body>
+                                <Label onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </Label>
+                            </Body>
+                            <Right>
+                                {statusKehadiran === 'Hadir' ? (<View style={styles.Hadir} />) : null}
+                                {statusKehadiran === 'Tidak Hadir' ? (<View style={styles.TidakHadir} />) : null}
+                                {statusKehadiran === 'Libur' ? (<View style={styles.Libur} />) : null}
+                            </Right>
+                        </Item>
+                        <Item>
+                            <Text>{jamMasuk}</Text>
+                            {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text> s/d </Text>)}
+                            <Text>{jamKeluar}</Text>
+                            <Right>
+                                <Text>{totalJam}</Text>
+                            </Right>
+                        </Item>
+                    </Body>
+                </CardItem>
+            </Card>
+        )
     }
+}
+
+const styles = {
+    Hadir: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'green'
+    },
+    TidakHadir: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'red'
+    },
+    Cuti: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'purple'
+    },
+    Libur: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'yellow'
+    },
+    PerjalananDinas: {
+        width: 70,
+        height: 30,
+        backgroundColor: 'black'
+    },
 }
 
 export default ListHariPribadi;

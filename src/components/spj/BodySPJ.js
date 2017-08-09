@@ -28,7 +28,8 @@ export default class BodySPJ extends Component {
     constructor() {
         super()
         this.state = {
-            data: ds
+            data: ds,
+            text: ''
         }
     }
 
@@ -56,22 +57,38 @@ export default class BodySPJ extends Component {
         )
     }
 
+    filterSearch(text){
+        const newData = this.state.data.filter((item) => {
+            const itemData = item.idSPJ.toUpperCase()
+            const textData = text.toUpperCase()
+            return itemData.indexOf(textData) > -1
+        })
+        this.setState({
+            dataSource: this.state.dataSource.cloneWithRows(newData),
+            text: text
+        })
+    }
+
     render() {
         const { SearchStyle, ViewStyle, ButtonStyle, TextStyle, ListStyle } = styles;
 
         return (
             <Container>
-                <Content>
-                    <Item style={SearchStyle} rounded>
+                <Header searchBar rounded>
+                    <Item>
                         <Icon name="ios-search" />
                         <Input
                             placeholder="Search"
+                            onChangeText={(text) => this.filterSearch(text)}
+                            value={this.state.text}
                         />
                         <Icon name="ios-people" />
                     </Item>
-                    <Button style={ButtonStyle} block rounded>
-                        <Text style={TextStyle}>Search</Text>
+                    <Button transparent>
+                        <Text>Search</Text>
                     </Button>
+                </Header>
+                <Content>
                     <ListView
                         dataSource={this.state.data}
                         renderRow={this.renderRow}

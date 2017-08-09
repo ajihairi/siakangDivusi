@@ -14,7 +14,7 @@ import {
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-export default class ItemDetailKinerja extends Component {
+export default class ItemDetailKinerjaBawahan extends Component {
     render() {
         const {
             hari,
@@ -24,8 +24,7 @@ export default class ItemDetailKinerja extends Component {
             totalJam,
             statusKehadiran,
             aktivitas,
-            mood,
-            statusPerjalananDinas
+            mood
         } = this.props.library;
 
             return (
@@ -84,13 +83,6 @@ export default class ItemDetailKinerja extends Component {
                             <Label>Mood</Label>
                             <Label>
                                 <Text>{mood}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Perjalanan Dinas</Label>
-                            <Label>
-                                <Text>{statusPerjalananDinas}</Text>
                             </Label>
                             <Label />
                         </Item>
