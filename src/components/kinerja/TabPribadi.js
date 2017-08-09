@@ -9,6 +9,8 @@ import {
     Button,
     Text,
     Tabs,
+    Card,
+    CardItem,
     Tab
 } from 'native-base';
 import ListActivitasPribadi from './ListActivitasPribadi';
@@ -57,8 +59,8 @@ export default class TabPribadi extends Component {
 
     render() {
         return (
-            <Container>
-                <ScrollView>
+            <Card>
+                <CardItem>
                     <Content>
                         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
                             <DatePicker
@@ -135,8 +137,8 @@ export default class TabPribadi extends Component {
                             </Tab>
                         </Tabs>
                     </Content>
-                </ScrollView>
-            </Container>
+                </CardItem>
+            </Card>
         );
     }
 }

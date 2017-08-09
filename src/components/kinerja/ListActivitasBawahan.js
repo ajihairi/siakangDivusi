@@ -11,28 +11,28 @@ import {
 
 export default class ListActivitas extends Component {
     render() {
-        var activitas = ['Activitas 1','Activitas 2',
-        'Activitas 3','Activitas 4','Activitas 5'];
-
+        const {
+            tanggal,
+            activitas
+        } = this.props.library;
         return (
-            <Container>
-                <Content>
-                    <List dataArray={activitas} block
-                        renderRow={(item) =>
-                        <ListItem avatar>
+            <Card style={{flex: 1}}>
+                    <CardItem>
+                        <Body>
                             <Item>
-                                <Text>{item}</Text>
+                                <Body>
+                                    <Label onPress={() => Actions.detailbawahan()}>
+                                        {tanggal}
+                                    </Label>
+                                </Body>
                             </Item>
                             <Item>
-                                <Text note>Aktivitas bla bla bla</Text>
+                                <Text>Activitas :</Text>
+                                <Label><Text>{activitas}</Text></Label>
                             </Item>
-                        </ListItem>
-                        }>
-                    </List>
-                </Content>
-            </Container>
+                        </Body>
+                    </CardItem>
+                </Card>
         );
     }
 }
-
-module.export = ListActivitas;
