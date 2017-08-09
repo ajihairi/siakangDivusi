@@ -16,40 +16,46 @@ import { Actions } from 'react-native-router-flux';
 
 class ItemKehadiran extends Component {
     render() {
-        let articles = this.props.data.map(function(articleData, index){
-            return(
+        const {
+           hari,
+           tanggal,
+           jamMasuk,
+           jamKeluar,
+           totalJam,
+           status
+        } = this.props.library;
+        
+          return(
             <CardSection>
                 <Content >
                     <Item style={{height:40}}>
-                        <H1 onPress={() => Actions.keyDetailKehadiran()}>{articleData.tanggal}</H1>
+                        <H1 onPress={() => Actions.keyDetailKehadiran({tanggal:tanggal})}>{tanggal}</H1>
                        <Right>
-                          <View style={styles.Hadir} />
+                          {status === 'Hadir'? (<View style={styles.Hadir} />) : null}
+                        {status === 'Tidak Hadir'? (<View style={styles.TidakHadir} />) : null} 
+                       {status === 'Libur'? (<View style={styles.Libur} />) : null} 
                         </Right>
-                            
-                        
                     </Item>
                         <Item style={{height:40}}>
                             
-                            <Text>  {articleData.jamMasuk}   </Text>
-                            <Text>s/d </Text>
-                       <Text> {articleData.jamKeluar} </Text>
+                            <Text>  {jamMasuk}   </Text>
+                            {(jamMasuk===null && jamKeluar===null) ?(<Text />):(<Text>s/d </Text>)}
+                       <Text> {jamKeluar} </Text>
                    <Right>
-                       <View style={styles.Hadir} />
-                        </Right>
+                       {status === 'Hadir'? (<View style={styles.Hadir} />):null}
+                          {status === 'Tidak Hadir'? (<View style={styles.TidakHadir} />) : null} 
+                       {status === 'Libur'? (<View style={styles.Libur} />) : null} 
+                        </Right> 
                      </Item>
          
                 </Content>
 
             </CardSection>
         )
-    });
-return(
-            <Content>
-                {articles}
-            </Content>
-        );
     }
-}
+        
+    }
+
 
 const styles ={
   Hadir:{
@@ -65,7 +71,7 @@ const styles ={
 Cuti:{
      width: 100,
     height: 100,
-    backgroundColor: 'purple'
+    backgroundColor: 'white'
   },
 Libur:{
      width: 100,
@@ -75,7 +81,7 @@ Libur:{
 PerjalananDinas:{
      width: 100,
     height: 100,
-    backgroundColor: 'black'
+    backgroundColor: 'blue'
   },
 }
 

@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import {Text,View} from 'react-native';
 import { ListItem, Container, Content, InputGroup, Input, Picker, CheckBox, Body, Button, Item } from 'native-base';
+
 import { Actions } from 'react-native-router-flux';
-class Koreksi extends Component {
+class Izin extends Component {
     render()
     {
       return (
@@ -38,4 +39,4 @@ class Koreksi extends Component {
   
            
            
-export default Koreksi;
+export default Izin;

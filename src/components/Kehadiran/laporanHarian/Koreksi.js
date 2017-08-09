@@ -27,8 +27,7 @@ class Koreksi extends Component {
             <Item >
             <Input placeholder='alasan koreksi' />
             </Item>
-           <Item style={{marginTop : 5,  justifyContent : 'center'}} >
-            </Item>     
+           
             </Content>
       </Container>
     );

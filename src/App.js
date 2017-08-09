@@ -19,14 +19,23 @@ import FormLemburDriver from './components/FormLemburDriver';
 import LoginForm from './components/LoginForm';
 import Kehadiran from './components/Kehadiran';
 import LaporanHarian from './components/Kehadiran/laporanHarian/LaporanHarian';
-import formPenugasanLembur from './components/formPenugasanLembur';
-import formCuti from './components/formCuti';
-import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
-import DetailPersetujuanPribadiRemote from './components/persetujuan/DetailPersetujuanPribadiRemote' ;
+import Aktivitas from './components/Kehadiran/laporanHarian/Aktivitas';
 import Remote from './components/Kehadiran/laporanHarian/Remote';
-import Izin from './components/Kehadiran/laporanHarian/Izin';
 import Koreksi from './components/Kehadiran/laporanHarian/Koreksi';
 import Dinas from './components/Kehadiran/laporanHarian/Dinas';
+import Izin from './components/Kehadiran/laporanHarian/Izin';
+import ClaimLembur from './components/Kehadiran/ClaimLembur';
+import DetailPribadiCuti from './components/persetujuan/pribadi/Detail/Cuti/DetailPribadiCuti';
+import DetailPribadiRemote from './components/persetujuan/pribadi/Detail/Remote/DetailPribadiRemote';
+import DetailPribadiKoreksi from './components/persetujuan/pribadi/Detail/Koreksi/DetailPribadiKoreksi';
+import DetailPribadiIzin from './components/persetujuan/pribadi/Detail/Izin/DetailPribadiIzin';
+import DetailPribadiLembur from './components/persetujuan/pribadi/Detail/Lembur/DetailPribadiLembur';
+import DetailPribadiLemburDriver from './components/persetujuan/pribadi/Detail/LemburDriver/DetailPribadiLemburDriver';
+
+import formPenugasanLembur from './components/formPenugasanLembur';
+import formCuti from './components/formCuti';
+import formSakit from './components/formPengajuanSakit';
+import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
 
 import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
 import TimePicker from './components/cobacoba/TimePicker';
@@ -84,7 +93,12 @@ class App extends Component{
                 component={Kehadiran}
                 title="Kehadiran"
                 />
-                
+                <Scene
+                key="ClaimLembur"
+                component={ClaimLembur}
+                title="klaim Lembur"
+                />
+      
                 <Scene
                   key = "applemburdriver"
                   component = { AppLemburDriver }
@@ -157,18 +171,49 @@ class App extends Component{
                 component={formCuti}
                 title="Pengajuan Cuti"
                 />
-
+              <Scene
+                key="keyPengajuanSakit"
+                component={formSakit}
+                title="Pengajuan Sakit"
+                />
               <Scene
                 key="keyDetailKehadiran"
                 component={DetailKehadiran}
                 title="Detail Kehadiran"
                 />
-
-              <Scene
-                key="detailRemote"
-                component={DetailPersetujuanPribadiRemote}
-                title="Detail Remote"
+                <Scene
+                key="DetailPribadiCuti"
+                component={DetailPribadiCuti}
+                title="Detail persetujuan Pribadi Cuti"
                 />
+                <Scene
+                key="DetailPribadiRemote"
+                component={DetailPribadiRemote}
+                title="Detail persetujuan Pribadi remote"
+                />
+                <Scene
+                key="DetailPribadiKoreksi"
+                component={DetailPribadiKoreksi}
+                title="Detail persetujuan Pribadi koreksi"
+                />
+                <Scene
+                key="DetailPribadiIzin"
+                component={DetailPribadiIzin}
+                title="Detail persetujuan Pribadi izin"
+                />
+                <Scene
+                key="DetailPribadiLembur"
+                component={DetailPribadiLembur}
+                title="Detail persetujuan Pribadi lembur"
+                />
+                <Scene
+                key="DetailPribadiLemburDriver"
+                component={DetailPribadiLemburDriver}
+                title="Detail persetujuan Pribadi lembur driver"
+                />
+
+              
+
 
               </Scene>
             </Router>

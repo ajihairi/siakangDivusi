@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {Text,View} from 'react-native';
 import { ListItem, Container, Content, InputGroup, Input, Picker, CheckBox, Body, Button, Item } from 'native-base';
 
-class Koreksi extends Component {
+class Dinas extends Component {
     render()
     {
       return (
@@ -25,11 +25,6 @@ class Koreksi extends Component {
                         <Picker.Item label="spj-3" value="Wednesday" />
                         <Picker.Item label="dll" value="Thursday" />
                     </Picker>
-            <Item style={{marginTop : 5,  justifyContent : 'center'}} >
-            <Button style={{justifyContent:'center',marginLeft: 5, width : 300 }} block>
-           <Text>submit </Text>
-          </Button>
-            </Item>
 </Content>
   </Container>
       );
@@ -39,4 +34,4 @@ class Koreksi extends Component {
   
            
            
-export default Koreksi;
+export default Dinas;

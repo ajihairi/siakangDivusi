@@ -25,7 +25,8 @@ class Remote extends Component {
              <Text>alasan remote</Text>
             <Item >
             <Input placeholder='alasan remote' />
-            </Item>     
+            </Item>
+
             </Content>
       </Container>
     );

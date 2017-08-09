@@ -181,7 +181,7 @@ class FormLemburDriver extends Component{
                 </List>
 
                   <List>
-                    <Text note>ditugaskan oleh</Text>
+                    <Text note>Ditugaskan Oleh</Text>
                     <FormItem style={{marginTop: 5}}>
                      <Picker
                     iosHeader="Select  Name"

@@ -15,44 +15,49 @@ import {View} from 'react-native'
 
 export default class ItemDetailKehadiran extends Component {
     render() {
-      let detail = this.props.data.map(function(detail, index){ 
+       const {
+           hari,
+           tanggal,
+           jamMasuk,
+           jamKeluar,
+           totalJam,
+           overtimeStatus,
+           status
+        } = this.props.library;
+
           return (
             <Container>
                 <Content>
                     <Form style={{marginTop: 30}}>
                         <Item stackedLabel>
                             <Label>Hari</Label>
-                            <Label><Text>{detail.hari}</Text></Label>
-                            <Label/>
+                            <Text>{hari} </Text>
                            </Item>
                         <Item stackedLabel>
-                            <Label>Hari</Label>
-                            <Label><Text>{detail.tanggal}</Text></Label>
-                            <Label/>
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Hari</Label>
-                            <Label><Text>{detail.jamMasuk}</Text></Label>
-                            <Label/>
+                            <Label>tanggal</Label>
+                            <Text>{tanggal} </Text>
                            </Item>
                         <Item stackedLabel>
-                            <Label>Hari</Label>
-                            <Label><Text>{detail.jamKeluar}</Text></Label>
-                            <Label/>
+                            <Label>jam masuk</Label>
+                            <Text>{jamMasuk} </Text>
+                           </Item>
+                        <Item stackedLabel>
+                            <Label>jam keluar</Label>
+                            <Text>{jamKeluar} </Text>
+                           
                         </Item>
                         <Item stackedLabel>
-                            <Label>Hari</Label>
-                            <Label><Text>{detail.totalJam}</Text></Label>
-                            <Label/>
+                            <Label>total jam kerja</Label>
+                           <Text>{totalJam} </Text>
+                           
                         </Item>
                     <Item stackedLabel>
-                            <Label>Hari</Label>
-                            <Label><Text>{detail.status}</Text></Label>
-                            <Label/>
+                            <Label>status</Label>
+                            <Text>{status} </Text>
+                            
                         </Item>
-                        <View style={{flexDirection: 'row', marginTop: 30, marginBottom: 5,  alignItems: 'center', justifyContent: 'center'}}>
-                    
-                    <Button  
+                     {(overtimeStatus===null) ?(
+                         <View style={{flexDirection: 'row', marginTop: 30, marginBottom: 5,  alignItems: 'center', justifyContent: 'center'}}><Button  
                     style={{width:150, 
                     justifyContent: 'center', 
                     alignItems: 'center',
@@ -62,22 +67,22 @@ export default class ItemDetailKehadiran extends Component {
 
                       onPress={() => Actions.keyLaporanHarian()}>
                       <Text style={{textAlign: 'center'}}> Laporan Harian </Text>
-                    </Button>
+                    </Button></View>) : (<View style={{flexDirection: 'row', marginTop: 30, marginBottom: 5,  alignItems: 'center', justifyContent: 'center'}}><Button  
+                    style={{width:150, 
+                    justifyContent: 'center', 
+                    alignItems: 'center',
+                    marginRight: 5}}
 
-                    <Button success style={{width:150, justifyContent: 'center', alignItems: 'center', marginLeft: 5}}>
+                    bordered success
+
+                      onPress={() => Actions.keyLaporanHarian()}>
+                      <Text style={{textAlign: 'center'}}> Laporan Harian </Text>
+                    </Button><Button onPress={() => Actions.ClaimLembur()} success style={{width:150, justifyContent: 'center', alignItems: 'center', marginLeft: 5}}>
                       <Text style={{textAlign: 'center'}}> Claim Lembur </Text>
-                    </Button>
-
-                  </View>
+                    </Button></View>)}                    
                     </Form>
                 </Content>
             </Container>
         );
 
-});
-    return(
-            <Content>
-                {detail}
-            </Content>
-        );
 }}

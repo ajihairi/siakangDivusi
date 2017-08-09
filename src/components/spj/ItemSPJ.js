@@ -1,35 +1,56 @@
 import React, { Component } from 'react';
 import {
-    Item,
+    Container,
     Content,
+    Card,
+    CardItem,
     Right,
-    Body,
+    Left,
+    Form,
+    Item,
+    Input,
     Label,
-    Text
+    Text,
+    View,
+    Footer,
+    Body,
+    Button
 } from 'native-base';
-import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
 class ItemSPJ extends Component {
     render() {
-        return(
-            <CardSection>
-                <Content>
-                    <Item>
-                        <Body>
-                            <Label  onPress={() => Actions.detailspj()}> {this.props.library.id_spj}</Label>
-                        </Body>
-                    </Item>
-                    <Item>
-                        <Text> {this.props.library.namaPekerjaan}</Text>
-                        <Body>
-                        </Body>
-                        <Right>
-                            <Text> {this.props.library.kotaTujuan}</Text>
-                        </Right>
-                    </Item>
-                </Content>
-            </CardSection>
+        let articles = this.props.data.map(function (articleData, index) {
+            return (
+            <Card>
+                <CardItem>
+                    <Body>
+                        <Item>
+                            <Body>
+                                <Label onPress={() => Actions.detailspj()}>
+                                    {articleData.idSPJ}
+                                </Label>
+                            </Body>
+                        </Item>
+                        <Item>
+                            <Text>{articleData.namaPekerjaan}</Text>
+                            <Body>
+                                <Text></Text>
+                            </Body>
+                            <Right>
+                                <Text>{articleData.tujuan}</Text>
+                            </Right>
+                        </Item>
+                    </Body>
+                </CardItem>
+            </Card>
+        );
+        });
+
+        return (
+            <Content>
+                {articles}
+            </Content>
         );
     }
 }
