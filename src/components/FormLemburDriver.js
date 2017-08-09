@@ -39,6 +39,18 @@ class FormLemburDriver extends Component{
       };
     }
 
+    onValueChange(value: string) {
+      this.setState({
+        selected1: value
+      });
+    }
+
+    _onValueChange(value: string) {
+      this.setState({
+        selected2: value
+      });
+    }
+
     render() {
       return (
         <Container style={{backgroundColor: 'white'}}>

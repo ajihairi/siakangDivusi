@@ -17,6 +17,7 @@ import {
     Header
 } from 'native-base';
 import ItemKehadiran from './ItemKehadiran';
+import Fabs from './Fabs';
 
 var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
@@ -72,6 +73,9 @@ export default class BodyKehadiran extends Component {
                         renderRow = {this.renderRow}
                     />
                 </Content>
+                <View>
+                    <Fabs />
+                    </View>
             </Container>
         );
     }

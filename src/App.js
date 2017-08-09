@@ -68,13 +68,13 @@ class App extends Component{
                 key="keyMainMenu"
                 component={MainMenu}
                 title="Si-Akang"
-                initial 
+                
                 />
 
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                
+                initial 
                 />
 
                 <Scene

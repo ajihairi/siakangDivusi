@@ -18,7 +18,7 @@ export default class ItemDetailPribadiLembur extends Component {
     render() {
 
          const {
-           namaPegawai,
+           pemberiPekerjaan,
             jamSelesai,
             departemen,
             jabatan,
