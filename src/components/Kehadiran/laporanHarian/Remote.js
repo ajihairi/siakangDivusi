@@ -27,15 +27,6 @@ class Remote extends Component {
             <Input placeholder='alasan remote' />
             </Item>
 
-            <Item style={{marginTop : 5,  justifyContent : 'center'}} >
-            <Button style={{justifyContent:"center", marginRight: 5, width: 150}} block>
-             <Text>Back</Text>
-            </Button>
-          
-            <Button style={{justifyContent:'center',marginLeft: 5, width : 150 }} block>
-           <Text>Next </Text>
-          </Button>
-            </Item>     
             </Content>
       </Container>
     );

@@ -19,6 +19,12 @@ import FormLemburDriver from './components/FormLemburDriver';
 import LoginForm from './components/LoginForm';
 import Kehadiran from './components/Kehadiran';
 import LaporanHarian from './components/Kehadiran/laporanHarian/LaporanHarian';
+import Aktivitas from './components/Kehadiran/laporanHarian/Aktivitas';
+import Remote from './components/Kehadiran/laporanHarian/Remote';
+import Koreksi from './components/Kehadiran/laporanHarian/Koreksi';
+import Dinas from './components/Kehadiran/laporanHarian/Dinas';
+import Izin from './components/Kehadiran/laporanHarian/Izin';
+
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
 import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
@@ -174,6 +180,7 @@ class App extends Component{
                 component={DetailPersetujuanPribadiRemote}
                 title="Detail Remote"
                 />
+
 
               </Scene>
             </Router>
