@@ -18,80 +18,65 @@ export default class ItemDetailPribadiRemote extends Component {
     render() {
 
         const {
-            idPribadi,
-            namaPekerjaan,
-            statusPerjalananDinas,
-            statusPembayaran,
-            durasi,
-            jenisKota,
-            kotaTujuan,
-            tanggalSelesai,
-            tanggalMulai
+            namaPegawai,
+            departemen,
+            jabatan,
+            tanggal,
+            jamMulai,
+            jamSelesai,
+            alasanRemote,
+            catatanPersetujuan
         } = this.props.library;
 
             return (
                 <View>
                     <Form>
                         <Item stackedLabel>
-                            <Label>ID Pribadi :</Label>
+                            <Label>Nama Pegawai :</Label>
                             <Label>
-                                <Text>{idPribadi}</Text>
+                                <Text>{namaPegawai}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel>
-                            <Label>Nama Pekerjaan :</Label>
+                            <Label>departemen :</Label>
                             <Label>
-                                <Text>{namaPekerjaan}</Text>
+                                <Text>{departemen}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Tanggal Mulai :</Label>
+                            <Label>jabatan :</Label>
                             <Label>
-                                <Text>{tanggalMulai}</Text>
+                                <Text>{jabatan}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Tanggal Selesai :</Label>
+                            <Label>jam :</Label>
                             <Label>
-                                <Text>{tanggalSelesai}</Text>
+                                <Text>{jamMulai} sampai dengan {jamSelesai}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
+                            <Label>tanggal :</Label>
                             <Label>
-                                <Text>{kotaTujuan}</Text>
+                                <Text>{tanggal}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
+                            <Label>alasan :</Label>
                             <Label>
-                                <Text>{jenisKota}</Text>
+                                <Text>{alasanRemote}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
-                            <Label>Durasi :</Label>
+                            <Label>catatan Persetujuan :</Label>
                             <Label>
-                                <Text>{durasi}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Pembayaran :</Label>
-                            <Label>
-                                <Text>{statusPembayaran}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Perjalanan Dinas :</Label>
-                            <Label>
-                                <Text>{statusPerjalananDinas}</Text>
+                                <Text>{catatanPersetujuan}</Text>
                             </Label>
                             <Label />
                         </Item>

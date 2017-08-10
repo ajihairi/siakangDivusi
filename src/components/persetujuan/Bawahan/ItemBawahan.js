@@ -13,12 +13,12 @@ import {
 } from 'native-base';
 import { CardSection } from '../../common';
 import { Actions } from 'react-native-router-flux';
-import * as Pribadiactions from '../../actions';
+import * as Bawahanactions from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { TouchableWithoutFeedback } from 'react-native';
 
-class ItemPribadi extends Component {
+class ItemBawahan extends Component {
 
     render() {
         const {
@@ -35,12 +35,12 @@ class ItemPribadi extends Component {
                 <Content>
                     <Item>
                         
-                          {jenisPengajuan === 'Izin\/Cuti\/Sakit'? (<H3  onPress={() => Actions.DetailPribadiCuti({start_date:start_date,end_date:end_date})}> {jenisPengajuan}</H3>):null} 
-                           {jenisPengajuan === 'Koreksi'? (<H3  onPress={() => Actions.DetailPribadiKoreksi({tanggalPengajuan : tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
-                           {jenisPengajuan === 'Remote'? (<H3  onPress={() => Actions.DetailPribadiRemote({tanggalPengajuan:tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
-                           {jenisPengajuan === 'Lembur'? (<H3  onPress={() => Actions.DetailPribadiLembur({tanggalPengajuan:tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
-                           {jenisPengajuan === 'Lembur Driver'? (<H3  onPress={() => Actions.DetailPribadiDriver({tanggalPengajuan : tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
-                           {jenisPengajuan === 'Izin Keluar Kantor'? (<H3  onPress={() => Actions.DetailPribadiIzin({tanggalPengajuan:tanggalPengajuan})}> {jenisPengajuan}</H3>):null} 
+                          {jenisPengajuan === 'Izin\/Cuti\/Sakit'? (<H3  onPress={() => Actions.DetailBawahanCuti({start_date:start_date,end_date:end_date})}> {jenisPengajuan}</H3>):null} 
+                           {jenisPengajuan === 'Koreksi'? (<H3  onPress={() => Actions.DetailBawahanKoreksi({tanggalPengajuan : tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
+                           {jenisPengajuan === 'Remote'? (<H3  onPress={() => Actions.DetailBawahanRemote({tanggalPengajuan:tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
+                           {jenisPengajuan === 'Lembur'? (<H3  onPress={() => Actions.DetailBawahanLembur({tanggalPengajuan:tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
+                           {jenisPengajuan === 'Lembur Driver'? (<H3  onPress={() => Actions.DetailBawahanDriver({tanggalPengajuan : tanggalPengajuan})}> {jenisPengajuan}</H3>):null}
+                           {jenisPengajuan === 'Izin Keluar Kantor'? (<H3  onPress={() => Actions.DetailBawahanIzin({tanggalPengajuan:tanggalPengajuan})}> {jenisPengajuan}</H3>):null} 
                            {jenisPengajuan === 'Klaim Lembur'? (<H3  > {jenisPengajuan}</H3>):null}     
                     </Item>
                     <Item>
@@ -59,4 +59,4 @@ class ItemPribadi extends Component {
     }
 }
 
-export default ItemPribadi;
+export default ItemBawahan;
