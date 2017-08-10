@@ -64,7 +64,7 @@ export default class BodySPJ extends Component {
             return itemData.indexOf(textData) > -1
         })
         this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(newData),
+            dataSource: ds.cloneWithRows(newData),
             text: text
         })
     }
@@ -89,7 +89,7 @@ export default class BodySPJ extends Component {
                     </Button>
                 </Header>
                 <Content>
-                    <ListView
+                    <ListView style={{paddingTop: 20}}
                         dataSource={this.state.data}
                         renderRow={this.renderRow}
                     />

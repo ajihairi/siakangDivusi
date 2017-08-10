@@ -25,8 +25,8 @@ class ListHariPribadi extends Component {
         } = this.props.library;
 
         return (
-            <Card style={{ flex: 1 }}>
-                <CardItem>
+            // <Card style={{ flex: 1 }}>
+            //     <CardItem>
                     <Body>
                         <Item>
                             <Body>
@@ -49,8 +49,8 @@ class ListHariPribadi extends Component {
                             </Right>
                         </Item>
                     </Body>
-                </CardItem>
-            </Card>
+            //     </CardItem>
+            // </Card>
         )
     }
 }

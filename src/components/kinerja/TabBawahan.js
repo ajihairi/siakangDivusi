@@ -8,6 +8,8 @@ import {
     Input,
     Button,
     Tabs,
+    Card,
+    CardItem,
     Tab
 } from 'native-base';
 import ListHariBawahan from './ListHariBawahan';
@@ -59,8 +61,9 @@ export default class TabBawahan extends Component {
 
     render() {
         return (
-            <Container>
-                <Content>
+            <Card>
+                <CardItem>
+                    <Content>
                     <Item style={{ marginRight: 15, marginLeft: 15, marginTop: 20 }}>
                         <Input placeholder='Nama Bawahan' />
                         <Icon active name='person' />
@@ -140,8 +143,9 @@ export default class TabBawahan extends Component {
                                 />*/}
                         </Tab>
                     </Tabs>
-                </Content>
-            </Container>
+                    </Content>
+                </CardItem>
+            </Card>
         );
     }
 }
