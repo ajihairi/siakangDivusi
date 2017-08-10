@@ -1,44 +1,41 @@
 import React, { Component } from 'react';
-import {
-    Item,
+import { 
+    Container,
     Content,
-    Right,
-    Body,
+    List,
+    ListItem,
+    Text,
     Label,
     Card,
     CardItem,
-    Left,
-    Text
-} from 'native-base';
-import { CardSection } from '../common';
-import { Actions } from 'react-native-router-flux';
+    Body,
+    Item
+ } from 'native-base';
 
-class ListHariPribadi extends Component {
+export default class ListAktivitasBawahan extends Component {
     render() {
         const {
             tanggal,
-            activitas
+            aktivitas
         } = this.props.library;
-            return (
-                <Card style={{flex: 1}}>
+        return (
+            <Card style={{flex: 1}}>
                     <CardItem>
                         <Body>
                             <Item>
                                 <Body>
-                                    <Label onPress={() => Actions.detailpribadi()}>
+                                    <Label onPress={() => Actions.detailbawahan()}>
                                         {tanggal}
                                     </Label>
                                 </Body>
                             </Item>
                             <Item>
-                                <Text>Activitas :</Text>
-                                <Label><Text>{activitas}</Text></Label>
+                                <Text>Aktivitas :</Text>
+                                <Label><Text>{aktivitas}</Text></Label>
                             </Item>
                         </Body>
                     </CardItem>
                 </Card>
-            )
+        );
     }
 }
-
-export default ListHariPribadi;

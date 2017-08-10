@@ -13,7 +13,7 @@ import {
     CardItem,
     Tab
 } from 'native-base';
-import ListActivitasPribadi from './ListActivitasPribadi';
+import ListAktivitasPribadi from './ListAktivitasPribadi';
 import ListHariPribadi from './ListHariPribadi';
 import DatePicker from 'react-native-datepicker';
 
@@ -51,9 +51,9 @@ export default class TabPribadi extends Component {
         )
     }
 
-    renderRowActivitas(library) {
+    renderRowAktivitas(library) {
         return (
-            <ListActivitasPribadi library={library} />
+            <ListAktivitasPribadi library={library} />
         )
     }
 
@@ -132,7 +132,7 @@ export default class TabPribadi extends Component {
                             <Tab heading="Aktivitas">
                                 <ListView
                                     dataSource={this.state.data}
-                                    renderRow={this.renderRowActivitas}
+                                    renderRow={this.renderRowAktivitas}
                                 />
                             </Tab>
                         </Tabs>
