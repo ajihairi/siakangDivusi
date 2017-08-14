@@ -55,14 +55,20 @@ import AppPersetujuan from './components/AppPersetujuan';
 
 class App extends Component{
 
+    state={loggedIn: null}
 
-  renderContent(){
+
+    componentWillMount(){
+    }
+    
+    renderContent(){
         return (
             <Router>
               <Scene key="root" 
               navigationBarStyle={styles.navbarStyle}  
               titleStyle={{color : "#FFF"}}
                 hideNavBar={true}>
+
               
                 <Scene
                 key="keyMainMenu"
