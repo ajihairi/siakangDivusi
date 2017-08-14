@@ -13,7 +13,7 @@ import {
     Tab
 } from 'native-base';
 import ListHariBawahan from './ListHariBawahan';
-import ListActivitasBawahan from './ListActivitasBawahan';
+import ListAktivitasBawahan from './ListAktivitasBawahan';
 import { View, ListView } from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
@@ -53,11 +53,11 @@ export default class TabBawahan extends Component {
         )
     }
 
-    // renderRowActivitas(library) {
-    //     return (
-    //         <ListActivitasPribadi library={library} />
-    //     )
-    // }
+    renderRowAktivitas(library) {
+        return (
+            <ListAktivitasBawahan library={library} />
+        )
+    }
 
     render() {
         return (
@@ -137,10 +137,10 @@ export default class TabBawahan extends Component {
                             />
                         </Tab>
                         <Tab heading="Aktivitas">
-                            {/*<ListView
+                            <ListView
                                     dataSource={this.state.data}
-                                    renderRow={this.renderRowActivitas}
-                                />*/}
+                                    renderRow={this.renderRowAktivitas}
+                                />
                         </Tab>
                     </Tabs>
                     </Content>
@@ -149,5 +149,3 @@ export default class TabBawahan extends Component {
         );
     }
 }
-
-module.export = TabBawahan;

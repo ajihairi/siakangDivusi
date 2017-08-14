@@ -39,7 +39,8 @@ export default class BodySPJ extends Component {
             .then((responseJson) => {
 
                 this.setState({
-                    data: ds.cloneWithRows(responseJson.data.laporanSPJ)
+                    data: ds.cloneWithRows(responseJson.data.laporanSPJ),
+                    datas: responseJson.data.laporanSPJ,
                 });
             })
             .catch((error) => {
@@ -57,15 +58,25 @@ export default class BodySPJ extends Component {
         )
     }
 
-    filterSearch(text){
-        const newData = this.state.data.filter((item) => {
-            const itemData = item.idSPJ.toUpperCase()
-            const textData = text.toUpperCase()
-            return itemData.indexOf(textData) > -1
-        })
+    setSearchText(event) {
+        const searchText = event.nativeEvent.text;
+
+        alaporanLength = this.state.data.laporanSPJ.length;
+        alaporan = this.state.data.laporanSPJ;
+
+        const filteredData = this.state.datas.filter(checkidSPJ);
+
+        function checkidSPJ() {
+            for (i = 0; i < alaporanLength; i++) {
+                if (alaporan[i].idSPJ === searchText) {
+                    return alaporan[i];
+                }
+            }
+        }
+
         this.setState({
-            dataSource: ds.cloneWithRows(newData),
-            text: text
+            searchText,
+            data: ds.cloneWithRows(filteredData)
         })
     }
 
@@ -79,7 +90,7 @@ export default class BodySPJ extends Component {
                         <Icon name="ios-search" />
                         <Input
                             placeholder="Search"
-                            onChangeText={(text) => this.filterSearch(text)}
+                            onChange={this.setSearchText.bind(this)}
                             value={this.state.text}
                         />
                         <Icon name="ios-people" />
@@ -89,7 +100,7 @@ export default class BodySPJ extends Component {
                     </Button>
                 </Header>
                 <Content>
-                    <ListView style={{paddingTop: 20}}
+                    <ListView style={{ paddingTop: 20 }}
                         dataSource={this.state.data}
                         renderRow={this.renderRow}
                     />

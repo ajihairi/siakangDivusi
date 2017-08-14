@@ -6,12 +6,13 @@ import {
     ListItem,
     Text,
     Label,
-    Item,
     Card,
-    CardItem   
+    CardItem,
+    Body,
+    Item
  } from 'native-base';
 
-export default class ListActivitas extends Component {
+export default class ListAktivitasBawahan extends Component {
     render() {
         const {
             tanggal,
