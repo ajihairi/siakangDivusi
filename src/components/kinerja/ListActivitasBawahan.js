@@ -6,14 +6,16 @@ import {
     ListItem,
     Text,
     Label,
-    Item
+    Item,
+    Card,
+    CardItem   
  } from 'native-base';
 
 export default class ListActivitas extends Component {
     render() {
         const {
             tanggal,
-            activitas
+            aktivitas
         } = this.props.library;
         return (
             <Card style={{flex: 1}}>
@@ -27,8 +29,8 @@ export default class ListActivitas extends Component {
                                 </Body>
                             </Item>
                             <Item>
-                                <Text>Activitas :</Text>
-                                <Label><Text>{activitas}</Text></Label>
+                                <Text>Aktivitas :</Text>
+                                <Label><Text>{aktivitas}</Text></Label>
                             </Item>
                         </Body>
                     </CardItem>

@@ -46,16 +46,26 @@ class ItemLemburDriver extends Component {
                         </Item>
                         <Item>
                             <Left>
-                                <Item>
-                                    <Text>{jamMulaiPagi}</Text>
-                                    {(jamMulaiPagi === null && jamSelesaiPagi === null) ? (<Text />) : (<Text> s/d </Text>)}
-                                    <Text>{jamSelesaiPagi}</Text>
-                                </Item>
-                                <Item>
-                                    <Text>{jamMulaiMalam}</Text>
-                                    {(jamMulaiMalam === null && jamSelesaiMalam === null) ? (<Text />) : (<Text> s/d </Text>)}
-                                    <Text>{jamSelesaiMalam}</Text>
-                                </Item>
+                                <View>
+                                    <Item>
+                                        <Text>Pagi :</Text>
+                                    </Item>
+                                    <Item>
+                                        <Text>{jamMulaiPagi}</Text>
+                                        {(jamMulaiPagi === null && jamSelesaiPagi === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                        <Text>{jamSelesaiPagi}</Text>
+                                    </Item>
+                                </View>
+                                <View>
+                                    <Item>
+                                        <Text>Malam :</Text>
+                                    </Item>
+                                    <Item>
+                                        <Text>{jamMulaiMalam}</Text>
+                                        {(jamMulaiMalam === null && jamSelesaiMalam === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                        <Text>{jamSelesaiMalam}</Text>
+                                    </Item>
+                                </View>
                             </Left>
                             <Right>
                                 <Text> {statusPembayaran}</Text>

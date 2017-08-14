@@ -17,7 +17,7 @@ class ListHariPribadi extends Component {
     render() {
         const {
             tanggal,
-            activitas
+            aktivitas
         } = this.props.library;
             return (
                 <Card style={{flex: 1}}>
@@ -31,8 +31,8 @@ class ListHariPribadi extends Component {
                                 </Body>
                             </Item>
                             <Item>
-                                <Text>Activitas :</Text>
-                                <Label><Text>{activitas}</Text></Label>
+                                <Text>Aktivitas :</Text>
+                                <Label><Text>{aktivitas}</Text></Label>
                             </Item>
                         </Body>
                     </CardItem>

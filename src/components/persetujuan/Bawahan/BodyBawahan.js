@@ -61,7 +61,6 @@ export default class BodyBawahan extends Component {
         const { SearchStyle, ViewStyle, ButtonStyle, TextStyle, ListStyle } = styles;
 
         return (
-            <Container>
                 <Content>
                     <Item style={SearchStyle} rounded>
                         <Icon name="ios-search" />
@@ -78,7 +77,6 @@ export default class BodyBawahan extends Component {
                         renderRow={this.renderRow}
                     />
                 </Content>
-            </Container>
         );
     }
 }
