@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Tab, Tabs,Item,Icon, Text, Button, Input } from 'native-base';
 import BodyPribadi from './pribadi/BodyPribadi';
+import BodyBawahan from './Bawahan/BodyBawahan';
 import TabSPJ from './TabSPJ';
 
 export default class BodyPersetujuan extends Component {
@@ -12,7 +13,9 @@ export default class BodyPersetujuan extends Component {
             <Tab heading="Pribadi">
               <BodyPribadi />
             </Tab>
-            
+            <Tab heading="Bawahan">
+              <BodyBawahan />
+            </Tab>
             <Tab heading="SPJ">
             <TabSPJ />
             </Tab>

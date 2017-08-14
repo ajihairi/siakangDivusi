@@ -18,14 +18,13 @@ export default class ItemDetailPribadiLembur extends Component {
     render() {
 
          const {
+           namaPekerjaan,
+           tanggalPengajuan,
            pemberiPekerjaan,
-            jamSelesai,
-            departemen,
-            jabatan,
-          jamMulai,
-           catatanPersetujuan,
-            tanggal,
-            alasan
+           tanggal,
+           hariKerja,
+           status,
+           anggotaLembur
         } = this.props.library;
 
             return (
@@ -34,21 +33,21 @@ export default class ItemDetailPribadiLembur extends Component {
                         <Item stackedLabel>
                             <Label>Nama Pegawai :</Label>
                             <Label>
-                                <Text>{namaPegawai}</Text>
+                                <Text>--</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel>
                             <Label>departemen :</Label>
                             <Label>
-                                <Text>{departemen}</Text>
+                                <Text>--</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>jabatan :</Label>
                             <Label>
-                                <Text>{jabatan}</Text>
+                                <Text>--</Text>
                             </Label>
                             <Label />
                         </Item>
@@ -60,29 +59,20 @@ export default class ItemDetailPribadiLembur extends Component {
                             <Label />
                         </Item>
                           <Item stackedLabel last>
-                            <Label>jam :</Label>
+                            <Label>proyek :</Label>
                             <Label>
-                                <Text> jam Mulai     :</Text>
-                                <Text>{jamMulai}</Text>
-                                <Text> jam Selesai   :</Text>
-                                <Text>{jamSelesai}</Text>
+                                <Text>{namaPekerjaan}</Text>
                             </Label>
                             <Label />
                             </Item>
-                        <Item stackedLabel last>
-                            <Label>alasan :</Label>
+                            <Item stackedLabel last>
+                            <Label>daftar peserta :</Label>
                             <Label>
-                                <Text>{alasan}</Text>
+                                <Text/>
                             </Label>
                             <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>catatan Persetujuan :</Label>
-                            <Label>
-                                <Text>{catatanPersetujuan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
+                            </Item>
+                       
                     </Form>
                 </View>
             );

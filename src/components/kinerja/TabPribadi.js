@@ -35,6 +35,7 @@ export default class TabPribadi extends Component {
                 this.setState({
                     data: ds.cloneWithRows(responseJson.data.kinerjaPribadi)
                 });
+                console.log(responseJson.data.kinerjaPribadi);
             })
             .catch((error) => {
                 console.error(error);
