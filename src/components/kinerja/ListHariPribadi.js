@@ -9,6 +9,7 @@ import {
     Card,
     CardItem,
     Left,
+    H1,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
@@ -25,61 +26,82 @@ class ListHariPribadi extends Component {
         } = this.props.library;
 
         return (
-            // <Card style={{ flex: 1 }}>
-            //     <CardItem>
-                    <Body>
-                        <Item>
-                            <Body>
-                                <Label onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+            <Card>
+                {statusKehadiran === 'Hadir' ? (
+                    <CardItem style={styles.Hadir} >
+                            
+                                <Left style={{ height: 40 }}>
+                                    <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+                                        {tanggal}
+                                    </H1>
+                                </Left>
+                                <Left style={{ height: 30 }}>
+                                    <Text style={{ color: 'white' }}>  {jamMasuk}   </Text>
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}>s/d </Text>)}
+                                    <Text style={{ color: 'white' }}> {jamKeluar} </Text>
+                                </Left>
+                                <Left style={{ height: 30 }}>
+                                    <Text style={{ color: 'white' }}>  {totalJam} </Text>
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Left>
+                           
+                       
+                                <Text>nama</Text>
+                           
+                    </CardItem>) : null}
+                {statusKehadiran === 'Tidak Hadir' ? (
+                    <CardItem style={styles.TidakHadir}>
+                        <View rounded>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {tanggal}
-                                </Label>
-                            </Body>
-                            <Right>
-                                {statusKehadiran === 'Hadir' ? (<View style={styles.Hadir} />) : null}
-                                {statusKehadiran === 'Tidak Hadir' ? (<View style={styles.TidakHadir} />) : null}
-                                {statusKehadiran === 'Libur' ? (<View style={styles.Libur} />) : null}
-                            </Right>
-                        </Item>
-                        <Item>
-                            <Text>{jamMasuk}</Text>
-                            {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text> s/d </Text>)}
-                            <Text>{jamKeluar}</Text>
-                            <Right>
-                                <Text>{totalJam}</Text>
-                            </Right>
-                        </Item>
-                    </Body>
-            //     </CardItem>
-            // </Card>
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>  {jamMasuk}   </Text>
+                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}>s/d </Text>)}
+                                <Text style={{ color: 'white' }}> {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>  {totalJam} </Text>
+                                {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                            </View>
+                        </View>
+                    </CardItem>) : null}
+                {statusKehadiran === 'Libur' ? (
+                    <CardItem style={styles.Libur}>
+                        <View rounded>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <Item style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>  {jamMasuk}   </Text>
+                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}>s/d </Text>)}
+                                <Text style={{ color: 'white' }}> {jamKeluar} </Text>
+                            </Item>
+                            <Item style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>  {totalJam} </Text>
+                                {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                            </Item>
+                        </View>
+                    </CardItem>) : null}
+            </Card>
         )
     }
 }
 
 const styles = {
     Hadir: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'green'
+        backgroundColor: '#1abc9c',
+
     },
     TidakHadir: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'red'
-    },
-    Cuti: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'purple'
+        backgroundColor: '#e74c3c',
     },
     Libur: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'yellow'
-    },
-    PerjalananDinas: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'black'
+        backgroundColor: '#f39c12',
     },
 }
 
