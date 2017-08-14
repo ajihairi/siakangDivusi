@@ -59,86 +59,83 @@ export default class TabPribadi extends Component {
 
     render() {
         return (
-            <Card>
-                <CardItem>
-                    <Content>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 10 }}>
-                            <DatePicker
-                                style={{ width: 130, marginLeft: 10 }}
-                                date={this.state.date1}
-                                mode="date"
-                                placeholder="select date"
-                                format="DD-MM-YYYY"
-                                minDate="2017-01-01"
-                                maxDate="2030-12-31"
-                                confirmBtnText="Confirm"
-                                cancelBtnText="Cancel"
+            <Content style={{backgroundColor: '#f4f4f4'}}>
+                <View>
+                    <View>
+                        <DatePicker
+                            style={{ width: 130, marginLeft: 10, marginTop: 10 }}
+                            date={this.state.date1}
+                            mode="date"
+                            placeholder="Start Date"
+                            format="DD-MM-YYYY"
+                            minDate="2017-01-01"
+                            maxDate="2030-12-31"
+                            confirmBtnText="Confirm"
+                            cancelBtnText="Cancel"
 
-                                customStyles={{
-                                    dateIcon: {
-                                        position: 'absolute',
-                                        left: 0,
-                                        top: 4,
-                                        marginLeft: 0
-                                    },
-                                    dateInput: {
-                                        marginLeft: 36
-                                    }
+                            customStyles={{
+                                dateIcon: {
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 4,
+                                    marginLeft: 0
+                                },
+                                dateInput: {
+                                    marginLeft: 36
                                 }
-                                }
-                                onDateChange={(date1) => { this.setState({ date1: date1 }) }}
-                            />
-                            <Text style={{ marginRight: 5, marginLeft: 5 }}> s/d </Text>
-                            <DatePicker
-                                showIcon={false}
-                                style={{ width: 100 }}
-                                date={this.state.date2}
-                                mode="date"
-                                placeholder="select date"
-                                format="DD-MM-YYYY"
-                                minDate="2017-01-01"
-                                maxDate="2030-12-31"
-                                confirmBtnText="Confirm"
-                                cancelBtnText="Cancel"
+                            }
+                            }
+                            onDateChange={(date1) => { this.setState({ date1: date1 }) }}
+                        />
+                    </View>
+                    <View>
+                        <DatePicker
+                            style={{ width: 130, marginLeft: 10, marginTop: 10 }}
+                            date={this.state.date2}
+                            mode="date"
+                            placeholder="End Date"
+                            format="DD-MM-YYYY"
+                            minDate="2017-01-01"
+                            maxDate="2030-12-31"
+                            confirmBtnText="Confirm"
+                            cancelBtnText="Cancel"
 
-                                customStyles={{
-                                    dateIcon: {
-                                        position: 'absolute',
-                                        left: 0,
-                                        top: 4,
-                                        marginLeft: 0
-                                    },
-                                    dateInput: {
-                                        marginLeft: 0,
-                                        marginRight: 5
-                                    }
+                            customStyles={{
+                                dateIcon: {
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 4,
+                                    marginLeft: 0
+                                },
+                                dateInput: {
+                                    marginLeft: 36
                                 }
-                                }
-                                onDateChange={(date2) => { this.setState({ date2: date2 }) }}
-                            />
-                        </View>
-                        <Button block info style={{ marginLeft: 10, marginRight: 10, marginBottom: 15, marginTop: 15 }}>
-                            <Icon large name="search" style={{ color: "white" }}>
-                                <Text> Cari </Text>
-                            </Icon>
-                        </Button>
-                        <Tabs initialPage={0}>
-                            <Tab heading="Hari">
-                                <ListView
-                                    dataSource={this.state.data}
-                                    renderRow={this.renderRowHari}
-                                />
-                            </Tab>
-                            <Tab heading="Aktivitas">
-                                <ListView
-                                    dataSource={this.state.data}
-                                    renderRow={this.renderRowAktivitas}
-                                />
-                            </Tab>
-                        </Tabs>
-                    </Content>
-                </CardItem>
-            </Card>
+                            }
+                            }
+                            onDateChange={(date2) => { this.setState({ date2: date2 }) }}
+                        />
+                    </View>
+                </View>
+                <Button block info style={{ marginLeft: 10, marginRight: 10, marginBottom: 15, marginTop: 15 }}>
+                    <Icon large name="search" style={{ color: "white" }}>
+                        <Text> Cari </Text>
+                    </Icon>
+                </Button>
+                <Tabs initialPage={0}>
+                    <Tab heading="Hari">
+                        <ListView
+                            dataSource={this.state.data}
+                            renderRow={this.renderRowHari}
+                        />
+                    </Tab>
+                    <Tab heading="Aktivitas">
+                        <ListView
+                            dataSource={this.state.data}
+                            renderRow={this.renderRowAktivitas}
+                        />
+                    </Tab>
+                </Tabs>
+            </Content>
         );
     }
 }
