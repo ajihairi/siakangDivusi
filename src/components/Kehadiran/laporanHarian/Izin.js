@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import {Text,View} from 'react-native';
 import { ListItem, Container, Content, InputGroup, Input, Picker, CheckBox, Body, Button, Item } from 'native-base';
 
+import { Actions } from 'react-native-router-flux';
 class Izin extends Component {
     render()
     {

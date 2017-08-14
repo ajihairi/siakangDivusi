@@ -37,10 +37,19 @@ class Aktivitas extends Component {
                         selectedValue = {this.props.shift}
                         onValueChange = {value => this.props.employeeUpdate({prop:'shift', value: value})}
                     >
-                        <Picker.Item label="Mood1" value="Monday" />
-                        <Picker.Item label="Mood2" value="Tuesday" />
-                        <Picker.Item label="Mood3" value="Wednesday" />
-                        <Picker.Item label="Mood4" value="Thursday" />
+                        <Picker.Item label="nama orang 1" value="Monday" />
+                        <Picker.Item label="nama orang 2" value="Tuesday" />
+                        <Picker.Item label="nama orang 3" value="Wednesday" />
+                        <Picker.Item label="nama orang 4" value="Thursday" />
+                        <Picker.Item label="nama orang 5" value="Monday" />
+                        <Picker.Item label="nama orang 6" value="Tuesday" />
+                        <Picker.Item label="nama orang 7" value="Wednesday" />
+                        <Picker.Item label="nama orang 8" value="Thursday" />
+                        <Picker.Item label="nama orang 9" value="Monday" />
+                        <Picker.Item label="nama orang 10" value="Tuesday" />
+                        <Picker.Item label="nama orang 11" value="Wednesday" />
+                        <Picker.Item label="nama orang 12" value="Thursday" />
+                    
                     </Picker>
              <Text>terima kasih untuk </Text>
             <Picker

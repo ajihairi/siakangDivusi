@@ -11,7 +11,7 @@ import {
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemKinerja extends Component {
+class ItemActivitasBawahan extends Component {
     render() {
         return(
             <CardSection>
@@ -37,4 +37,4 @@ class ItemKinerja extends Component {
     }
 }
 
-export default ItemKinerja;
+export default ItemActivitasBawahan;

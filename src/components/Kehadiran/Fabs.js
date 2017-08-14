@@ -27,6 +27,11 @@ class Fabs extends Component {
         onPress={()=>Actions.keyPengajuanCuti()} style={{ backgroundColor:"#34A34F"}}>
              <Icon name="calendar" style={{color:'white'}} />
           </Button>
+          <Button 
+          primary transparent 
+        onPress={()=>Actions.keyPengajuanSakit()} style={{ backgroundColor:"white"}}>
+             <Icon name="cross" style={{color:'red'}} />
+          </Button>
          <Button 
             primary transparent
          onPress={()=>Actions.keyPenugasanLembur()} style={{ backgroundColor:"gray"}}>

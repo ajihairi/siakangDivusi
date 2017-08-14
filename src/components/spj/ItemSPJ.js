@@ -5,32 +5,54 @@ import {
     Right,
     Body,
     Label,
+    Card,
+    CardItem,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
+import * as spjactions from '../actions';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import DetailSPJ from './DetailSPJ';
+import { TouchableWithoutFeedback } from 'react-native';
 
 class ItemSPJ extends Component {
+
     render() {
-        return(
-            <CardSection>
-                <Content>
-                    <Item>
-                        <Body>
-                            <Label  onPress={() => Actions.detailspj()}> {this.props.library.id_spj}</Label>
-                        </Body>
-                    </Item>
-                    <Item>
-                        <Text> {this.props.library.namaPekerjaan}</Text>
-                        <Body>
-                        </Body>
-                        <Right>
-                            <Text> {this.props.library.kotaTujuan}</Text>
-                        </Right>
-                    </Item>
-                </Content>
-            </CardSection>
-        );
+        const {
+            idSPJ,
+            namaPekerjaan,
+            tujuan
+        } = this.props.library;
+
+        return (
+            <Card>
+                <CardItem>
+                    <Body>
+                        <Item>
+                            <Body>
+                                <Label 
+                                onPress={() => Actions.detailspj({idSPJ : idSPJ})}
+                                >
+                                    {idSPJ}
+                                </Label>
+                            </Body>
+            
+                        </Item>
+                        <Item>
+                            <Text>{namaPekerjaan}</Text>
+                            <Body>
+                                <Text></Text>
+                            </Body>
+                            <Right>
+                                <Text>{tujuan}</Text>
+                            </Right>
+                        </Item>
+                    </Body>
+                </CardItem>
+            </Card>
+        )
     }
 }
 

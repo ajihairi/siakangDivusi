@@ -20,7 +20,7 @@ export default class laporanHarian extends Component {
               </Button>
             </Left>
             <Body>
-              <Title>Lembur Driver</Title>
+              <Title>Laporan Harian</Title>
             </Body>
             <Right />
           </Header>  
