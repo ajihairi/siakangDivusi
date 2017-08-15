@@ -6,12 +6,16 @@ import {
     Right,
     Body,
     Label,
+    Card,
+    CardItem,
+    H1,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
 class ItemHariBawahan extends Component {
+
     render() {
         const {
             tanggal,
@@ -22,59 +26,81 @@ class ItemHariBawahan extends Component {
         } = this.props.library;
 
         return (
-            <CardSection>
-                <Content>
-                    <Item>
-                        <Body>
-                            <Label onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
-                                {tanggal}
-                            </Label>
-                        </Body>
-                        <Right>
-                            {statusKehadiran === 'Hadir' ? (<View style={styles.Hadir} />) : null}
-                            {statusKehadiran === 'Tidak Hadir' ? (<View style={styles.TidakHadir} />) : null}
-                            {statusKehadiran === 'Libur' ? (<View style={styles.Libur} />) : null}
-                        </Right>
-                    </Item>
-                    <Item>
-                        <Text>{jamMasuk}</Text>
-                        {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text> s/d </Text>)}
-                        <Text>{jamKeluar}</Text>
-                        <Right>
-                            <Text>{totalJam}</Text>
-                        </Right>
-                    </Item>
-                </Content>
-            </CardSection>
+            <Card>
+                {statusKehadiran === 'Hadir' ? (
+                    <CardItem style={styles.Hadir} >
+                        <View rounded >
+                            <Item style={{ height: 40 }}>
+                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </Item>
+                            <Item style={{ height: 30 }}>
+                                <Text>  {jamMasuk}   </Text>
+                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text>s/d </Text>)}
+                                <Text> {jamKeluar} </Text>
+                            </Item>
+                            <Item style={{ height: 30 }}>
+                                <Text>  {totalJam} </Text>
+                                {(totalJam === null) ? (<Text />) : (<Text> Jam </Text>)}
+                            </Item>
+                        </View>
+                    </CardItem>)
+                    : null}
+                {statusKehadiran === 'Tidak Hadir' ? (
+                    <CardItem style={styles.TidakHadir}>
+                        <View rounded>
+                            <Item style={{ height: 40 }}>
+                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </Item>
+                            <Item style={{ height: 30 }}>
+                                <Text>  {jamMasuk}   </Text>
+                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text>s/d </Text>)}
+                                <Text> {jamKeluar} </Text>
+                            </Item>
+                            <Item style={{ height: 30 }}>
+                                <Text>  {totalJam} </Text>
+                                {(totalJam === null) ? (<Text />) : (<Text> Jam </Text>)}
+                            </Item>
+                        </View>
+                    </CardItem>)
+                    : null}
+                {statusKehadiran === 'Libur' ? (
+                    <CardItem style={styles.Libur}>
+                        <View rounded>
+                            <Item style={{ height: 40 }}>
+                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </Item>
+                            <Item style={{ height: 30 }}>
+                                <Text>  {jamMasuk}   </Text>
+                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text>s/d </Text>)}
+                                <Text> {jamKeluar} </Text>
+                            </Item>
+                            <Item style={{ height: 30 }}>
+                                <Text>  {totalJam} </Text>
+                                {(totalJam === null) ? (<Text />) : (<Text> Jam </Text>)}
+                            </Item>
+                        </View>
+                    </CardItem>)
+                    : null}
+            </Card>
         );
     }
 }
 
 const styles = {
     Hadir: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'green'
+        backgroundColor: '#2ecc71'
     },
     TidakHadir: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'red'
-    },
-    Cuti: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'purple'
+        backgroundColor: '#e74c3c'
     },
     Libur: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'yellow'
-    },
-    PerjalananDinas: {
-        width: 70,
-        height: 30,
-        backgroundColor: 'black'
+        backgroundColor: '#e67e22'
     },
 }
 

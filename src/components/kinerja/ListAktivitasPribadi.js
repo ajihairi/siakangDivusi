@@ -7,7 +7,9 @@ import {
     Label,
     Card,
     CardItem,
+    View,
     Left,
+    H1,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
@@ -17,26 +19,24 @@ class ListHariPribadi extends Component {
     render() {
         const {
             tanggal,
-            aktivitas
+            aktivitas,
+            statusKehadiran
         } = this.props.library;
             return (
-                <Card style={{flex: 1}}>
+                <Card>
                     <CardItem>
-                        <Body>
-                            <Item>
-                                <Body>
-                                    <Label onPress={() => Actions.detailpribadi()}>
-                                        {tanggal}
-                                    </Label>
-                                </Body>
-                            </Item>
-                            <Item>
-                                <Text>Aktivitas :</Text>
-                                <Label><Text>{aktivitas}</Text></Label>
-                            </Item>
-                        </Body>
+                        <View rounded >
+                            <View style={{ height: 40 }}>
+                                <H1 onPress={() => Actions.detailPribadi({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text>  {aktivitas}   </Text>
+                            </View>
+                        </View>
                     </CardItem>
-                </Card>
+            </Card>
             )
     }
 }
