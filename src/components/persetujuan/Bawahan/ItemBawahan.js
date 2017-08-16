@@ -35,8 +35,9 @@ class ItemBawahan extends Component {
             <Card>
                 <CardItem>
                     <Body>
+                    <Text>{namaKaryawan}</Text>
+                            
                         <Item>
-                            <Text>{namaKaryawan}</Text>
                             
                             {jenisPengajuan === 'Izin\/Cuti\/Sakit' ? (<H3 onPress={() => Actions.DetailBawahanCuti({ start_date: start_date, end_date: end_date })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Koreksi' ? (<H3 onPress={() => Actions.DetailBawahanKoreksi({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
