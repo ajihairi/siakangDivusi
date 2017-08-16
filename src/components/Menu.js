@@ -9,6 +9,7 @@ import FormLemburDriver from './FormLemburDriver';
 import Kehadiran from './Kehadiran';
 class Menu extends Component{
 
+  //logout
   async userLogout(){
     try {
       await AsyncStorage.removeItem('id_token');
