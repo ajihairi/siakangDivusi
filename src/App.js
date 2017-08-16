@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, AsyncStorage, Alert } from 'react-native';
 import {
   Container,
   Content,
@@ -55,26 +55,47 @@ import AppPersetujuan from './components/AppPersetujuan';
 
 class App extends Component{
 
+    constructor(){
+      super();
+      this.state ={
+        hasToken: false,
+      }
+    }
 
-  renderContent(){
+
+    compnentDidMount(){
+      AsyncStorage.getItem('id_token').then((token) =>{
+        if (token !== null){
+          this.setState({
+            hasToken: true,
+          });
+        } else{
+          this.setState({
+            hasToken: false,
+          });
+        }
+      })
+    }
+    renderContent(){
         return (
             <Router>
               <Scene key="root" 
               navigationBarStyle={styles.navbarStyle}  
               titleStyle={{color : "#FFF"}}
                 hideNavBar={true}>
-              
-                <Scene
-                key="keyMainMenu"
-                component={MainMenu}
-                title="Si-Akang"
-               initial 
-                />
 
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                  
+                initial={!this.state.hasToken}
+                />
+                
+                <Scene
+                key="keyMainMenu"
+                component={MainMenu}
+                initial={this.state.hasToken}
+                title="Si-Akang"
+               initial 
                 />
 
                 <Scene
