@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, AsyncStorage} from 'react-native';
 import { Button, Card, CardSection, Input, Spinner} from './common';
 //import LinearGradient from 'react-native-linear-gradient';
 import {Actions} from 'react-native-router-flux';
 import MainMenu from './MainMenu';
 
 import {create} from 'apisauce'
-const api = create({baseURL: 'https://www.makanbandung.com/api'})
 
 const ACCESS_TOKEN = 'access_token';
 class LoginForm extends Component {
   constructor(){
     super();
-
     this.state = {
       username: "",
       password: "",
@@ -20,36 +18,40 @@ class LoginForm extends Component {
       showProgress: false,
     }
   }
-  redirect(routeName, accessToken){
-    this.props.navigator.push({
-      name: routeName
-    });
-  }
+  async onValueChange (item, SelectedValue){
+    try {
+      await AsyncStorages.setItem(item, SelectedValue);
 
-  storeToken(responseData){
-    AsyncStorage.setItem(ACCESS_TOKEN, responseData, (err)=> {
-      if(err){
-        console.log("an error");
-        throw err;
-      }
-      console.log("success");
-    }).catch((err)=> {
-        console.log("error is: " + err);
-    });
+    } catch (error){
+      console.log('AsyncStorage Error : ' +error.message);
+    }
   }
-  onLoginPressed() {
-    this.setState({showProgress: true})
-    api.post('https://www.makanbandung.com/api/login', {username: this.state.username, password: this.state.password})
-    .then(response => {
-      //handle success disini
-      console.log(response)
+  userLogin(){
+    if (this.state.username && this.state.password){
+      fetch("https://www.makanbandung.com/api/login", {
+      method: "POST",
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password,
+      })
+    })
+    .then((response) => response.json())
+    .then((responseData) =>{
+      this.onValueChange('id_token', responseData.id_token),
+      Alert.alert(
+        'Login Success!'
+      ),
       Actions.keyMainMenu();
     })
-    .catch(error => {
-      //handle error disni
-      console.log(error)
-    })
+    .done();
+    }
   }
+
+  
   render(){
     return(
 
@@ -61,14 +63,16 @@ class LoginForm extends Component {
           <Input
           placeholder="username"
           label="Username"
-          onChangeText={ (text)=> this.setState({username: text}) }
+          onChangeText={(username) => this.setState({username})}
+          value={this.state.username}
           />
         </CardSection>
 
         <CardSection>
           <Input
-            onChangeText={ (text)=> this.setState({password: text}) }
-            secureTextEntry
+            onChangeText={(password) => this.setState({password})}
+            value={this.state.password}
+            secureTextEntry={true}
             placeholder="password"
             label="Password"
           />
@@ -78,7 +82,7 @@ class LoginForm extends Component {
         <Text style={styles.error}>
           {this.state.error}
         </Text>
-          <Button onPress={this.onLoginPressed.bind(this)}>
+          <Button onPress={this.userLogin.bind(this)}>
             <Text>Log In</Text>
           </Button>
         </CardSection>

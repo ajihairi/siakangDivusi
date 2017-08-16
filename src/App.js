@@ -55,12 +55,27 @@ import AppPersetujuan from './components/AppPersetujuan';
 
 class App extends Component{
 
-    state={loggedIn: null}
-
-
-    componentWillMount(){
+    constructor(){
+      super();
+      this.state ={
+        hasToken: false,
+      }
     }
-    
+
+
+    compnentDidMount(){
+      AsyncStorage.getItem('id_token').then((token) =>{
+        if (token !== null){
+          this.setState({
+            hasToken: true,
+          });
+        } else{
+          this.setState({
+            hasToken: false,
+          });
+        }
+      })
+    }
     renderContent(){
         return (
             <Router>
@@ -69,18 +84,18 @@ class App extends Component{
               titleStyle={{color : "#FFF"}}
                 hideNavBar={true}>
 
-              
-                <Scene
-                key="keyMainMenu"
-                component={MainMenu}
-                title="Si-Akang"
-               
-                />
-
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                  initial
+                initial={!this.state.hasToken}
+                />
+                
+                <Scene
+                key="keyMainMenu"
+                component={MainMenu}
+                initial={this.state.hasToken}
+                title="Si-Akang"
+               
                 />
 
                 <Scene

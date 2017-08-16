@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { View, Image, TouchableHighlight} from 'react-native';
+import { AsyncStorage, View, Image, TouchableHighlight} from 'react-native';
 import { Container, Text,Content, H1, Button, Icon, Col, Row, Grid} from 'native-base';
 import firebase from 'firebase'
 
@@ -7,8 +7,19 @@ import {Actions} from 'react-native-router-flux';
 
 import FormLemburDriver from './FormLemburDriver';
 import Kehadiran from './Kehadiran';
-const Menu =()=>{
-  return(
+class Menu extends Component{
+
+  async userLogout(){
+    try {
+      await AsyncStorage.removeItem('id_token');
+      Alert.alert("logout Success");
+      Actions.keylogin();
+    } catch (error) {
+      console.log ('Asyncstorage error: ' + error.message);
+    }
+  }
+  render(){
+    return (
     <Container style={styles.splashScreens}>
 
     <Content>
@@ -103,7 +114,7 @@ const Menu =()=>{
                   </Col>
                   <Col>
                     <Container style={styles.buttonContainer}>
-                        <Button primary transparent style={styles.buttonStyle}>
+                        <Button primary transparent style={styles.buttonStyle} onPress={this.userLogout}>
                           <Container style={styles.buttonContainer}>
                             <Image source={require('../img/logout.png')} style={styles.iconStyle}/>
                             <Text style={styles.textStyles}> Log Out </Text>
@@ -114,8 +125,8 @@ const Menu =()=>{
                 </Grid>
     </Content>
     </Container>
-
-  );
+    );
+  }
 }
 
 const styles ={
