@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     Item,
     Content,
+    Left,
     Right,
     Body,
     Label,
@@ -23,33 +24,40 @@ class ItemSPJ extends Component {
         const {
             idSPJ,
             namaPekerjaan,
-            tujuan
+            tujuan,
+            statusPembayaran
         } = this.props.library;
 
         return (
             <Card>
-                <CardItem>
-                    <Body>
-                        <Item>
-                            <Body>
-                                <Label 
-                                onPress={() => Actions.detailspj({idSPJ : idSPJ})}
-                                >
+                <CardItem style={styles.Hadir} >
+                    <Left>
+                        <View style={{ height: 40 }}>
+                            <Left>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {idSPJ}
-                                </Label>
-                            </Body>
-            
-                        </Item>
-                        <Item>
-                            <Text>{namaPekerjaan}</Text>
-                            <Body>
-                                <Text></Text>
-                            </Body>
-                            <Right>
-                                <Text>{tujuan}</Text>
-                            </Right>
-                        </Item>
-                    </Body>
+                                </H1>
+                            </Left>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Left>
+                                <Text style={{ color: 'white' }}>  {namaPekerjaan}   </Text>
+                            </Left>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Left>
+                                <Text style={{ color: 'white' }}>  {tujuan} </Text>
+                            </Left>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Left>
+                                <Text style={{ color: 'white' }}>  {statusPembayaran} </Text>
+                            </Left>
+                        </View>
+                    </Left>
+                    <Right>
+                        <Text>nama</Text>
+                    </Right>
                 </CardItem>
             </Card>
         )

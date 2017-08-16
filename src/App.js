@@ -68,13 +68,13 @@ class App extends Component{
                 key="keyMainMenu"
                 component={MainMenu}
                 title="Si-Akang"
-               
+               initial 
                 />
 
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                  initial
+                  
                 />
 
                 <Scene
@@ -124,7 +124,7 @@ class App extends Component{
                     key = "kinerja"
                     component = { AppKinerja }
                     title= "Kinerja" 
-                         
+                    
                 />
 
                 <Scene
@@ -148,7 +148,8 @@ class App extends Component{
                 <Scene
                     key = "detailpribadi"
                     component = { DetailPribadi }
-                    title= "Detail Laporan Pribadi"               
+                    title= "Detail Laporan Pribadi"    
+                              
                 />
 
                 <Scene

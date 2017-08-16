@@ -31,47 +31,28 @@ class ItemLemburDriver extends Component {
         } = this.props.library;
 
         return (
-
             <Card>
                 <CardItem>
-                    <Body>
-                        <Item>
-                            <Body>
-                                <Label
-                                    onPress={() => Actions.detaillemburdriver({ tanggal: tanggal })}
-                                >
-                                    {tanggal}
-                                </Label>
-                            </Body>
-                        </Item>
-                        <Item>
-                            <Left>
-                                <View>
-                                    <Item>
-                                        <Text>Pagi :</Text>
-                                    </Item>
-                                    <Item>
-                                        <Text>{jamMulaiPagi}</Text>
-                                        {(jamMulaiPagi === null && jamSelesaiPagi === null) ? (<Text />) : (<Text> s/d </Text>)}
-                                        <Text>{jamSelesaiPagi}</Text>
-                                    </Item>
-                                </View>
-                                <View>
-                                    <Item>
-                                        <Text>Malam :</Text>
-                                    </Item>
-                                    <Item>
-                                        <Text>{jamMulaiMalam}</Text>
-                                        {(jamMulaiMalam === null && jamSelesaiMalam === null) ? (<Text />) : (<Text> s/d </Text>)}
-                                        <Text>{jamSelesaiMalam}</Text>
-                                    </Item>
-                                </View>
-                            </Left>
-                            <Right>
-                                <Text> {statusPembayaran}</Text>
-                            </Right>
-                        </Item>
-                    </Body>
+                    <View>
+                        <View style={{ height: 40 }}>
+                            <H1 onPress={() => Actions.detaillemburdriver({ tanggal: tanggal })}>
+                                {tanggal}
+                            </H1>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{jamMulaiPagi}
+                                {(jamMulaiPagi === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                {jamKeluar} </Text>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{totalJam}
+                                {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                            </Text>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{statusPembayaran}</Text>
+                        </View>
+                    </View>
                 </CardItem>
             </Card>
         );
