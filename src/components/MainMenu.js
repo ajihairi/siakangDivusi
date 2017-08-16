@@ -3,10 +3,9 @@ import { Container, Header, Content, Tab, Tabs} from 'native-base';
 import Menu from './Menu';
 import {View} from 'react-native';
 import Profile from './Profile';
+import {Router, Scene, Actions} from 'react-native-router-flux';
 
-import {Router, Scene} from 'react-native-router-flux';
-
- MainMenu =()=>{
+ const MainMenu =()=>{
 
     return (
 
