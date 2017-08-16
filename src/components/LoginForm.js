@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Text, View, Image, AsyncStorage} from 'react-native';
+import {Text, View, Alert, Image, AsyncStorage} from 'react-native';
 import { Button, Card, CardSection, Input, Spinner} from './common';
 //import LinearGradient from 'react-native-linear-gradient';
 import {Actions} from 'react-native-router-flux';
@@ -28,7 +28,7 @@ class LoginForm extends Component {
   }
   userLogin(){
     if (this.state.username && this.state.password){
-      fetch("https://www.makanbandung.com/api/login", {
+      fetch("https://si-akang-dev.divusi.com/api/login", {
       method: "POST",
       headers: {
         'Accept' : 'application/json',

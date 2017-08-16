@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { AsyncStorage, View, Image, TouchableHighlight} from 'react-native';
+import { AsyncStorage,Alert, View, Image, TouchableHighlight} from 'react-native';
 import { Container, Text,Content, H1, Button, Icon, Col, Row, Grid} from 'native-base';
 import firebase from 'firebase'
 
