@@ -61,17 +61,7 @@ export default class BodyPribadi extends Component {
         const { SearchStyle, ViewStyle, ButtonStyle, TextStyle, ListStyle } = styles;
 
         return (
-                <Content>
-                    <Item style={SearchStyle} rounded>
-                        <Icon name="ios-search" />
-                        <Input
-                            placeholder="Search"
-                        />
-                        <Icon name="ios-people" />
-                    </Item>
-                    <Button style={ButtonStyle} block rounded>
-                        <Text style={TextStyle}>Search</Text>
-                    </Button>
+                <Content style={{backgroundColor:'#f4f4f4'}}>
                     <ListView
                         dataSource={this.state.data}
                         renderRow={this.renderRow}

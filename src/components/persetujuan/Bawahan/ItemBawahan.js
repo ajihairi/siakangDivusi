@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
+import { View, Image } from 'react-native';
 import {
     Item,
     Content,
     Right,
     Body,
     Label,
+    Text,
+    Left,
+    H1,
     Card,
     CardItem,
-    Text,
-    H3,
-    Icon
 } from 'native-base';
-import { CardSection } from '../../common';
 import { Actions } from 'react-native-router-flux';
-import * as Bawahanactions from '../../actions';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { TouchableWithoutFeedback } from 'react-native';
 
 class ItemBawahan extends Component {
 
@@ -27,40 +23,65 @@ class ItemBawahan extends Component {
             status,
             start_date,
             end_date,
-            namaKaryawan
+            namaKaryawan,
+            idKaryawan
 
         } = this.props.library;
-
         return (
             <Card>
-                <CardItem>
-                    <Body>
-                    <Text>{namaKaryawan}</Text>
-                            
-                        <Item>
-                            
-                            {jenisPengajuan === 'Izin\/Cuti\/Sakit' ? (<H3 onPress={() => Actions.DetailBawahanCuti({ start_date: start_date, end_date: end_date })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Koreksi' ? (<H3 onPress={() => Actions.DetailBawahanKoreksi({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Remote' ? (<H3 onPress={() => Actions.DetailBawahanRemote({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Lembur' ? (<H3 onPress={() => Actions.DetailBawahanLembur({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Lembur Driver' ? (<H3 onPress={() => Actions.DetailBawahanDriver({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Izin Keluar Kantor' ? (<H3 onPress={() => Actions.DetailBawahanIzin({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Klaim Lembur' ? (<H3  > {jenisPengajuan}</H3>) : null}
-                        </Item>
-                        <Item>
-                            <Text> {tanggalPengajuan}</Text>
-                            <Text>    s/d   </Text>
-                            <Text> {tanggalPengajuan}</Text>
-                            <Right>
-                                {status === 'Disetujui' ? (<Icon name='ios-checkmark-circle-outline' />) : null}
-                                {status === 'Diajukan' ? (<Icon name='ios-remove-circle-outline' />) : null}
-                                {status === 'Ditolak' ? (<Icon name='i' />) : null}
-                            </Right>
-                        </Item>
-                    </Body>
-                </CardItem>
+                
+                    <CardItem style={styles.Hadir} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ paddingTop: 5, color: 'black' }} onPress={() => Actions.DetailPribadiCuti({ idKaryawan: idKaryawan })}>  {jenisPengajuan}
+                                </H1>
+
+                            </View>
+                            <View style={{ paddingLeft: 5, paddingBottom: 10, paddingRight: 5, paddingTop: 5, height: 30 }}>
+                                <Text style={{ color: 'black' }}>  {namaKaryawan}
+                                    {(namaKaryawan === null) ? (<Text />) : (<Text style={{ color: 'black' }}></Text>)}
+                                </Text>
+                            </View>
+                            <View style={{ paddingLeft: 5, paddingBottom: 5, paddingRight: 5, paddingTop: 5, height: 30 }}>
+                                <Text style={{ color: 'black' }}>  {tanggalPengajuan}
+                                 </Text>
+                            </View>
+                        </View>
+                        <Right>  
+                            {status === 'Disetujui' ? (<Image source={require('../../../img/icons/check_black.png')} style={styles.imageStyle}/>) : null}
+                            {status === 'Diajukan' ? (<Image source={require('../../../img/icons/paperplane_black.png')} style={styles.imageStyle}/>) : null}
+                            {status === 'Ditolak' ? (<Image source={require('../../../img/icons/cross_black.png')} style={styles.imageStyle}/>) : null}
+                           </Right>
+
+                    </CardItem>
+               
             </Card>
         )
+    }
+
+}
+
+
+const styles = {
+    Hadir: {
+        backgroundColor: 'white',
+    },
+    TidakHadir: {
+        backgroundColor: '#e74c3c',
+    },
+    Libur: {
+        backgroundColor: '#f39c12',
+    },
+    Cuti: {
+        backgroundColor: 'white',
+    },
+    PerjalananDinas: {
+        backgroundColor: '#2980b9',
+    },
+    imageStyle: {
+        width: 50,
+        height: 50,
+        resizeMode: 'contain'
     }
 }
 
