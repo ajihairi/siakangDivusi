@@ -8,7 +8,6 @@ import { createStore } from 'redux';
 export default class AppKinerja extends Component {
   render() {
     return (
-      <Provider store={createStore(reducers)}>
         <Container>
           <Header>
             <Left>
@@ -23,7 +22,6 @@ export default class AppKinerja extends Component {
           </Header>
           <BodyKinerja />
         </Container>
-      </Provider>
     );
   }
 }

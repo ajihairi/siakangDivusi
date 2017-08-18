@@ -21,7 +21,7 @@ import { ListView } from 'react-native';
 
 var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
-export default class DetailSPJ extends Component {
+export default class DetailKinerjaPribadi extends Component {
     constructor() {
         super()
         this.state = {

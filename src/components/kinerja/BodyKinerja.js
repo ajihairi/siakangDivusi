@@ -9,7 +9,7 @@ import {
   Text
 } from 'native-base';
 import TabPribadi from './TabPribadi';
-import TabBawahan from './contoh';
+import TabBawahan from './TabBawahan';
 import { Actions } from 'react-native-router-flux';
 
 export default class BodyKinerja extends Component {
@@ -17,7 +17,7 @@ export default class BodyKinerja extends Component {
     return (
       <Container>
         <Content>
-          <Tabs initialPage={1}>
+          <Tabs initialPage={0}>
             <Tab  style={styles.tab} heading="Pribadi">
               <TabPribadi />
             </Tab>

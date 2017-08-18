@@ -5,14 +5,18 @@ import {
     Form,
     Item,
     Input,
+    Left,
+    Right,
     Label,
     Text,
-    Button,
     View,
+    Footer,
+    Body,
+    Button
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-export default class DetailLembur extends Component {
+export default class ItemDetailLembur extends Component {
     render() {
         const {
             namaPekerjaan,
@@ -25,50 +29,58 @@ export default class DetailLembur extends Component {
 
         return (
             <View>
-                    <Form>
-                        <Item stackedLabel>
-                            <Label>Nama Pekerjaan :</Label>
-                            <Label>
-                                <Text>{namaPekerjaan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Tanggal :</Label>
-                            <Label>
-                                <Text>{tanggal}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Jam Mulai :</Label>
-                            <Label>
-                                <Text>{jamMulai}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Jam Selesai :</Label>
-                            <Label>
-                                <Text>s.d {jamSelesai}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Hasil Kerja :</Label>
-                            <Label>
-                                <Text>{hasilKerja}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Status Pembayaran :</Label>
-                            <Label>
-                                <Text>{statusPembayaran}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                    </Form>
+                <Form style={{ marginLeft: 10 }}>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Nama Pekerjaan</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{namaPekerjaan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Tanggal</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggal}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jam Mulai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamMulai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jam Selesai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamSelesai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Hasil Kerja</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{hasilKerja}</Text>
+                            </View>
+                        </View>
+                    </View>
+                </Form>
             </View>
         );
     }

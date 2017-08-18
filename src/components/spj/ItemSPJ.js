@@ -2,23 +2,20 @@ import React, { Component } from 'react';
 import {
     Item,
     Content,
-    Left,
     Right,
-    Body,
-    Label,
     Card,
     CardItem,
+    H1,
+    View,
+    Body,
+    Label,
+    H3,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import DetailSPJ from './DetailSPJ';
-import { TouchableWithoutFeedback } from 'react-native';
 
 class ItemSPJ extends Component {
-
     render() {
         const {
             idSPJ,
@@ -26,40 +23,28 @@ class ItemSPJ extends Component {
             tujuan,
             statusPembayaran
         } = this.props.library;
-
         return (
             <Card>
-                <CardItem style={styles.Hadir} >
-                    <Left>
+                <CardItem>
+                    <View>
+                        <View style={{ height: 35 }}>
+                            <H3 onPress={() => Actions.detailspj({ idSPJ: idSPJ })}>
+                                {idSPJ}
+                            </H3>
+                        </View>
                         <View style={{ height: 40 }}>
-                            <Left>
-                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
-                                    {idSPJ}
-                                </H1>
-                            </Left>
+                            <H1>{namaPekerjaan}</H1>
                         </View>
                         <View style={{ height: 30 }}>
-                            <Left>
-                                <Text style={{ color: 'white' }}>  {namaPekerjaan}   </Text>
-                            </Left>
+                            <Text>{tujuan}</Text>
                         </View>
                         <View style={{ height: 30 }}>
-                            <Left>
-                                <Text style={{ color: 'white' }}>  {tujuan} </Text>
-                            </Left>
+                            <Text>{statusPembayaran}</Text>
                         </View>
-                        <View style={{ height: 30 }}>
-                            <Left>
-                                <Text style={{ color: 'white' }}>  {statusPembayaran} </Text>
-                            </Left>
-                        </View>
-                    </Left>
-                    <Right>
-                        <Text>nama</Text>
-                    </Right>
+                    </View>
                 </CardItem>
             </Card>
-        )
+        );
     }
 }
 

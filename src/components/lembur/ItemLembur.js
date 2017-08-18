@@ -5,6 +5,8 @@ import {
     Right,
     Card,
     CardItem,
+    H1,
+    View,
     Body,
     Label,
     Text
@@ -17,7 +19,6 @@ class ItemLembur extends Component {
         const {
             tanggal,
             jamMulai,
-            namaPekerjaan,
             jamSelesai,
             statusPembayaran
         } = this.props.library;
@@ -31,17 +32,9 @@ class ItemLembur extends Component {
                             </H1>
                         </View>
                         <View style={{ height: 30 }}>
-                            <Text>{namaPekerjaan}</Text>
-                        </View>
-                        <View style={{ height: 30 }}>
-                            <Text>{jamMasuk}
-                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
-                                {jamKeluar} </Text>
-                        </View>
-                        <View style={{ height: 30 }}>
-                            <Text>{totalJam}
-                                {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
-                            </Text>
+                            <Text>{jamMulai}
+                                {(jamMulai === null && jamSelesai === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                {jamSelesai} </Text>
                         </View>
                         <View style={{ height: 30 }}>
                             <Text>{statusPembayaran}</Text>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import {
     Item,
     Content,
@@ -47,10 +47,10 @@ class ListHariPribadi extends Component {
                             </View>
                         </View>
                         <Right>
-                            <Text>nama</Text>
+                            <Image source={require('../../img/icons/check_white.png')} style={styles.imageStyle} />
                         </Right>
                     </CardItem>
-                    ) : null}
+                ) : null}
                 {statusKehadiran === 'Tidak Hadir' ? (
                     <CardItem style={styles.TidakHadir} >
                         <View>
@@ -71,10 +71,10 @@ class ListHariPribadi extends Component {
                             </View>
                         </View>
                         <Right>
-                            <Text>nama</Text>
+                            <Image source={require('../../img/icons/cross_white.png')} style={styles.imageStyle} />
                         </Right>
                     </CardItem>
-                    ) : null}
+                ) : null}
                 {statusKehadiran === 'Libur' ? (
                     <CardItem style={styles.Libur} >
                         <View>
@@ -95,10 +95,34 @@ class ListHariPribadi extends Component {
                             </View>
                         </View>
                         <Right>
-                            <Text>nama</Text>
+                            <Image source={require('../../img/icons/holiday_white.png')} style={styles.imageStyle} />
                         </Right>
                     </CardItem>
-                    ) : null}
+                ) : null}
+                {statusKehadiran === 'Cuti' ? (
+                    <CardItem style={styles.Cuti} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
+                            </View>
+                        </View>
+                        <Right>
+                            <Image source={require('../../img/icons/suitcase_black.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
             </Card>
         )
     }
@@ -115,6 +139,15 @@ const styles = {
     Libur: {
         backgroundColor: '#f39c12',
     },
+    Cuti: {
+            backgroundColor: 'white',
+            width: 750,
+        },
+    imageStyle: {
+        width: 50,
+        height: 50,
+        resizeMode:'contain'
+    }
 }
 
 export default ListHariPribadi;

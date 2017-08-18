@@ -20,7 +20,7 @@ class ListHariPribadi extends Component {
         const {
             tanggal,
             aktivitas,
-            statusKehadiran
+            mood
         } = this.props.library;
         return (
             <Card>
@@ -28,7 +28,7 @@ class ListHariPribadi extends Component {
                     <Left>
                         <View>
                             <View style={{ height: 40 }}>
-                                <H1 onPress={() => Actions.detailPribadi({ tanggal: tanggal })}>
+                                <H1 onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {tanggal}
                                 </H1>
                             </View>
@@ -38,7 +38,7 @@ class ListHariPribadi extends Component {
                         </View>
                         </Left>
                         <Right>
-                            <Text>nama</Text>
+                            <Text>{mood}</Text>
                         </Right>
                 </CardItem>
             </Card>

@@ -8,7 +8,6 @@ import BodyLemburDriver from './lemburdriver/BodyLemburDriver';
 export default class AppLemburDriver extends Component {
     render() {
     return (
-      <Provider store={createStore(reducers)}>
         <Container>
           <Header>
             <Left>
@@ -23,7 +22,6 @@ export default class AppLemburDriver extends Component {
           </Header>
           <BodyLemburDriver />
         </Container>
-      </Provider>
     );
   }
 }

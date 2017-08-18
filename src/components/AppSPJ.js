@@ -8,7 +8,6 @@ import BodySPJ from './spj/BodySPJ';
 export default class AppSPJ extends Component {
     render() {
     return (
-      <Provider store={createStore(reducers)}>
         <Container>
           <Header>
             <Left>
@@ -23,7 +22,6 @@ export default class AppSPJ extends Component {
           </Header>
           <BodySPJ />
         </Container>
-      </Provider>
     );
   }
 }

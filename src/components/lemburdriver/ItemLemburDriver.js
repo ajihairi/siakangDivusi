@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import {
     Item,
-    Container,
     Content,
     Right,
-    Body,
-    Label,
     Card,
     CardItem,
-    Left,
+    H1,
+    View,
+    Body,
+    Label,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { TouchableWithoutFeedback, View } from 'react-native';
-import DetailLemburDriver from './DetailLemburDriver';
 
 class ItemLemburDriver extends Component {
     render() {
@@ -28,7 +24,6 @@ class ItemLemburDriver extends Component {
             jamSelesaiMalam,
             statusPembayaran
         } = this.props.library;
-
         return (
             <Card>
                 <CardItem>
@@ -40,13 +35,13 @@ class ItemLemburDriver extends Component {
                         </View>
                         <View style={{ height: 30 }}>
                             <Text>{jamMulaiPagi}
-                                {(jamMulaiPagi === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
-                                {jamKeluar} </Text>
+                                {(jamMulaiPagi === null && jamSelesaiPagi === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                {jamSelesaiPagi} </Text>
                         </View>
                         <View style={{ height: 30 }}>
-                            <Text>{totalJam}
-                                {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
-                            </Text>
+                            <Text>{jamMulaiMalam}
+                                {(jamMulaiMalam === null && jamSelesaiMalam === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                {jamSelesaiMalam} </Text>
                         </View>
                         <View style={{ height: 30 }}>
                             <Text>{statusPembayaran}</Text>
@@ -58,13 +53,4 @@ class ItemLemburDriver extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return { selectLibraryId: state.selectLibraryId };
-}
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(lemburactions, dispatch)
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemLemburDriver);
+export default ItemLemburDriver;

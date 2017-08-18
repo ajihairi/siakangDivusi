@@ -8,7 +8,6 @@ import BodyLembur from './lembur/BodyLembur';
 export default class AppLembur extends Component {
     render() {
     return (
-      <Provider store={createStore(reducers)}>
         <Container>
           <Header>
             <Left>
@@ -23,7 +22,6 @@ export default class AppLembur extends Component {
           </Header>
           <BodyLembur />
         </Container>
-      </Provider>
     );
   }
 }
