@@ -65,9 +65,6 @@ export default class DetailKehadiran extends Component {
                         renderRow={this.renderRow}
                     />
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} block>
-                    <Text>Back</Text>
-                </Button>
             </Container>
         );
     }
