@@ -70,7 +70,7 @@ class FormLemburDriver extends Component {
           <Form style={{ padding: 15 }}>
             <Text note> Pekerjaan </Text>
             <Picker
-              iosHeader="Select one"
+            placeholder="Select one"
               mode="dropdown"
               selectedValue={this.state.selected1}
               onValueChange={this.onValueChange.bind(this)}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import { Container, Header, Left, Body, Title, Icon, Button, Right } from 'native-base';
-import reducers from './reducers';
 import BodyKinerja from './kinerja/BodyKinerja';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';

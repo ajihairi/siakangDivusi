@@ -95,7 +95,7 @@ class App extends Component{
                 component={MainMenu}
                 initial={this.state.hasToken}
                 title="Si-Akang"
-               initial 
+                initial
                 />
 
                 <Scene
