@@ -16,8 +16,6 @@ import {
     Body,
     Header
 } from 'native-base';
-// import ListLembur from './components/ListLembur';
-// import DetailLaporan from './components/DetailLaporan';
 import ItemLembur from './ItemLembur';
 
 var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
@@ -59,7 +57,7 @@ export default class BodyLembur extends Component {
 
         return (
             <Container>
-                <Content>
+                <Content style={{ backgroundColor: '#f4f4f4', marginLeft: 10, marginRight: 10 }}>
                     <ListView
                         dataSource={this.state.data}
                         renderRow={this.renderRow}
@@ -86,5 +84,3 @@ const styles = {
         position: 'relative',
     }
 }
-
-module.export = BodyLembur;

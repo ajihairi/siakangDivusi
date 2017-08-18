@@ -22,7 +22,7 @@ class ListHariBawahan extends Component {
             nama_karyawan,
             tanggal,
             aktivitas,
-            statusKehadiran
+            mood
         } = this.props.library;
         return (
             <Card>
@@ -40,7 +40,7 @@ class ListHariBawahan extends Component {
                         </View>
                         </Left>
                         <Right>
-                            <Text>nama</Text>
+                            <Text>{mood}</Text>
                         </Right>
                 </CardItem>
             </Card>

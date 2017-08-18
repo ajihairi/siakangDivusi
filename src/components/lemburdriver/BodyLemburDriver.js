@@ -20,8 +20,7 @@ import ItemLemburDriver from './ItemLemburDriver';
 
 var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
-export default class BodyLemburDriver extends Component {
-
+export default class BodyLembur extends Component {
     constructor() {
         super()
         this.state = {
@@ -58,18 +57,7 @@ export default class BodyLemburDriver extends Component {
 
         return (
             <Container>
-
-                <Header searchBar rounded>
-                    <Item>
-                        <Icon name="ios-search" />
-                        <Input placeholder="Search" />
-                        <Icon name="ios-people" />
-                    </Item>
-                    <Button transparent>
-                        <Text>Search</Text>
-                    </Button>
-                </Header>
-                <Content>
+                <Content style={{ backgroundColor: '#f4f4f4', marginLeft: 10, marginRight: 10 }}>
                     <ListView
                         dataSource={this.state.data}
                         renderRow={this.renderRow}
@@ -96,5 +84,3 @@ const styles = {
         position: 'relative',
     }
 }
-
-module.export = BodyLemburDriver;

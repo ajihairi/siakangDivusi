@@ -5,6 +5,8 @@ import {
     Form,
     Item,
     Input,
+    Left,
+    Right,
     Label,
     Text,
     View,
@@ -16,87 +18,113 @@ import { Actions } from 'react-native-router-flux';
 
 export default class ItemDetailSPJ extends Component {
     render() {
-
         const {
             idSPJ,
             namaPekerjaan,
-            statusPerjalananDinas,
-            statusPembayaran,
-            durasi,
-            jenisKota,
-            kotaTujuan,
+            tanggalMulai,
             tanggalSelesai,
-            tanggalMulai
+            kotaTujuan,
+            jenisKOta,
+            durasi,
+            statusPembayaran,
+            statusPerjalananDinas
         } = this.props.library;
 
-            return (
-                <View>
-                    <Form>
-                        <Item stackedLabel>
-                            <Label>ID SPJ :</Label>
-                            <Label>
-                                <Text>{idSPJ}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Nama Pekerjaan :</Label>
-                            <Label>
-                                <Text>{namaPekerjaan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Tanggal Mulai :</Label>
-                            <Label>
-                                <Text>{tanggalMulai}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Tanggal Selesai :</Label>
-                            <Label>
-                                <Text>{tanggalSelesai}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
-                            <Label>
-                                <Text>{kotaTujuan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
-                            <Label>
-                                <Text>{jenisKota}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Durasi :</Label>
-                            <Label>
-                                <Text>{durasi}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Pembayaran :</Label>
-                            <Label>
-                                <Text>{statusPembayaran}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Perjalanan Dinas :</Label>
-                            <Label>
-                                <Text>{statusPerjalananDinas}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                    </Form>
-                </View>
-            );
+        return (
+            <View>
+                <Form style={{ marginLeft: 10 }}>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Id SPJ</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{idSPJ}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Nama Pekerjaan</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{namaPekerjaan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Tanggal Mulai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggalMulai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Tanggal Selesai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggalSelesai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Kota Tujuan</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{kotaTujuan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jenis Tujuan</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jenisKOta}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Durasi</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{durasi}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Status Pembayaran</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{statusPembayaran}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Status Perjalanan Dinas</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{statusPerjalananDinas}</Text>
+                            </View>
+                        </View>
+                    </View>
+                </Form>
+            </View>
+        );
     }
 }
