@@ -1,41 +1,51 @@
 import React, { Component } from 'react';
-import { 
-    Container,
+import {
+    Item,
     Content,
-    List,
-    ListItem,
-    Text,
+    Right,
+    Body,
     Label,
     Card,
     CardItem,
-    Body,
-    Item
- } from 'native-base';
+    View,
+    Left,
+    H1,
+    Text
+} from 'native-base';
+import { CardSection } from '../common';
+import { Actions } from 'react-native-router-flux';
 
-export default class ListAktivitasBawahan extends Component {
+class ListHariBawahan extends Component {
     render() {
         const {
+            id_karyawan,
+            nama_karyawan,
             tanggal,
-            aktivitas
+            aktivitas,
+            mood
         } = this.props.library;
         return (
-            <Card style={{flex: 1}}>
-                    <CardItem>
-                        <Body>
-                            <Item>
-                                <Body>
-                                    <Label onPress={() => Actions.detailbawahan()}>
-                                        {tanggal}
-                                    </Label>
-                                </Body>
-                            </Item>
-                            <Item>
-                                <Text>Aktivitas :</Text>
-                                <Label><Text>{aktivitas}</Text></Label>
-                            </Item>
-                        </Body>
-                    </CardItem>
-                </Card>
-        );
+            <Card>
+                <CardItem>
+                    <Left>
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal, nama_karyawan: nama_karyawan })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text>{aktivitas}</Text>
+                            </View>
+                        </View>
+                        </Left>
+                        <Right>
+                            <Text>{mood}</Text>
+                        </Right>
+                </CardItem>
+            </Card>
+        )
     }
 }
+
+export default ListHariBawahan;

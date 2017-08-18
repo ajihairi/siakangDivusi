@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import { Container, Header, Left, Body, Title, Icon, Button, Right } from 'native-base';
-import reducers from './reducers';
 import BodyKinerja from './kinerja/BodyKinerja';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -9,7 +8,6 @@ import { createStore } from 'redux';
 export default class AppKinerja extends Component {
   render() {
     return (
-      <Provider store={createStore(reducers)}>
         <Container>
           <Header>
             <Left>
@@ -24,7 +22,6 @@ export default class AppKinerja extends Component {
           </Header>
           <BodyKinerja />
         </Container>
-      </Provider>
     );
   }
 }

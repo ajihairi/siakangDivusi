@@ -95,7 +95,7 @@ class App extends Component{
                 component={MainMenu}
                 initial={this.state.hasToken}
                 title="Si-Akang"
-               
+                initial
                 />
 
                 <Scene
@@ -145,7 +145,7 @@ class App extends Component{
                     key = "kinerja"
                     component = { AppKinerja }
                     title= "Kinerja" 
-                         
+                    
                 />
 
                 <Scene
@@ -169,7 +169,8 @@ class App extends Component{
                 <Scene
                     key = "detailpribadi"
                     component = { DetailPribadi }
-                    title= "Detail Laporan Pribadi"               
+                    title= "Detail Laporan Pribadi"    
+                              
                 />
 
                 <Scene

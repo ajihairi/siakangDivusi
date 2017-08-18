@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { Container, Header, Left, Body, Title, Icon, Button , Right} from 'native-base';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducers from './reducers';
 import { Actions } from 'react-native-router-flux';
 import BodySPJ from './spj/BodySPJ';
 
 export default class AppSPJ extends Component {
     render() {
     return (
-      <Provider store={createStore(reducers)}>
         <Container>
           <Header>
             <Left>
@@ -24,7 +22,6 @@ export default class AppSPJ extends Component {
           </Header>
           <BodySPJ />
         </Container>
-      </Provider>
     );
   }
 }

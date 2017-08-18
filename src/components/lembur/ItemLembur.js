@@ -3,6 +3,10 @@ import {
     Item,
     Content,
     Right,
+    Card,
+    CardItem,
+    H1,
+    View,
     Body,
     Label,
     Text
@@ -19,25 +23,25 @@ class ItemLembur extends Component {
             statusPembayaran
         } = this.props.library;
         return (
-            <CardSection>
-                <Content>
-                    <Item>
-                        <Body>
-                            <Label onPress={() => Actions.detaillembur({tanggal: tanggal})}>
+            <Card>
+                <CardItem>
+                    <View>
+                        <View style={{ height: 40 }}>
+                            <H1 onPress={() => Actions.detaillembur({ tanggal: tanggal })}>
                                 {tanggal}
-                            </Label>
-                        </Body>
-                    </Item>
-                    <Item>
-                        <Text> {jamMulai}</Text>
-                        {(jamMulai === null && jamSelesai === null) ? (<Text />) : (<Text> s/d </Text>)}
-                        <Text>{jamSelesai}</Text>
-                        <Right>
-                            <Text> {statusPembayaran}</Text>
-                        </Right>
-                    </Item>
-                </Content>
-            </CardSection>
+                            </H1>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{jamMulai}
+                                {(jamMulai === null && jamSelesai === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                {jamSelesai} </Text>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{statusPembayaran}</Text>
+                        </View>
+                    </View>
+                </CardItem>
+            </Card>
         );
     }
 }

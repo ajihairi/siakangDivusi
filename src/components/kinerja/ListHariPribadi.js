@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import {
     Item,
     Content,
@@ -29,64 +29,100 @@ class ListHariPribadi extends Component {
             <Card>
                 {statusKehadiran === 'Hadir' ? (
                     <CardItem style={styles.Hadir} >
-                            
-                                <Left style={{ height: 40 }}>
-                                    <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
-                                        {tanggal}
-                                    </H1>
-                                </Left>
-                                <Left style={{ height: 30 }}>
-                                    <Text style={{ color: 'white' }}>  {jamMasuk}   </Text>
-                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}>s/d </Text>)}
-                                    <Text style={{ color: 'white' }}> {jamKeluar} </Text>
-                                </Left>
-                                <Left style={{ height: 30 }}>
-                                    <Text style={{ color: 'white' }}>  {totalJam} </Text>
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
                                     {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
-                                </Left>
-                           
-                       
-                                <Text>nama</Text>
-                           
-                    </CardItem>) : null}
+                                </Text>
+                            </View>
+                        </View>
+                        <Right>
+                            <Image source={require('../../img/icons/check_white.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
                 {statusKehadiran === 'Tidak Hadir' ? (
-                    <CardItem style={styles.TidakHadir}>
-                        <View rounded>
+                    <CardItem style={styles.TidakHadir} >
+                        <View>
                             <View style={{ height: 40 }}>
                                 <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {tanggal}
                                 </H1>
                             </View>
                             <View style={{ height: 30 }}>
-                                <Text style={{ color: 'white' }}>  {jamMasuk}   </Text>
-                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}>s/d </Text>)}
-                                <Text style={{ color: 'white' }}> {jamKeluar} </Text>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
                             </View>
                             <View style={{ height: 30 }}>
-                                <Text style={{ color: 'white' }}>  {totalJam} </Text>
-                                {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
                             </View>
                         </View>
-                    </CardItem>) : null}
+                        <Right>
+                            <Image source={require('../../img/icons/cross_white.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
                 {statusKehadiran === 'Libur' ? (
-                    <CardItem style={styles.Libur}>
-                        <View rounded>
+                    <CardItem style={styles.Libur} >
+                        <View>
                             <View style={{ height: 40 }}>
                                 <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {tanggal}
                                 </H1>
                             </View>
-                            <Item style={{ height: 30 }}>
-                                <Text style={{ color: 'white' }}>  {jamMasuk}   </Text>
-                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}>s/d </Text>)}
-                                <Text style={{ color: 'white' }}> {jamKeluar} </Text>
-                            </Item>
-                            <Item style={{ height: 30 }}>
-                                <Text style={{ color: 'white' }}>  {totalJam} </Text>
-                                {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
-                            </Item>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
+                            </View>
                         </View>
-                    </CardItem>) : null}
+                        <Right>
+                            <Image source={require('../../img/icons/holiday_white.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
+                {statusKehadiran === 'Cuti' ? (
+                    <CardItem style={styles.Cuti} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
+                            </View>
+                        </View>
+                        <Right>
+                            <Image source={require('../../img/icons/suitcase_black.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
             </Card>
         )
     }
@@ -103,6 +139,15 @@ const styles = {
     Libur: {
         backgroundColor: '#f39c12',
     },
+    Cuti: {
+            backgroundColor: 'white',
+            width: 750,
+        },
+    imageStyle: {
+        width: 50,
+        height: 50,
+        resizeMode:'contain'
+    }
 }
 
 export default ListHariPribadi;

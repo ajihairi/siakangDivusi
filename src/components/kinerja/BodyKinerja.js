@@ -18,7 +18,7 @@ export default class BodyKinerja extends Component {
       <Container>
         <Content>
           <Tabs initialPage={0}>
-            <Tab heading="Pribadi">
+            <Tab  style={styles.tab} heading="Pribadi">
               <TabPribadi />
             </Tab>
             <Tab heading="Bawahan">
@@ -26,12 +26,13 @@ export default class BodyKinerja extends Component {
             </Tab>
           </Tabs>
         </Content>
-        <Button onPress={() => Actions.keyMainMenu()} block>
-          <Text>Back</Text>
-        </Button>
       </Container>
     );
   }
 }
 
-module.export = BodyKinerja;
+const styles = {
+    tab: {
+        backgroundColor: '#ffffff',
+    },
+}

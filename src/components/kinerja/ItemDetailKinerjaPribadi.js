@@ -5,6 +5,8 @@ import {
     Form,
     Item,
     Input,
+    Left,
+    Right,
     Label,
     Text,
     View,
@@ -27,67 +29,91 @@ export default class ItemDetailKinerjaPribadi extends Component {
             mood
         } = this.props.library;
 
-            return (
-                <View>
-                    <Form>
-                        <Item stackedLabel>
-                            <Label>Hari :</Label>
-                            <Label>
-                                <Text>{hari}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Tanggal :</Label>
-                            <Label>
-                                <Text>{tanggal}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Jam Masuk :</Label>
-                            <Label>
-                                <Text>{jamMasuk}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Jam Keluar :</Label>
-                            <Label>
-                                <Text>{jamKeluar}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Total Jam :</Label>
-                            <Label>
-                                <Text>{totalJam}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Kehadiran :</Label>
-                            <Label>
-                                <Text>{statusKehadiran}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Aktivitas</Label>
-                            <Label>
-                                <Text>{aktivitas}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Mood</Label>
-                            <Label>
-                                <Text>{mood}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                    </Form>
-                </View>
-            );
+        return (
+            <View>
+                <Form style={{ marginLeft: 10 }}>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Hari</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{hari}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Tanggal</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggal}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jam Masuk</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamMasuk}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jam Keluar</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamKeluar}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Total Jam</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{totalJam}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                        <View>
+                            <View>
+                                <Text>Status Kehadiran</Text>
+                            </View>
+                            <View>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>{statusKehadiran}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                        <View>
+                            <View>
+                                <Text>Aktivitas</Text>
+                            </View>
+                            <View>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>{aktivitas}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                        <View>
+                            <View>
+                                <Text>Mood</Text>
+                            </View>
+                            <View>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>{mood}</Text>
+                            </View>
+                        </View>
+                    </View>
+                </Form>
+            </View>
+        );
     }
 }

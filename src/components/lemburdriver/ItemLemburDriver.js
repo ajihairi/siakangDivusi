@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import {
     Item,
-    Container,
     Content,
     Right,
-    Body,
-    Label,
     Card,
     CardItem,
-    Left,
+    H1,
+    View,
+    Body,
+    Label,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
-import * as lemburactions from '../actions';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { TouchableWithoutFeedback, View } from 'react-native';
-import DetailLemburDriver from './DetailLemburDriver';
 
 class ItemLemburDriver extends Component {
     render() {
@@ -29,62 +24,33 @@ class ItemLemburDriver extends Component {
             jamSelesaiMalam,
             statusPembayaran
         } = this.props.library;
-
         return (
-
             <Card>
                 <CardItem>
-                    <Body>
-                        <Item>
-                            <Body>
-                                <Label
-                                    onPress={() => Actions.detaillemburdriver({ tanggal: tanggal })}
-                                >
-                                    {tanggal}
-                                </Label>
-                            </Body>
-                        </Item>
-                        <Item>
-                            <Left>
-                                <View>
-                                    <Item>
-                                        <Text>Pagi :</Text>
-                                    </Item>
-                                    <Item>
-                                        <Text>{jamMulaiPagi}</Text>
-                                        {(jamMulaiPagi === null && jamSelesaiPagi === null) ? (<Text />) : (<Text> s/d </Text>)}
-                                        <Text>{jamSelesaiPagi}</Text>
-                                    </Item>
-                                </View>
-                                <View>
-                                    <Item>
-                                        <Text>Malam :</Text>
-                                    </Item>
-                                    <Item>
-                                        <Text>{jamMulaiMalam}</Text>
-                                        {(jamMulaiMalam === null && jamSelesaiMalam === null) ? (<Text />) : (<Text> s/d </Text>)}
-                                        <Text>{jamSelesaiMalam}</Text>
-                                    </Item>
-                                </View>
-                            </Left>
-                            <Right>
-                                <Text> {statusPembayaran}</Text>
-                            </Right>
-                        </Item>
-                    </Body>
+                    <View>
+                        <View style={{ height: 40 }}>
+                            <H1 onPress={() => Actions.detaillemburdriver({ tanggal: tanggal })}>
+                                {tanggal}
+                            </H1>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{jamMulaiPagi}
+                                {(jamMulaiPagi === null && jamSelesaiPagi === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                {jamSelesaiPagi} </Text>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{jamMulaiMalam}
+                                {(jamMulaiMalam === null && jamSelesaiMalam === null) ? (<Text />) : (<Text> s/d </Text>)}
+                                {jamSelesaiMalam} </Text>
+                        </View>
+                        <View style={{ height: 30 }}>
+                            <Text>{statusPembayaran}</Text>
+                        </View>
+                    </View>
                 </CardItem>
             </Card>
         );
     }
 }
 
-const mapStateToProps = state => {
-    return { selectLibraryId: state.selectLibraryId };
-}
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(lemburactions, dispatch)
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemLemburDriver);
+export default ItemLemburDriver;

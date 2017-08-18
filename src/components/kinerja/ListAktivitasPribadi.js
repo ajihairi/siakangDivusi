@@ -20,24 +20,29 @@ class ListHariPribadi extends Component {
         const {
             tanggal,
             aktivitas,
-            statusKehadiran
+            mood
         } = this.props.library;
-            return (
-                <Card>
-                    <CardItem>
-                        <View rounded >
+        return (
+            <Card>
+                <CardItem>
+                    <Left>
+                        <View>
                             <View style={{ height: 40 }}>
-                                <H1 onPress={() => Actions.detailPribadi({ tanggal: tanggal })}>
+                                <H1 onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {tanggal}
                                 </H1>
                             </View>
                             <View style={{ height: 30 }}>
-                                <Text>  {aktivitas}   </Text>
+                                <Text>{aktivitas}</Text>
                             </View>
                         </View>
-                    </CardItem>
+                        </Left>
+                        <Right>
+                            <Text>{mood}</Text>
+                        </Right>
+                </CardItem>
             </Card>
-            )
+        )
     }
 }
 
