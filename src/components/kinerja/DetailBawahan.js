@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-import { ListView } from'react-native';
 import {
     Container,
     Content,
     Form,
     Item,
     Input,
+    Header,
+    Icon,
+    Title,
     Label,
     Text,
-    Button
+    Button,
+    Left,
+    Right,
+    Body
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import ItemDetailKinerjaBawahan from './ItemDetailKinerjaBawahan';
+import { ListView } from 'react-native';
 
 var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
-export default class DetailBawahan extends Component {
+export default class DetailKinerjaBawahan extends Component {
     constructor() {
         super()
         this.state = {
@@ -49,15 +55,23 @@ export default class DetailBawahan extends Component {
     render() {
         return (
             <Container>
+                <Header>
+                    <Left>
+                        <Button transparent onPress={() => this.props.navigation.goBack()}>
+                            <Icon name="arrow-back" />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title style={{ width: 150 }}>{this.props.nama_karyawan}jelek</Title>
+                    </Body>
+                    <Right />
+                </Header>
                 <Content>
                     <ListView
                         dataSource={this.state.data}
                         renderRow={this.renderRow}
                     />
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} block>
-                    <Text>Back</Text>
-                </Button>
             </Container>
         );
     }

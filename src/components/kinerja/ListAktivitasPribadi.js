@@ -28,7 +28,7 @@ class ListHariPribadi extends Component {
                     <Left>
                         <View>
                             <View style={{ height: 40 }}>
-                                <H1 onPress={() => Actions.detailPribadi({ tanggal: tanggal })}>
+                                <H1 onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {tanggal}
                                 </H1>
                             </View>

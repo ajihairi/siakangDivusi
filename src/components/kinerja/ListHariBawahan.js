@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import {
     Item,
     Content,
@@ -8,16 +8,18 @@ import {
     Label,
     Card,
     CardItem,
+    Left,
     H1,
     Text
 } from 'native-base';
 import { CardSection } from '../common';
 import { Actions } from 'react-native-router-flux';
 
-class ItemHariBawahan extends Component {
-
+class ListHariBawahan extends Component {
     render() {
         const {
+            id_karyawan,
+            nama_karyawan,
             tanggal,
             statusKehadiran,
             jamMasuk,
@@ -29,79 +31,125 @@ class ItemHariBawahan extends Component {
             <Card>
                 {statusKehadiran === 'Hadir' ? (
                     <CardItem style={styles.Hadir} >
-                        <View rounded >
-                            <Item style={{ height: 40 }}>
-                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal, nama_karyawan: nama_karyawan })}>
                                     {tanggal}
                                 </H1>
-                            </Item>
-                            <Item style={{ height: 30 }}>
-                                <Text>  {jamMasuk}   </Text>
-                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text>s/d </Text>)}
-                                <Text> {jamKeluar} </Text>
-                            </Item>
-                            <Item style={{ height: 30 }}>
-                                <Text>  {totalJam} </Text>
-                                {(totalJam === null) ? (<Text />) : (<Text> Jam </Text>)}
-                            </Item>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
+                            </View>
                         </View>
-                    </CardItem>)
-                    : null}
+                        <Right>
+                            <Image source={require('../../img/icons/check_white.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
                 {statusKehadiran === 'Tidak Hadir' ? (
-                    <CardItem style={styles.TidakHadir}>
-                        <View rounded>
-                            <Item style={{ height: 40 }}>
-                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                    <CardItem style={styles.TidakHadir} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal, nama_karyawan: nama_karyawan })}>
                                     {tanggal}
                                 </H1>
-                            </Item>
-                            <Item style={{ height: 30 }}>
-                                <Text>  {jamMasuk}   </Text>
-                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text>s/d </Text>)}
-                                <Text> {jamKeluar} </Text>
-                            </Item>
-                            <Item style={{ height: 30 }}>
-                                <Text>  {totalJam} </Text>
-                                {(totalJam === null) ? (<Text />) : (<Text> Jam </Text>)}
-                            </Item>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
+                            </View>
                         </View>
-                    </CardItem>)
-                    : null}
+                        <Right>
+                            <Image source={require('../../img/icons/cross_white.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
                 {statusKehadiran === 'Libur' ? (
-                    <CardItem style={styles.Libur}>
-                        <View rounded>
-                            <Item style={{ height: 40 }}>
-                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                    <CardItem style={styles.Libur} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal, nama_karyawan: nama_karyawan })}>
                                     {tanggal}
                                 </H1>
-                            </Item>
-                            <Item style={{ height: 30 }}>
-                                <Text>  {jamMasuk}   </Text>
-                                {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text>s/d </Text>)}
-                                <Text> {jamKeluar} </Text>
-                            </Item>
-                            <Item style={{ height: 30 }}>
-                                <Text>  {totalJam} </Text>
-                                {(totalJam === null) ? (<Text />) : (<Text> Jam </Text>)}
-                            </Item>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
+                            </View>
                         </View>
-                    </CardItem>)
-                    : null}
+                        <Right>
+                            <Image source={require('../../img/icons/holiday_white.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
+                {statusKehadiran === 'Cuti' ? (
+                    <CardItem style={styles.Cuti} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal, nama_karyawan: nama_karyawan })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: 'white' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: 'white' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: 'white' }}> Jam </Text>)}
+                                </Text>
+                            </View>
+                        </View>
+                        <Right>
+                            <Image source={require('../../img/icons/suitcase_black.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
             </Card>
-        );
+        )
     }
 }
 
 const styles = {
     Hadir: {
-        backgroundColor: '#2ecc71'
+        backgroundColor: '#1abc9c',
+
     },
     TidakHadir: {
-        backgroundColor: '#e74c3c'
+        backgroundColor: '#e74c3c',
     },
     Libur: {
-        backgroundColor: '#e67e22'
+        backgroundColor: '#f39c12',
     },
+    Cuti: {
+            backgroundColor: 'white',
+            width: 750,
+        },
+    imageStyle: {
+        width: 50,
+        height: 50,
+        resizeMode:'contain'
+    }
 }
 
-export default ItemHariBawahan;
+export default ListHariBawahan;

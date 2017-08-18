@@ -13,7 +13,6 @@ import {
 } from 'native-base';
 import { CardSection } from '../../common';
 import { Actions } from 'react-native-router-flux';
-import * as Pribadiactions from '../../actions';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { TouchableWithoutFeedback } from 'react-native';

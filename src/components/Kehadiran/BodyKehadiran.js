@@ -56,16 +56,12 @@ export default class BodyKehadiran extends Component {
         const { SearchStyle, ViewStyle, ButtonStyle, TextStyle, ListStyle } = styles;
         return (
             <Container>
-             
                 <Content>
                     <ListView
                         dataSource = {this.state.data}
                         renderRow = {this.renderRow}
                     />
                 </Content>
-                <View>
-                   
-                    </View>
             </Container>
         );
     }

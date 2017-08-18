@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Container } from 'native-base';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducers from './reducers';
 import { Actions } from 'react-native-router-flux';
 import {Header, Left, Right, Title, Body, Button, Icon,Item,Picker} from 'native-base';
 import BodyKehadiran from './Kehadiran/BodyKehadiran';

@@ -103,11 +103,11 @@ class ExampleMain extends Component {
             <Content style={{ backgroundColor: '#f4f4f4', marginLeft: 10, marginRight: 10 }}>
                 <View>
                     <View>
-                        <DatePicker block
-                            style={{ marginTop: 10, width: 363 }}
+                        <DatePicker
+                            style={{ width: 363, marginTop: 10 }}
                             date={this.state.date1}
-                            placeholder="Tanggal Mulai"
                             mode="date"
+                            placeholder="Start Date"
                             format="DD-MM-YYYY"
                             minDate="2017-01-01"
                             maxDate="2030-12-31"
@@ -119,6 +119,9 @@ class ExampleMain extends Component {
                                     position: 'absolute',
                                     left: 0,
                                     top: 4,
+                                    marginLeft: 0
+                                },
+                                dateInput: {
                                     marginLeft: 0
                                 }
                             }
@@ -127,11 +130,11 @@ class ExampleMain extends Component {
                         />
                     </View>
                     <View>
-                        <DatePicker block
-                            style={{ marginTop: 10, width: 363 }}
-                            date={this.state.date1}
-                            placeholder="Tanggal Selesai"
+                        <DatePicker
+                            style={{ width: 363, marginTop: 10 }}
+                            date={this.state.date2}
                             mode="date"
+                            placeholder="End Date"
                             format="DD-MM-YYYY"
                             minDate="2017-01-01"
                             maxDate="2030-12-31"
@@ -144,10 +147,13 @@ class ExampleMain extends Component {
                                     left: 0,
                                     top: 4,
                                     marginLeft: 0
+                                },
+                                dateInput: {
+                                    marginLeft: 0
                                 }
                             }
                             }
-                            onDateChange={(date1) => { this.setState({ date1: date1 }) }}
+                            onDateChange={(date2) => { this.setState({ date2: date2 }) }}
                         />
                     </View>
                 </View>
