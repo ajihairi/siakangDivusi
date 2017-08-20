@@ -30,8 +30,6 @@ export default class ItemDetailKehadiran extends Component {
            overtimeStatus,
            status
         } = this.props.library;
-        
-
           return (
             <Container>
                  <Header>
@@ -123,7 +121,8 @@ export default class ItemDetailKehadiran extends Component {
                     style={{width:150, 
                     justifyContent: 'center', 
                     alignItems: 'center',
-                    marginRight: 5}}
+                    marginRight: 5,
+                    backgroundColor:'orange' }}
                       onPress={() => Actions.keyLaporanHarian()}>
                       <Text style={{textAlign: 'center'}}> Laporan Harian </Text>
                     </Button><Button onPress={() => Actions.ClaimLembur()} success style={{width:150, justifyContent: 'center', alignItems: 'center', marginLeft: 5}}>

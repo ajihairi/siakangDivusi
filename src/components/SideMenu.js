@@ -45,37 +45,29 @@ const styles = StyleSheet.create({
 export default function Menu({ onItemSelected }) {
   return (
     <ScrollView scrollsToTop={false} style={styles.menu}>
-      <H1>
-      <Text
+      <H1
       onPress={() => Actions.keyPengajuanCuti()}
         style={styles.item}
       >
         AJUKAN CUTI
-      </Text>
       </H1>
-      <H1>
-      <Text
+      <H1
       onPress={() => Actions.keyPengajuanCuti()}
         style={styles.item}
       >
         AJUKAN IZIN
-      </Text>
       </H1>
-      <H1>
-      <Text
+      <H1
       onPress={() => Actions.keyPengajuanSakit()}
         style={styles.item}
       >
         AJUKAN SAKIT
-      </Text>
       </H1>
-      <H1>
-      <Text
+      <H1
       onPress={() => Actions.keyPenugasanLembur()}
         style={styles.item}
       >
         PENUGASAN LEMBUR
-      </Text>
       </H1>
     </ScrollView>
   );
