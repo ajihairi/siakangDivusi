@@ -29,59 +29,88 @@ export default class ItemDetailPribadiCuti extends Component {
         } = this.props.library;
 
             return (
-                <View>
-                    <Form>
-                        <Item stackedLabel>
-                            <Label>Nama Pegawai :</Label>
-                            <Label>
-                                <Text>{namaPegawai}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>departemen :</Label>
-                            <Label>
-                                <Text>{departemen}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>jabatan :</Label>
-                            <Label>
-                                <Text>{jabatan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>jenis pengajuan :</Label>
-                            <Label>
-                                <Text>{jenisCuti}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>tanggal :</Label>
-                            <Label>
-                                <Text>{tanggalMulaiCuti} sampai dengan {tanggalSelesaiCuti}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>catatan :</Label>
-                            <Label>
-                                <Text>{catatan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>catatan Persetujuan :</Label>
-                            <Label>
-                                <Text>{catatanPersetujuan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                    </Form>
-                </View>
+                <Form style={{ marginLeft: 10 }}>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Nama</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {namaPegawai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Departemen</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {departemen}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jabatan</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jabatan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jenis Cuti</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jenisCuti}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Tanggal Mulai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggalMulaiCuti}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Tanggal Selesai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggalSelesaiCuti}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                        <View>
+                            <View>
+                                <Text>Catatan</Text>
+                            </View>
+                            <View>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>: {catatan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                        <View>
+                            <View>
+                                <Text>Catatan Persetujuan</Text>
+                            </View>
+                            <View>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>: {catatanPersetujuan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                </Form>
             );
     }
 }

@@ -8,7 +8,7 @@ import {
     Label,
     Text,
     Left,
-    H1,
+    H3,
     Card,
     CardItem,
 } from 'native-base';
@@ -30,13 +30,18 @@ class ItemBawahan extends Component {
         return (
             <Card>
                 
-                    <CardItem style={styles.Hadir} >
-                        <View>
-                            <View style={{ height: 40 }}>
-                                <H1 style={{ paddingTop: 5, color: 'black' }} onPress={() => Actions.DetailPribadiCuti({ idKaryawan: idKaryawan })}>  {jenisPengajuan}
-                                </H1>
+                <CardItem style={{backgroundColor:'white'}} >
+                <View>
+                    <View style={{ height: 40 }}>
+                    {jenisPengajuan === 'Izin\/Cuti\/Sakit' ? (<H3 onPress={() => Actions.DetailBawahanCuti({ start_date: start_date, end_date: end_date, idKaryawan: idKaryawan })}> {jenisPengajuan}</H3>) : null}
+                    {jenisPengajuan === 'Koreksi' ? (<H3 onPress={() => Actions.DetailBawahanKoreksi({ tanggalPengajuan: tanggalPengajuan, idKaryawan: idKaryawan })}> {jenisPengajuan}</H3>) : null}
+                    {jenisPengajuan === 'Remote' ? (<H3 onPress={() => Actions.DetailBawahanRemote({ tanggalPengajuan: tanggalPengajuan, idKaryawan: idKaryawan })}> {jenisPengajuan}</H3>) : null}
+                    {jenisPengajuan === 'Lembur' ? (<H3 onPress={() => Actions.DetailBawahanLembur({ tanggalPengajuan: tanggalPengajuan, idKaryawan: idKaryawan })}> {jenisPengajuan}</H3>) : null}
+                    {jenisPengajuan === 'Lembur Driver' ? (<H3 onPress={() => Actions.DetailBawahanDriver({ tanggalPengajuan: tanggalPengajuan, idKaryawan: idKaryawan })}> {jenisPengajuan}</H3>) : null}
+                    {jenisPengajuan === 'Izin Keluar Kantor' ? (<H3 onPress={() => Actions.DetailBawahanIzin({ tanggalPengajuan: tanggalPengajuan, idKaryawan: idKaryawan })}> {jenisPengajuan}</H3>) : null}
+                    {jenisPengajuan === 'Klaim Lembur' ? (<H3  > {jenisPengajuan}</H3>) : null}
 
-                            </View>
+                    </View>
                             <View style={{ paddingLeft: 5, paddingBottom: 10, paddingRight: 5, paddingTop: 5, height: 30 }}>
                                 <Text style={{ color: 'black' }}>  {namaKaryawan}
                                     {(namaKaryawan === null) ? (<Text />) : (<Text style={{ color: 'black' }}></Text>)}
@@ -63,21 +68,6 @@ class ItemBawahan extends Component {
 
 
 const styles = {
-    Hadir: {
-        backgroundColor: 'white',
-    },
-    TidakHadir: {
-        backgroundColor: '#e74c3c',
-    },
-    Libur: {
-        backgroundColor: '#f39c12',
-    },
-    Cuti: {
-        backgroundColor: 'white',
-    },
-    PerjalananDinas: {
-        backgroundColor: '#2980b9',
-    },
     imageStyle: {
         width: 50,
         height: 50,

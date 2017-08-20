@@ -10,7 +10,7 @@ import {
     Left,
     H1,
     Card,
-    CardItem,
+    CardItem,H3
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -30,11 +30,16 @@ class ItemPribadi extends Component {
         return (
             <Card>
                 
-                    <CardItem style={styles.Hadir} >
+                    <CardItem style={{color:'white'}} >
                         <View>
                             <View style={{ height: 40 }}>
-                                <H1 style={{ paddingTop: 5, color: 'black' }} onPress={() => Actions.DetailPribadiCuti({ idKaryawan: idKaryawan })}>  {jenisPengajuan}
-                                </H1>
+                            {jenisPengajuan === 'Izin\/Cuti\/Sakit' ? (<H3 onPress={() => Actions.DetailPribadiCuti({ start_date: start_date, end_date: end_date })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Koreksi' ? (<H3 onPress={() => Actions.DetailPribadiKoreksi({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Remote' ? (<H3 onPress={() => Actions.DetailPribadiRemote({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Lembur' ? (<H3 onPress={() => Actions.DetailPribadiLembur({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Lembur Driver' ? (<H3 onPress={() => Actions.DetailPribadiDriver({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Izin Keluar Kantor' ? (<H3 onPress={() => Actions.DetailPribadiIzin({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Klaim Lembur' ? (<H3  > {jenisPengajuan}</H3>) : null}
 
                             </View>
                             <View style={{ paddingLeft: 5, paddingBottom: 5, paddingRight: 5, paddingTop: 5, height: 30 }}>
@@ -46,6 +51,8 @@ class ItemPribadi extends Component {
                             {status === 'Disetujui' ? (<Image source={require('../../../img/icons/check_black.png')} style={styles.imageStyle}/>) : null}
                             {status === 'Diajukan' ? (<Image source={require('../../../img/icons/paperplane_black.png')} style={styles.imageStyle}/>) : null}
                             {status === 'Ditolak' ? (<Image source={require('../../../img/icons/cross_black.png')} style={styles.imageStyle}/>) : null}
+                            {status === 'Diproses' ? (<Image source={require('../../../img/icons/cross_black.png')} style={styles.imageStyle}/>) : null}
+                          
                            </Right>
 
                     </CardItem>
@@ -58,21 +65,6 @@ class ItemPribadi extends Component {
 
 
 const styles = {
-    Hadir: {
-        backgroundColor: 'white',
-    },
-    TidakHadir: {
-        backgroundColor: '#e74c3c',
-    },
-    Libur: {
-        backgroundColor: '#f39c12',
-    },
-    Cuti: {
-        backgroundColor: 'white',
-    },
-    PerjalananDinas: {
-        backgroundColor: '#2980b9',
-    },
     imageStyle: {
         width: 50,
         height: 50,
