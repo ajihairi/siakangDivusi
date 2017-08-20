@@ -31,6 +31,12 @@ import DetailPribadiKoreksi from './components/persetujuan/pribadi/Detail/Koreks
 import DetailPribadiIzin from './components/persetujuan/pribadi/Detail/Izin/DetailPribadiIzin';
 import DetailPribadiLembur from './components/persetujuan/pribadi/Detail/Lembur/DetailPribadiLembur';
 import DetailPribadiLemburDriver from './components/persetujuan/pribadi/Detail/LemburDriver/DetailPribadiLemburDriver';
+import DetailBawahanCuti from './components/persetujuan/Bawahan/Detail/Cuti/DetailBawahanCuti';
+import DetailBawahanRemote from './components/persetujuan/Bawahan/Detail/Remote/DetailBawahanRemote';
+import DetailBawahanKoreksi from './components/persetujuan/Bawahan/Detail/Koreksi/DetailBawahanKoreksi';
+import DetailBawahanIzin from './components/persetujuan/Bawahan/Detail/Izin/DetailBawahanIzin';
+import DetailBawahanLembur from './components/persetujuan/Bawahan/Detail/Lembur/DetailBawahanLembur';
+import DetailBawahanLemburDriver from './components/persetujuan/Bawahan/Detail/LemburDriver/DetailBawahanLemburDriver';
 
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
@@ -241,6 +247,36 @@ class App extends Component{
                 key="DetailPribadiLemburDriver"
                 component={DetailPribadiLemburDriver}
                 title="Detail persetujuan Pribadi lembur driver"
+                />
+                <Scene
+                key="DetailBawahanCuti"
+                component={DetailBawahanCuti}
+                title="Detail persetujuan Bawahan Cuti"
+                />
+                <Scene
+                key="DetailBawahanRemote"
+                component={DetailBawahanRemote}
+                title="Detail persetujuan Bawahan remote"
+                />
+                <Scene
+                key="DetailBawahanKoreksi"
+                component={DetailBawahanKoreksi}
+                title="Detail persetujuan Bawahan koreksi"
+                />
+                <Scene
+                key="DetailBawahanIzin"
+                component={DetailBawahanIzin}
+                title="Detail persetujuan Bawahan izin"
+                />
+                <Scene
+                key="DetailBawahanLembur"
+                component={DetailBawahanLembur}
+                title="Detail persetujuan Bawahan lembur"
+                />
+                <Scene
+                key="DetailBawahanLemburDriver"
+                component={DetailBawahanLemburDriver}
+                title="Detail persetujuan Bawahan lembur driver"
                 />
 
               
