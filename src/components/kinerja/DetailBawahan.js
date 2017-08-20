@@ -62,7 +62,7 @@ export default class DetailKinerjaBawahan extends Component {
                         </Button>
                     </Left>
                     <Body>
-                        <Title style={{ width: 150 }}>{this.props.nama_karyawan}jelek</Title>
+                        <Title style={{ width: 150 }}>{this.props.nama_karyawan}</Title>
                     </Body>
                     <Right />
                 </Header>
