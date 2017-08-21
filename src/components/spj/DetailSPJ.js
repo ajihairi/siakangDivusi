@@ -56,11 +56,11 @@ export default class DetailSPJ extends Component {
 
     render() {
         return (
-            <Container>
+            <Container style={{backgroundColor: 'white'}}>
                 <Content>
                     <Header>
                         <Left>
-                            <Button transparent onPress={() => this.props.navigation.goBack()}>
+                            <Button transparent onPress={() => Actions.appspj()}>
                                 <Icon name="arrow-back" />
                             </Button>
                         </Left>

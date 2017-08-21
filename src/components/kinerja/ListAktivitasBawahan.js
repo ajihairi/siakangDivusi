@@ -18,33 +18,144 @@ import { Actions } from 'react-native-router-flux';
 class ListHariBawahan extends Component {
     render() {
         const {
-            id_karyawan,
-            nama_karyawan,
             tanggal,
             aktivitas,
+            statusKehadiran,
             mood
         } = this.props.library;
         return (
             <Card>
-                <CardItem>
-                    <Left>
+                {statusKehadiran === 'Hadir' ? (
+                    <CardItem style={styles.Hadir} >
                         <View>
                             <View style={{ height: 40 }}>
-                                <H1 onPress={() => Actions.detailbawahan({ tanggal: tanggal, nama_karyawan: nama_karyawan })}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
                                     {tanggal}
                                 </H1>
                             </View>
                             <View style={{ height: 30 }}>
-                                <Text>{aktivitas}</Text>
+                                {(aktivitas === null) ? (<Text style={{ color: 'white'}}>Tidak Ada Aktivitas</Text>) : (<Text style={{ color: 'white' }}> {aktivitas} </Text>)}
                             </View>
                         </View>
-                        </Left>
                         <Right>
-                            <Text>{mood}</Text>
+                            {mood === 'Idle' ? (<Image source={require('../../img/mood/idle.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Males parah' ? (<Image source={require('../../img/mood/malesparah.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Overload kerjaan' ? (<Image source={require('../../img/mood/overload.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Semangat 45 bekerja' ? (<Image source={require('../../img/mood/semangat45.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Standar' ? (<Image source={require('../../img/mood/standar.png')} style={styles.imageStyle} />) : null}
                         </Right>
-                </CardItem>
+                    </CardItem>
+                ) : null}
+                {statusKehadiran === 'Tidak Hadir' ? (
+                    <CardItem style={styles.TidakHadir} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                {(aktivitas === null) ? (<Text style={{ color: 'white'}}>Tidak Ada Aktivitas</Text>) : (<Text style={{ color: 'white' }}> {aktivitas} </Text>)}
+                            </View>
+                        </View>
+                        <Right>
+                            {mood === 'Idle' ? (<Image source={require('../../img/mood/idle.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Males parah' ? (<Image source={require('../../img/mood/malesparah.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Overload kerjaan' ? (<Image source={require('../../img/mood/overload.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Semangat 45 bekerja' ? (<Image source={require('../../img/mood/semangat45.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Standar' ? (<Image source={require('../../img/mood/standar.png')} style={styles.imageStyle} />) : null}
+                        </Right>
+                    </CardItem>
+                ) : null}
+                {statusKehadiran === 'Libur' ? (
+                    <CardItem style={styles.Libur} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                {(aktivitas === null) ? (<Text style={{ color: 'white'}}>Tidak Ada Aktivitas</Text>) : (<Text style={{ color: 'white' }}> {aktivitas} </Text>)}
+                            </View>
+                        </View>
+                        <Right>
+                            {mood === 'Idle' ? (<Image source={require('../../img/mood/idle.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Males parah' ? (<Image source={require('../../img/mood/malesparah.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Overload kerjaan' ? (<Image source={require('../../img/mood/overload.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Semangat 45 bekerja' ? (<Image source={require('../../img/mood/semangat45.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Standar' ? (<Image source={require('../../img/mood/standar.png')} style={styles.imageStyle} />) : null}
+                        </Right>
+                    </CardItem>
+                ) : null}
+                {statusKehadiran === 'Cuti' ? (
+                    <CardItem style={styles.Cuti} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: '#000' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                {(aktivitas === null) ? (<Text style={{ color: '#000'}}>Tidak Ada Aktivitas</Text>) : (<Text style={{ color: '#000' }}> {aktivitas} </Text>)}
+                            </View>
+                        </View>
+                        <Right>
+                            {mood === 'Idle' ? (<Image source={require('../../img/mood/idle.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Males parah' ? (<Image source={require('../../img/mood/malesparah.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Overload kerjaan' ? (<Image source={require('../../img/mood/overload.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Semangat 45 bekerja' ? (<Image source={require('../../img/mood/semangat45.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Standar' ? (<Image source={require('../../img/mood/standar.png')} style={styles.imageStyle} />) : null}
+                        </Right>
+                    </CardItem>
+                ) : null}
+                {statusKehadiran === 'Perjalanan Dinas' ? (
+                    <CardItem style={styles.PerjalananDinas} >
+                        <View>
+                            <View style={{ height: 40 }}>
+                                <H1 style={{ color: 'white' }} onPress={() => Actions.detailbawahan({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                {(aktivitas === null) ? (<Text style={{ color: 'white'}}>Tidak Ada Aktivitas</Text>) : (<Text style={{ color: 'white' }}> {aktivitas} </Text>)}
+                            </View>
+                        </View>
+                        <Right>
+                            {mood === 'Idle' ? (<Image source={require('../../img/mood/idle.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Males parah' ? (<Image source={require('../../img/mood/malesparah.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Overload kerjaan' ? (<Image source={require('../../img/mood/overload.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Semangat 45 bekerja' ? (<Image source={require('../../img/mood/semangat45.png')} style={styles.imageStyle} />) : null}
+                            {mood === 'Standar' ? (<Image source={require('../../img/mood/standar.png')} style={styles.imageStyle} />) : null}
+                        </Right>
+                    </CardItem>
+                ) : null}
             </Card>
         )
+    }
+}
+
+const styles = {
+    Hadir: {
+        backgroundColor: '#1abc9c',
+
+    },
+    TidakHadir: {
+        backgroundColor: '#e74c3c',
+    },
+    Libur: {
+        backgroundColor: '#f39c12',
+    },
+    Cuti: {
+        backgroundColor: '#FFF',
+    },
+    PerjalananDinas: {
+        backgroundColor: '#2980b9',
+    },
+    imageStyle: {
+        width: 50,
+        height: 50,
+        resizeMode:'contain'
     }
 }
 

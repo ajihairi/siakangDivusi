@@ -39,7 +39,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Id SPJ</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{idSPJ}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {idSPJ}</Text>
                             </View>
                         </View>
                     </View>
@@ -49,7 +49,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Nama Pekerjaan</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{namaPekerjaan}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {namaPekerjaan}</Text>
                             </View>
                         </View>
                     </View>
@@ -59,7 +59,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Tanggal Mulai</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggalMulai}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggalMulai}</Text>
                             </View>
                         </View>
                     </View>
@@ -69,7 +69,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Tanggal Selesai</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggalSelesai}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggalSelesai}</Text>
                             </View>
                         </View>
                     </View>
@@ -79,7 +79,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Kota Tujuan</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{kotaTujuan}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {kotaTujuan}</Text>
                             </View>
                         </View>
                     </View>
@@ -89,7 +89,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Jenis Tujuan</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jenisKOta}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jenisKOta}</Text>
                             </View>
                         </View>
                     </View>
@@ -99,7 +99,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Durasi</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{durasi}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {durasi}</Text>
                             </View>
                         </View>
                     </View>
@@ -109,7 +109,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Status Pembayaran</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{statusPembayaran}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {statusPembayaran}</Text>
                             </View>
                         </View>
                     </View>
@@ -119,7 +119,7 @@ export default class ItemDetailSPJ extends Component {
                                 <Text>Status Perjalanan Dinas</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{statusPerjalananDinas}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {statusPerjalananDinas}</Text>
                             </View>
                         </View>
                     </View>

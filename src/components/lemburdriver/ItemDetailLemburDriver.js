@@ -36,7 +36,7 @@ export default class ItemDetailLemburDriver extends Component {
                                 <Text>Tanggal</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggal}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggal}</Text>
                             </View>
                         </View>
                     </View>
@@ -46,7 +46,7 @@ export default class ItemDetailLemburDriver extends Component {
                                 <Text>Jam Mulai Pagi</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamMulaiPagi}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamMulaiPagi}</Text>
                             </View>
                         </View>
                     </View>
@@ -56,7 +56,7 @@ export default class ItemDetailLemburDriver extends Component {
                                 <Text>Jam Selesai Pagi</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamSelesaiPagi}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamSelesaiPagi}</Text>
                             </View>
                         </View>
                     </View>
@@ -66,7 +66,7 @@ export default class ItemDetailLemburDriver extends Component {
                                 <Text>Jam Mulai Malam</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamMulaiMalam}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamMulaiMalam}</Text>
                             </View>
                         </View>
                     </View>
@@ -76,7 +76,7 @@ export default class ItemDetailLemburDriver extends Component {
                                 <Text>Jam Selesai Malam</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamSelesaiMalam}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamSelesaiMalam}</Text>
                             </View>
                         </View>
                     </View>
@@ -86,7 +86,7 @@ export default class ItemDetailLemburDriver extends Component {
                                 <Text>Status Pembayaran</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{statusPembayaran}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {statusPembayaran}</Text>
                             </View>
                         </View>
                     </View>

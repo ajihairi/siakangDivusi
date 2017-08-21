@@ -56,11 +56,11 @@ export default class DetailLembur extends Component {
 
     render() {
         return (
-            <Container>
+            <Container style={{backgroundColor: 'white'}}>
                 <Content>
                     <Header>
                         <Left>
-                            <Button transparent onPress={() => this.props.navigation.goBack()}>
+                            <Button transparent onPress={() => Actions.applembur()}>
                                 <Icon name="arrow-back" />
                             </Button>
                         </Left>

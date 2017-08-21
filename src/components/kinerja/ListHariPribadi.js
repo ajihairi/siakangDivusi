@@ -103,6 +103,30 @@ class ListHariPribadi extends Component {
                     <CardItem style={styles.Cuti} >
                         <View>
                             <View style={{ height: 40 }}>
+                                <H1 style={{ color: '#000' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
+                                    {tanggal}
+                                </H1>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: '#000' }}>{jamMasuk}
+                                    {(jamMasuk === null && jamKeluar === null) ? (<Text />) : (<Text style={{ color: '#000' }}> s/d </Text>)}
+                                    {jamKeluar} </Text>
+                            </View>
+                            <View style={{ height: 30 }}>
+                                <Text style={{ color: '#000' }}>{totalJam}
+                                    {(totalJam === null) ? (<Text />) : (<Text style={{ color: '#000' }}> Jam </Text>)}
+                                </Text>
+                            </View>
+                        </View>
+                        <Right>
+                            <Image source={require('../../img/icons/suitcase_black.png')} style={styles.imageStyle} />
+                        </Right>
+                    </CardItem>
+                ) : null}
+                {statusKehadiran === 'Perjalanan Dinas' ? (
+                    <CardItem style={styles.PerjalananDinas} >
+                        <View>
+                            <View style={{ height: 40 }}>
                                 <H1 style={{ color: 'white' }} onPress={() => Actions.detailpribadi({ tanggal: tanggal })}>
                                     {tanggal}
                                 </H1>
@@ -119,7 +143,7 @@ class ListHariPribadi extends Component {
                             </View>
                         </View>
                         <Right>
-                            <Image source={require('../../img/icons/suitcase_black.png')} style={styles.imageStyle} />
+                            <Image source={require('../../img/icons/car_white.png')} style={styles.imageStyle} />
                         </Right>
                     </CardItem>
                 ) : null}
@@ -140,13 +164,15 @@ const styles = {
         backgroundColor: '#f39c12',
     },
     Cuti: {
-            backgroundColor: 'white',
-            width: 750,
-        },
+        backgroundColor: '#FFF',
+    },
+    PerjalananDinas: {
+        backgroundColor: '#2980b9',
+    },
     imageStyle: {
         width: 50,
         height: 50,
-        resizeMode:'contain'
+        resizeMode: 'contain'
     }
 }
 

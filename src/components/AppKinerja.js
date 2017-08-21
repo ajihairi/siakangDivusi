@@ -3,6 +3,7 @@ import { AppRegistry } from 'react-native';
 import { Container, Header, Left, Body, Title, Icon, Button, Right } from 'native-base';
 import BodyKinerja from './kinerja/BodyKinerja';
 import { Provider } from 'react-redux';
+import { Actions } from 'react-native-router-flux';
 import { createStore } from 'redux';
 
 export default class AppKinerja extends Component {
@@ -11,7 +12,7 @@ export default class AppKinerja extends Component {
         <Container>
           <Header>
             <Left>
-              <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Button transparent onPress={() => Actions.keyMainMenu()}>
                 <Icon name="arrow-back" />
               </Button>
             </Left>

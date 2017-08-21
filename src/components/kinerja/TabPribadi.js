@@ -36,7 +36,7 @@ class ExampleMain extends Component {
     }
 
     getData() {
-        return fetch('https://si-akang-dev.divusi.com/api/performance?tanggalAwal=01-01-2017&tanggalAkhir=01-12-2017&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NjgsInVzZXJuYW1lX3Nlc3MiOiJpdmFubnVncmFoYSIsIm5hbWVfc2VzcyI6Ikl2YW4gTnVncmFoYSIsInJvbGVfbmFtZV9zZXNzIjoiS2FyeWF3YW4iLCJlbXBsb3llZV9uYW1lX3Nlc3MiOiJJdmFuIE51Z3JhaGEiLCJlbXBsb3llZV9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9pZF9zZXNzIjo2OCwiaXNfZHJpdmVyX3Nlc3MiOjAsInN1cGVydmlzb3JfbmFtZV9zZXNzIjoiSXZhbiBOdWdyYWhhIiwic3VwZXJ2aXNvcl9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9kZXBhcnRtZW50X3Nlc3MiOiJQcm9kdWN0IiwiY3JlZGl0cyI6MSwic3ViIjo2OCwiaXNzIjoiaHR0cHM6Ly93d3cubWFrYW5iYW5kdW5nLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE1MDE1NTQ0MjksImV4cCI6MTUzMzA5MDQyOSwibmJmIjoxNTAxNTU0NDI5LCJqdGkiOiJJNU9lMzM1Qjdpc2l4VFhXIn0.Vj5UKw092wECQexQqVO49aqSjXg2Sf6xH9IEQbwaIdk')
+        return fetch('https://si-akang-dev.divusi.com/api/performance?tanggalAwal=01-08-2017&tanggalAkhir=01-12-2017&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NjgsInVzZXJuYW1lX3Nlc3MiOiJpdmFubnVncmFoYSIsIm5hbWVfc2VzcyI6Ikl2YW4gTnVncmFoYSIsInJvbGVfbmFtZV9zZXNzIjoiS2FyeWF3YW4iLCJlbXBsb3llZV9uYW1lX3Nlc3MiOiJJdmFuIE51Z3JhaGEiLCJlbXBsb3llZV9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9pZF9zZXNzIjo2OCwiaXNfZHJpdmVyX3Nlc3MiOjAsInN1cGVydmlzb3JfbmFtZV9zZXNzIjoiSXZhbiBOdWdyYWhhIiwic3VwZXJ2aXNvcl9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9kZXBhcnRtZW50X3Nlc3MiOiJQcm9kdWN0IiwiY3JlZGl0cyI6MSwic3ViIjo2OCwiaXNzIjoiaHR0cHM6Ly93d3cubWFrYW5iYW5kdW5nLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE1MDE1NTQ0MjksImV4cCI6MTUzMzA5MDQyOSwibmJmIjoxNTAxNTU0NDI5LCJqdGkiOiJJNU9lMzM1Qjdpc2l4VFhXIn0.Vj5UKw092wECQexQqVO49aqSjXg2Sf6xH9IEQbwaIdk')
             .then((response) => response.json())
             .then((responseJson) => {
 
@@ -98,6 +98,16 @@ class ExampleMain extends Component {
         });
     }
 
+    onSearchChange(text) {
+        const filteredAssets = this.state.data.filter(
+            (search) => {
+                return search.tanggal.indexOf(text) !== -1;
+            }
+        );
+
+        this.dataSource = ds.cloneWithRows(_.values(filteredAssets));
+    }
+
     render() {
         return (
             <Content style={{ backgroundColor: '#f4f4f4', marginLeft: 10, marginRight: 10 }}>
@@ -126,7 +136,7 @@ class ExampleMain extends Component {
                                 }
                             }
                             }
-                            onDateChange={(date1) => { this.setState({ date1: date1 }) }}
+                            onDateChange={(date1) => {this.setState({ date1: date1 }) }}
                         />
                     </View>
                     <View>
@@ -168,7 +178,7 @@ class ExampleMain extends Component {
                         selectedIndex={this.state.customStyleIndex}
                         onTabPress={this.handleCustomIndexSelect}
                         borderRadius={5}
-                        tabsContainerStyle={{ height: 50, backgroundColor: '#f2f2f2', marginBottom: 10}}
+                        tabsContainerStyle={{ height: 50, backgroundColor: '#f2f2f2', marginBottom: 10 }}
                         tabStyle={{ backgroundColor: 'white', borderWidth: 2, borderColor: '#2980b9' }}
                         activeTabStyle={{ backgroundColor: '#2980b9' }}
                         tabTextStyle={{ color: '#2980b9', fontWeight: 'bold' }}

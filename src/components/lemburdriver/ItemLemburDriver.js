@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View, Image } from 'react-native';
 import {
     Item,
     Content,
@@ -6,7 +7,6 @@ import {
     Card,
     CardItem,
     H1,
-    View,
     Body,
     Label,
     Text
@@ -47,9 +47,20 @@ class ItemLemburDriver extends Component {
                             <Text>{statusPembayaran}</Text>
                         </View>
                     </View>
+                    <Right>
+                        {statusPembayaran === 'Belum Terbayarkan' ? (<Image source={require('../../img/icons/cross_black.png')} style={styles.imageStyle} />) : (<Image source={require('../../img/icons/check_black.png')} style={styles.imageStyle} />)}
+                    </Right>
                 </CardItem>
             </Card>
         );
+    }
+}
+
+const styles = {
+    imageStyle: {
+        width: 50,
+        height: 50,
+        resizeMode:'contain'
     }
 }
 

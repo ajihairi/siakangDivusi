@@ -56,11 +56,11 @@ export default class DetailLemburDriver extends Component {
 
     render() {
         return (
-            <Container>
+            <Container style={{backgroundColor: 'white'}}>
                 <Content>
                     <Header>
                         <Left>
-                            <Button transparent onPress={() => this.props.navigation.goBack()}>
+                            <Button transparent onPress={() => Actions.applemburdriver()}>
                                 <Icon name="arrow-back" />
                             </Button>
                         </Left>
