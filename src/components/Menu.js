@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { AsyncStorage,Alert, View, Image, TouchableHighlight} from 'react-native';
+import { AsyncStorage,Alert, View, Image, TouchableHighlight, TouchableOpacity} from 'react-native';
 import { Container, Text,Content, H1, Button, Icon, Col, Row, Grid} from 'native-base';
 import firebase from 'firebase'
 
@@ -22,109 +22,66 @@ class Menu extends Component{
   render(){
     return (
     <Container style={styles.splashScreens}>
+      <Content>
+        <Grid style={{marginTop:50, marginBottom:30}}>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.applembur()}>
+            <Image source={require('../img/kehadiran.png')} style={styles.iconStyle}/>
+            <Text style={styles.textStyles}> KEHADIRAN </Text>
+            </TouchableOpacity>
+          </Col>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keyLemburDriver()}>
+            <Image source={require('../img/lemburdriver.png')} style={styles.iconStyle}/>
+            <Text style={styles.textStyles}> LEMBUR DRIVER </Text>
+            </TouchableOpacity>
+          </Col>
+        </Grid>
+        <Grid style={{marginBottom:30}}>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} >
+            <Image source={require('../img/perjalanan.png')} style={styles.iconStyle}/>
+            <Text style={styles.textStyles}> PERJALANAN </Text>
+            </TouchableOpacity>
+          </Col>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keylaporankinerja()}>
+            <Image source={require('../img/laporankinerja.png')} style={styles.iconStyle}/>
+            <Text style={styles.textStyles}> LAPORAN KINERJA </Text>
+            </TouchableOpacity>
+          </Col>
+        </Grid>
+        <Grid style={{marginBottom:30}}>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keylaporanspj()}>
+            <Image source={require('../img/laporanspj.png')} style={styles.iconStyle}/>
+            <Text style={styles.textStyles}> LAPORAN SPJ </Text>
+            </TouchableOpacity>
+          </Col>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keylaporanLemburDriver()}>
+            <Image source={require('../img/laporanlemburdriver.png')} style={styles.iconStyle}/>
+            <Text style={styles.textStyles}> LAPORAN LEMBUR DRIVER </Text>
+            </TouchableOpacity>
+          </Col>
+        </Grid>
+        <Grid style={{marginBottom:30}}>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} >
+            <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle} onPress={()=>Actions.keylaporanlembur()}/>
+            <Text style={styles.textStyles}> LAPORAN LEMBUR</Text>
+            </TouchableOpacity>
+          </Col>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keypersetujuan()}>
+            <Image source={require('../img/persetujuan.png')} style={styles.iconStyle}/>
+            <Text style={styles.textStyles}> PERSETUJUAN </Text>
+            </TouchableOpacity>
+          </Col>
+        </Grid>
 
-    <Content>
-
-
-                <Grid style={{marginTop:50,marginBottom:70}}>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.keyKehadiran()} style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/jadwal.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}>Kehadiran</Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.keyLemburDriver()} style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/lemburdriver.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}>Lembur Driver</Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                  <Col>
-                    <Container style={styles.buttonContainer} >
-                        <Button primary transparent style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer} >
-                            <Image source={require('../img/perjalanan.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}>Perjalanan</Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                </Grid>
-
-                <Grid style={{marginBottom:70}}>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.kinerja()} style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/laporankinerja.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}> Laporan Kinerja </Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.appspj()} style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/laporanspj.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}> Laporan SPJ </Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.applemburdriver()} style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/lapranlemburdriver.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}> Laporan Lembur Driver </Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                </Grid>
-
-                <Grid style={{marginBottom:70}}>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.applembur()} style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}> Laporan Lembur </Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent onPress={()=> Actions.persetujuan()} style={styles.buttonStyle}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/persetujuan.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}>Persetujuan</Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                  <Col>
-                    <Container style={styles.buttonContainer}>
-                        <Button primary transparent style={styles.buttonStyle} onPress={this.userLogout}>
-                          <Container style={styles.buttonContainer}>
-                            <Image source={require('../img/logout.png')} style={styles.iconStyle}/>
-                            <Text style={styles.textStyles}> Log Out </Text>
-                          </Container>
-                        </Button>
-                    </Container>
-                  </Col>
-                </Grid>
-    </Content>
+      </Content>
+      
     </Container>
     );
   }
@@ -133,8 +90,8 @@ class Menu extends Component{
 const styles ={
   splashScreens:{
     backgroundColor: 'white',
-    paddingLeft:30,
-    paddingRight:30,
+    paddingLeft:20,
+    paddingRight:20,
     flex: 1
   },
   buttonContainer:{
@@ -145,18 +102,33 @@ const styles ={
     alignItems: 'center',
   },
   iconStyle:{
-    width: 110,
-    height: 110
+    width: 50,
+    height: 50,
+    resizeMode: 'contain'
   },
   textStyles:{
     alignSelf:'center',
     textAlign:'center',
     width:100,
-    fontSize: 12
+    fontSize: 12,
+    marginTop: 25,
+    color: '#3498db',
+    fontWeight: 'bold'
   },
   buttonStyle:{
-    alignItems: 'flex-start',
-    height: 230
+    backgroundColor:'#f4f4f4',
+    width: 150,
+    height: 150,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 5, height: 3 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 1,
+    borderColor: '#eee',
+    borderWidth: 0.5
   }
 
 }

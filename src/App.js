@@ -129,27 +129,27 @@ class App extends Component{
                 />
       
                 <Scene
-                  key = "applemburdriver"
+                  key = "keylaporanlemburdriver"
                   component = { AppLemburDriver }
                   title= "Laporan Lembur Driver"
                   
                 />
                 
                 <Scene
-                  key = "applembur"
+                  key = "keylaporanlembur"
                   component = { AppLembur }
                   title= "Laporan Lembur"
                 />
 
                 <Scene
-                    key = "appspj"
+                    key = "keylaporanspj"
                     component = { AppSPJ }
                     title= "Laporan SPJ"
                     
                 />
 
                 <Scene
-                    key = "kinerja"
+                    key = "keylaporankinerja"
                     component = { AppKinerja }
                     title= "Laporan Kinerja" 
                     
@@ -163,7 +163,7 @@ class App extends Component{
                 />
 
                 <Scene
-                    key = "persetujuan"
+                    key = "keypersetujuan"
                     component = { AppPersetujuan }
                     title= "Persetujuan"                 
                 />
