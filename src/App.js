@@ -54,6 +54,7 @@ import DetailSPJ from './components/spj/DetailSPJ';
 import DetailBawahan from './components/kinerja/DetailBawahan';
 import DetailPribadi from './components/kinerja/DetailPribadi';
 import AppKinerja from './components/AppKinerja';
+import AppKinerjabawahan from './components/kinerja/TabBawahan';
 import AppLemburDriver from './components/AppLemburDriver';
 import AppLembur from './components/AppLembur';
 import AppSPJ from './components/AppSPJ';
@@ -150,7 +151,14 @@ class App extends Component{
                 <Scene
                     key = "keylaporankinerja"
                     component = { AppKinerja }
-                    title= "Kinerja" 
+                    title= "Laporan Kinerja" 
+                    
+                />
+
+                <Scene
+                    key = "kinerjabawahan"
+                    component = { AppKinerjabawahan }
+                    title= "Laporan Kinerja" 
                     
                 />
 

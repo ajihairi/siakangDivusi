@@ -54,7 +54,7 @@ export default class DetailKinerjaBawahan extends Component {
 
     render() {
         return (
-            <Container>
+            <Container style={{backgroundColor: 'white'}}>
                 <Header>
                     <Left>
                         <Button transparent onPress={() => this.props.navigation.goBack()}>

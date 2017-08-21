@@ -38,7 +38,7 @@ export default class ItemDetailKinerjaPribadi extends Component {
                                 <Text>Hari</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{hari}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {hari}</Text>
                             </View>
                         </View>
                     </View>
@@ -48,7 +48,7 @@ export default class ItemDetailKinerjaPribadi extends Component {
                                 <Text>Tanggal</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggal}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggal}</Text>
                             </View>
                         </View>
                     </View>
@@ -58,7 +58,7 @@ export default class ItemDetailKinerjaPribadi extends Component {
                                 <Text>Jam Masuk</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamMasuk}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamMasuk}</Text>
                             </View>
                         </View>
                     </View>
@@ -78,7 +78,7 @@ export default class ItemDetailKinerjaPribadi extends Component {
                                 <Text>Total Jam</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{totalJam}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {totalJam}</Text>
                             </View>
                         </View>
                     </View>
@@ -88,7 +88,7 @@ export default class ItemDetailKinerjaPribadi extends Component {
                                 <Text>Status Kehadiran</Text>
                             </View>
                             <View>
-                                <Text style={{marginLeft: 200, marginTop:-23}}>{statusKehadiran}</Text>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>: {statusKehadiran}</Text>
                             </View>
                         </View>
                     </View>
@@ -98,7 +98,7 @@ export default class ItemDetailKinerjaPribadi extends Component {
                                 <Text>Aktivitas</Text>
                             </View>
                             <View>
-                                <Text style={{marginLeft: 200, marginTop:-23}}>{aktivitas}</Text>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>{(aktivitas === null) ? (<Text>: Tidak Ada Aktivitas</Text>) : (<Text>: {aktivitas} </Text>)}</Text>
                             </View>
                         </View>
                     </View>
@@ -108,7 +108,7 @@ export default class ItemDetailKinerjaPribadi extends Component {
                                 <Text>Mood</Text>
                             </View>
                             <View>
-                                <Text style={{marginLeft: 200, marginTop:-23}}>{mood}</Text>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>: {mood}</Text>
                             </View>
                         </View>
                     </View>

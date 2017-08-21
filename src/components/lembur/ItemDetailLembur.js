@@ -36,7 +36,7 @@ export default class ItemDetailLembur extends Component {
                                 <Text>Nama Pekerjaan</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{namaPekerjaan}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {namaPekerjaan}</Text>
                             </View>
                         </View>
                     </View>
@@ -46,7 +46,7 @@ export default class ItemDetailLembur extends Component {
                                 <Text>Tanggal</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{tanggal}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggal}</Text>
                             </View>
                         </View>
                     </View>
@@ -56,7 +56,7 @@ export default class ItemDetailLembur extends Component {
                                 <Text>Jam Mulai</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamMulai}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamMulai}</Text>
                             </View>
                         </View>
                     </View>
@@ -66,7 +66,7 @@ export default class ItemDetailLembur extends Component {
                                 <Text>Jam Selesai</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{jamSelesai}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamSelesai}</Text>
                             </View>
                         </View>
                     </View>
@@ -76,12 +76,20 @@ export default class ItemDetailLembur extends Component {
                                 <Text>Hasil Kerja</Text>
                             </View>
                             <View>
-                                <Text style={{ marginLeft: 200, marginTop: -23 }}>{hasilKerja}</Text>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {hasilKerja}</Text>
                             </View>
                         </View>
                     </View>
                 </Form>
             </View>
         );
+    }
+}
+
+const style ={
+    imageStyle: {
+        width: 50,
+        height: 50,
+        resizeMode:'contain'
     }
 }
