@@ -61,6 +61,9 @@ const Profile =()=>{
           <Button block success style={{margin:10}} onPress={()=> Actions.keyGantiPassword()}>
             <Text>Ganti Password</Text>
             </Button>
+            <Button block danger style={{margin:10}} >
+            <Text>Log Out</Text>
+            </Button>
         </List>
       </Content>
     </Container>
