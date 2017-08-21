@@ -4,9 +4,13 @@ import { Container, Content, H1, ListItem, List, Body, Text, Button} from 'nativ
 
 
 import {Actions} from 'react-native-router-flux';
-const Profile =()=>{
+class Profile extends Component{
+  _logout(){
+    Actions.keylogin();
+  }
 
-  return(
+  render(){
+    return(
     <Container style={styles.splashScreens}>
       <Content>
         <List>
@@ -61,14 +65,12 @@ const Profile =()=>{
           <Button block success style={{margin:10}} onPress={()=> Actions.keyGantiPassword()}>
             <Text>Ganti Password</Text>
             </Button>
-            <Button block danger style={{margin:10}} >
-            <Text>Log Out</Text>
-            </Button>
+            <Text style={{ marginTop: 50, color: '#e74c3c', alignSelf: 'center', textDecorationLine:'underline'}} onPress={this._logout}>Log Out</Text>
         </List>
       </Content>
     </Container>
-
-  );
+    );
+  }
 }
 
 const styles ={
