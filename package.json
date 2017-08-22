@@ -23,6 +23,7 @@
     "react-native-linear-gradient": "^2.1.0",
     "react-native-modal-datetime-picker": "^4.8.0",
     "react-native-modal-dropdown": "^0.4.4",
+    "react-native-navigation": "^1.1.205",
     "react-native-off-canvas-menu": "^0.1.31",
     "react-native-osd-datetimepicker": "^1.1.1",
     "react-native-paginated-listview": "^1.0.2",

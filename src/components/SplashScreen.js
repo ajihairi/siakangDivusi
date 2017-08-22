@@ -1,8 +1,18 @@
 import React,{Component} from 'react';
 import { View, Image, Text} from 'react-native';
 import { Container, Content, H1} from 'native-base';
+import {Actions} from 'react-native-router-flux';
 
-const SplashScreen =()=>{
+class SplashScreen extends Component{
+  componentDidMount()
+  {
+    setTimeout(() =>{
+      this.props.actions.checkUser(this.props.navigator);
+      Actions.keylogin();
+    }, 1500);
+  
+  }
+render(){
   return(
     <Container style={styles.splashScreens}>
 
@@ -11,6 +21,7 @@ const SplashScreen =()=>{
     </Container>
 
   );
+}
 }
 
 const styles ={

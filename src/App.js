@@ -91,19 +91,20 @@ class App extends Component{
               titleStyle={{color : "#FFF"}}
                 hideNavBar={true}>
 
+                <Scene 
+                key="keysplash"
+                component={SplashScreen}
+                initial={true} />
+
                 <Scene
                 key="keylogin"
                 component={LoginForm}
-                initial={!this.state.hasToken}
                 />
                 
                 <Scene
                 key="keyMainMenu"
                 component={MainMenu}
-                initial={this.state.hasToken}
                 title="Si-Akang"
-
-                initial={this.state.hasToken}
                 />
 
                 <Scene
