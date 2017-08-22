@@ -57,7 +57,7 @@ export default class DetailBawahanRemote extends Component {
             <Container>
                 <Header>
             <Left>
-              <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Button transparent onPress={()=> Actions.persetujuan()}>
                 <Icon name="arrow-back" />
               </Button>
             </Left>
