@@ -60,7 +60,7 @@ export default class DetailLemburDriver extends Component {
                 <Content>
                     <Header>
                         <Left>
-                            <Button transparent onPress={() => Actions.applemburdriver()}>
+                            <Button transparent onPress={() => Actions.keylaporanlemburdriver()}>
                                 <Icon name="arrow-back" />
                             </Button>
                         </Left>

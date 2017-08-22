@@ -60,7 +60,7 @@ export default class DetailLembur extends Component {
                 <Content>
                     <Header>
                         <Left>
-                            <Button transparent onPress={() => Actions.applembur()}>
+                            <Button transparent onPress={() => Actions.keylaporanlembur()}>
                                 <Icon name="arrow-back" />
                             </Button>
                         </Left>
