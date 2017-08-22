@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View, Image } from 'react-native';
 import {
     Item,
     Content,
@@ -7,7 +8,6 @@ import {
     Label,
     Card,
     CardItem,
-    View,
     Left,
     H1,
     Text

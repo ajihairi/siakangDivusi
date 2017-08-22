@@ -60,12 +60,12 @@ export default class DetailSPJ extends Component {
                 <Content>
                     <Header>
                         <Left>
-                            <Button transparent onPress={() => Actions.appspj()}>
+                            <Button transparent onPress={() => Actions.keylaporanspj()}>
                                 <Icon name="arrow-back" />
                             </Button>
                         </Left>
                         <Body>
-                            <Title style={{ width: 150 }}>Detail Laporan SPJ</Title>
+                            <Title style={{ width: 150 }}>{this.props.idSPJ}</Title>
                         </Body>
                         <Right />
                     </Header>

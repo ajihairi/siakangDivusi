@@ -57,7 +57,7 @@ export default class DetailKinerjaPribadi extends Component {
             <Container style={{backgroundColor: 'white'}}>
                 <Header>
                     <Left>
-                        <Button transparent onPress={() => Actions.kinerja()}>
+                        <Button transparent onPress={() => this.props.navigation.goBack()}>
                             <Icon name="arrow-back" />
                         </Button>
                     </Left>

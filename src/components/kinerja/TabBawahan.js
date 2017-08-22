@@ -115,7 +115,6 @@ export default class TabBawahan extends Component {
                             return (
                                 <Item
                                     label={item.nama_karyawan} value={item.id} key={index}
-
                                 ></Item>
                             )
                         })}

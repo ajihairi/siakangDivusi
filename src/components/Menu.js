@@ -54,10 +54,10 @@ class Menu extends Component{
           </Col>
         </Grid>
         <Grid style={{marginBottom:30}}>
-        <Col>
-            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keylaporanlembur()}>
-            <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle}/>
-            <Text style={styles.textStyles}> LAPORAN LEMBUR </Text>
+          <Col>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=>Actions.keylaporanlembur()}>
+            <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle} />
+            <Text style={styles.textStyles}> LAPORAN LEMBUR</Text>
             </TouchableOpacity>
           </Col>
           <Col>
