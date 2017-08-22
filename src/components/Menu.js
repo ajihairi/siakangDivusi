@@ -2,23 +2,11 @@ import React,{Component} from 'react';
 import { AsyncStorage,Alert, View, Image, TouchableHighlight, TouchableOpacity} from 'react-native';
 import { Container, Text,Content, H1, Button, Icon, Col, Row, Grid} from 'native-base';
 import firebase from 'firebase'
-
 import {Actions} from 'react-native-router-flux';
-
 import FormLemburDriver from './FormLemburDriver';
 import Kehadiran from './Kehadiran';
 class Menu extends Component{
 
-  //logout
-  async userLogout(){
-    try {
-      await AsyncStorage.removeItem('id_token');
-      Alert.alert("logout Success");
-      Actions.keylogin();
-    } catch (error) {
-      console.log ('Asyncstorage error: ' + error.message);
-    }
-  }
   render(){
     return (
     <Container style={styles.splashScreens}>

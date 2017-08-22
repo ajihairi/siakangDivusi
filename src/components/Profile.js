@@ -1,14 +1,18 @@
 import React,{Component} from 'react';
-import { View, Image} from 'react-native';
+import { View, Image, AsyncStorage} from 'react-native';
 import { Container, Content, H1, ListItem, List, Body, Text, Button} from 'native-base';
-
-
 import {Actions} from 'react-native-router-flux';
 class Profile extends Component{
-  _logout(){
-    Actions.keylogin();
+  
+   //logout
+   async userLogout(){
+    try {
+      await AsyncStorage.removeItem('id_token');
+      Actions.keylogin();
+    } catch (error) {
+      console.log ('Asyncstorage error: ' + error.message);
+    }
   }
-
   render(){
     return(
     <Container style={styles.splashScreens}>
@@ -65,7 +69,13 @@ class Profile extends Component{
           <Button block success style={{margin:10}} onPress={()=> Actions.keyGantiPassword()}>
             <Text>Ganti Password</Text>
             </Button>
-            <Text style={{ marginTop: 50, color: '#e74c3c', alignSelf: 'center', textDecorationLine:'underline'}} onPress={this._logout}>Log Out</Text>
+            <Button primary transparent onPress={this.userLogout} style={{ marginTop: 20,
+            alignSelf: 'center'}} >
+            <Text style={{ 
+            color: '#e74c3c', 
+            alignSelf: 'center',
+            textDecorationLine: 'underline'}}>Log Out</Text>
+            </Button>
         </List>
       </Content>
     </Container>

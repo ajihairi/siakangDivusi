@@ -43,9 +43,6 @@ class LoginForm extends Component {
     .then((response) => response.json())
     .then((responseData) =>{
       this.onValueChange('id_token', responseData.id_token),
-      Alert.alert(
-        'Login Success!'
-      ),
       Actions.keyMainMenu();
     })
     .done();
