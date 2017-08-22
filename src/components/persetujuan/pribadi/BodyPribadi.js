@@ -20,11 +20,12 @@ import {
 // import DetailLaporan from './components/DetailLaporan';
 // import ListPribadi from './ListPribadi';
 import ItemPribadi from './ItemPribadi';
+import PaginatedListView from 'react-native-paginated-listview';
 
 var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 
 export default class BodyPribadi extends Component {
-
+   
     constructor() {
         super()
         this.state = {

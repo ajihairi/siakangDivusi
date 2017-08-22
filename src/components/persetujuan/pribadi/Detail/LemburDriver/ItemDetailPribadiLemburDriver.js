@@ -18,15 +18,17 @@ export default class ItemDetailPribadiLemburDriver extends Component {
     render() {
 
         const {
-            idPribadi,
-            namaPekerjaan,
-            statusPerjalananDinas,
-            statusPembayaran,
-            durasi,
-            jenisKota,
-            kotaTujuan,
-            tanggalSelesai,
-            tanggalMulai
+            namaPegawai,
+            departemen,
+            jabatan,
+            tanggal,
+            proyek,
+            jamMulaiPagi,
+            jamSelesaiPagi,
+            jamMulaiMalam,
+            jamSelesaiMalam,
+            rincianPengerjaan,
+            pemberiTugas,
         } = this.props.library;
 
             return (
@@ -35,63 +37,77 @@ export default class ItemDetailPribadiLemburDriver extends Component {
                         <Item stackedLabel>
                             <Label>ID Pribadi :</Label>
                             <Label>
-                                <Text>{idPribadi}</Text>
+                                <Text>{namaPegawai}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel>
                             <Label>Nama Pekerjaan :</Label>
                             <Label>
-                                <Text>{namaPekerjaan}</Text>
+                                <Text>{departemen}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Tanggal Mulai :</Label>
                             <Label>
-                                <Text>{tanggalMulai}</Text>
+                                <Text>{jabatan}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Tanggal Selesai :</Label>
                             <Label>
-                                <Text>{tanggalSelesai}</Text>
+                                <Text>{tanggal}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Kota Tujuan :</Label>
                             <Label>
-                                <Text>{kotaTujuan}</Text>
+                                <Text>{proyek}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Kota Tujuan :</Label>
                             <Label>
-                                <Text>{jenisKota}</Text>
+                                <Text>{jamMulaiPagi}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Durasi :</Label>
                             <Label>
-                                <Text>{durasi}</Text>
+                                <Text>{jamSelesaiPagi}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Status Pembayaran :</Label>
                             <Label>
-                                <Text>{statusPembayaran}</Text>
+                                <Text>{jamMulaiMalam}</Text>
                             </Label>
                             <Label />
                         </Item>
                         <Item stackedLabel last>
                             <Label>Status Perjalanan Dinas :</Label>
                             <Label>
-                                <Text>{statusPerjalananDinas}</Text>
+                                <Text>{jamSelesaiMalam}</Text>
+                            </Label>
+                            <Label />
+                        </Item>
+                        <Item stackedLabel last>
+                            <Label>Status Perjalanan Dinas :</Label>
+                            <Label>
+                                <Text>{rincianPengerjaan}</Text>
+                            </Label>
+                            <Label />
+                        </Item>
+                        <Item stackedLabel last>
+                            <Label>Status Perjalanan Dinas :</Label>
+                            <Label>
+                                <Text>{pemberiTugas}</Text>
                             </Label>
                             <Label />
                         </Item>

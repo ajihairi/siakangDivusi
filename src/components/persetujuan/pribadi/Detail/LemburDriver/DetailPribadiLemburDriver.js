@@ -8,7 +8,12 @@ import {
     Input,
     Label,
     Text,
-    Button
+    Button,
+    Header,
+    Left,
+    Icon,
+    Body,
+    Title
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import ItemDetailPribadiLemburDriver from './ItemDetailPribadiLemburDriver';
@@ -25,12 +30,12 @@ export default class DetailPribadiLemburDriver extends Component {
     }
 
     getData() {
-        return fetch()
+        return fetch('https://si-akang-dev.divusi.com/api/approval/detail_overtime_driver?tanggal='+this.props.tanggalPengajuan+'&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbXBsb3llZV9pZCI6NjgsInVzZXJuYW1lX3Nlc3MiOiJpdmFubnVncmFoYSIsIm5hbWVfc2VzcyI6Ikl2YW4gTnVncmFoYSIsInJvbGVfbmFtZV9zZXNzIjoiS2FyeWF3YW4iLCJlbXBsb3llZV9uYW1lX3Nlc3MiOiJJdmFuIE51Z3JhaGEiLCJlbXBsb3llZV9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9pZF9zZXNzIjo2OCwiaXNfZHJpdmVyX3Nlc3MiOjAsInN1cGVydmlzb3JfbmFtZV9zZXNzIjoiSXZhbiBOdWdyYWhhIiwic3VwZXJ2aXNvcl9yb2xlX3Nlc3MiOiJWUCBQcm9kdWN0Iiwic3VwZXJ2aXNvcl9kZXBhcnRtZW50X3Nlc3MiOiJQcm9kdWN0IiwiY3JlZGl0cyI6MSwic3ViIjo2OCwiaXNzIjoiaHR0cHM6Ly93d3cubWFrYW5iYW5kdW5nLmNvbS9hcGkvbG9naW4iLCJpYXQiOjE1MDE1NTQ0MjksImV4cCI6MTUzMzA5MDQyOSwibmJmIjoxNTAxNTU0NDI5LCJqdGkiOiJJNU9lMzM1Qjdpc2l4VFhXIn0.Vj5UKw092wECQexQqVO49aqSjXg2Sf6xH9IEQbwaIdk')
             .then((response) => response.json())
             .then((responseJson) => {
                 
                 this.setState({ 
-                    data: ds.cloneWithRows(responseJson.data.cuti)
+                    data: ds.cloneWithRows(responseJson.data.detailLemburDriver)
                 });
             })
             .catch((error) => {
@@ -52,14 +57,21 @@ export default class DetailPribadiLemburDriver extends Component {
         return (
             <Container>
                 <Content>
+                <Header>
+            <Left>
+              <Button transparent onPress={() => this.props.navigation.goBack()}>
+                <Icon name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
+              <Title>Detail Persetujuan</Title>
+            </Body>
+          </Header>
                     <ListView 
                         dataSource={this.state.data} 
                         renderRow={this.renderRow}
                     />
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} block>
-                    <Text>Back</Text>
-                </Button>
             </Container>
         );
     }

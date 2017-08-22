@@ -31,73 +31,131 @@ export default class ItemDetailBawahanLemburDriver extends Component {
         } = this.props.library;
 
             return (
-                <View>
-                    <Form>
-                        <Item stackedLabel>
-                            <Label>ID Bawahan :</Label>
-                            <Label>
-                                <Text>{idBawahan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel>
-                            <Label>Nama Pekerjaan :</Label>
-                            <Label>
-                                <Text>{namaPekerjaan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Tanggal Mulai :</Label>
-                            <Label>
-                                <Text>{tanggalMulai}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Tanggal Selesai :</Label>
-                            <Label>
-                                <Text>{tanggalSelesai}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
-                            <Label>
-                                <Text>{kotaTujuan}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Kota Tujuan :</Label>
-                            <Label>
-                                <Text>{jenisKota}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Durasi :</Label>
-                            <Label>
-                                <Text>{durasi}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Pembayaran :</Label>
-                            <Label>
-                                <Text>{statusPembayaran}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                        <Item stackedLabel last>
-                            <Label>Status Perjalanan Dinas :</Label>
-                            <Label>
-                                <Text>{statusPerjalananDinas}</Text>
-                            </Label>
-                            <Label />
-                        </Item>
-                    </Form>
-                </View>
+                <Form style={{ marginLeft: 10 }}>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Nama</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {namaPegawai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Departemen</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {departemen}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jabatan</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jabatan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Tanggal</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {tanggal}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jam Mulai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamMulai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{ marginTop: 10, marginBottom: 10 }}>
+                        <View>
+                            <View>
+                                <Text>Jam Selesai</Text>
+                            </View>
+                            <View>
+                                <Text style={{ marginLeft: 200, marginTop: -23 }}>: {jamSelesai}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                        <View>
+                            <View>
+                                <Text>Alasan</Text>
+                            </View>
+                            <View>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>: {alasan}</Text>
+                            </View>
+                        </View>
+                    </View>
+                    {status === 'Disetujui' ? ( 
+                        <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                         <View>
+                             <View>
+                                 <Text>Catatan Persetujuan</Text>
+                             </View>
+                             <View>
+                                 <Text style={{marginLeft: 200, marginTop:-23}}>: {catatanPersetujuan}</Text>
+                             </View>
+                         </View>
+                     </View> ) : null}
+                     {status === 'Ditolak' ? ( 
+                        <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                         <View>
+                             <View>
+                                 <Text>Catatan Penolakan</Text>
+                             </View>
+                             <View>
+                                 <Text style={{marginLeft: 200, marginTop:-23}}>: {catatanPersetujuan}</Text>
+                             </View>
+                         </View>
+                     </View> ) : null}
+                     {status === 'Diajukan' ? ( 
+                        <View stackedLabel style={{marginTop: 10, marginBottom:10}}>
+                         <View>
+                             <View>
+                                 <Text>Catatan Persetujuan / penolakan</Text>
+                             </View>
+                             <View>
+               <Input placeholder='catatan persetujuan / penolakan' />
+                             </View>
+                         </View>
+                         <View style={{ flexDirection: 'row', marginTop: 30, alignItems: 'center', justifyContent: 'center' }}>
+ 
+               <Button danger
+                 style={{
+                   width: 150,
+                   justifyContent: 'center',
+                   alignItems: 'center',
+                   marginRight: 4
+                 }}
+ 
+                 onPress={()=> Actions.persetujuan()}>
+                 <Text> Tolak </Text>
+               </Button>
+ 
+               <Button primary style={{ width: 150, justifyContent: 'center', alignItems: 'center', marginLeft: 4 }}>
+                 <Text> Setujui </Text>
+               </Button>
+ 
+             </View>
+                     </View>
+                     ) : null}
+                </Form>
             );
     }
 }
