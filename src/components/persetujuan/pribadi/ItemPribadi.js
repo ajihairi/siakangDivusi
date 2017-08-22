@@ -30,14 +30,14 @@ class ItemPribadi extends Component {
         return (
             <Card>
                 
-                    <CardItem style={{color:'white'}} >
+                    <CardItem style={{backgroundColor:'white'}} >
                         <View>
                             <View style={{ height: 40 }}>
                             {jenisPengajuan === 'Izin\/Cuti\/Sakit' ? (<H3 onPress={() => Actions.DetailPribadiCuti({ start_date: start_date, end_date: end_date })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Koreksi' ? (<H3 onPress={() => Actions.DetailPribadiKoreksi({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Remote' ? (<H3 onPress={() => Actions.DetailPribadiRemote({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Lembur' ? (<H3 onPress={() => Actions.DetailPribadiLembur({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Lembur Driver' ? (<H3 onPress={() => Actions.DetailPribadiDriver({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Lembur Driver' ? (<H3 onPress={() => Actions.DetailPribadiLemburDriver({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Izin Keluar Kantor' ? (<H3 onPress={() => Actions.DetailPribadiIzin({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Klaim Lembur' ? (<H3  > {jenisPengajuan}</H3>) : null}
 

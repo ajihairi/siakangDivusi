@@ -17,7 +17,7 @@ export default class AppPersetujuan extends Component {
               </Button>
             </Left>
             <Body>
-              <Title style={{width: 200}}>Laporan Persetujuan</Title>
+              <Title style={{width: 200}}>Persetujuan</Title>
             </Body>
             <Right />
           </Header>

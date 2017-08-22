@@ -8,7 +8,12 @@ import {
     Input,
     Label,
     Text,
-    Button
+    Button,
+    Header,
+    Left,
+    Icon,
+    Body,
+    Title
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import ItemDetailBawahanLembur from './ItemDetailBawahanLembur';
@@ -51,15 +56,22 @@ export default class DetailBawahanLembur extends Component {
     render() {
         return (
             <Container>
+                   <Header>
+            <Left>
+              <Button transparent onPress={()=> this.props.navigation.goBack()}>
+                <Icon name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
+              <Title>Detail Persetujuan</Title>
+            </Body>
+          </Header>
                 <Content>
                     <ListView 
                         dataSource={this.state.data} 
                         renderRow={this.renderRow}
                     />
                 </Content>
-                <Button onPress={() => this.props.navigation.goBack()} block>
-                    <Text>Back</Text>
-                </Button>
             </Container>
         );
     }

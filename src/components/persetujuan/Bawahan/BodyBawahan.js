@@ -83,7 +83,7 @@ const styles = {
         marginBottom: 10
     },
     TextStyle: {
-        color: '#fff',
+        color: '#ffffff',
         position: 'relative',
     }
 }

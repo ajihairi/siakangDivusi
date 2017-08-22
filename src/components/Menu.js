@@ -25,7 +25,7 @@ class Menu extends Component{
       <Content>
         <Grid style={{marginTop:50, marginBottom:30}}>
           <Col>
-            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.applembur()}>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keyKehadiran()}>
             <Image source={require('../img/kehadiran.png')} style={styles.iconStyle}/>
             <Text style={styles.textStyles}> KEHADIRAN </Text>
             </TouchableOpacity>
@@ -61,7 +61,7 @@ class Menu extends Component{
           <Col>
             <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keylaporanlemburdriver()}>
             <Image source={require('../img/laporanlemburdriver.png')} style={styles.iconStyle}/>
-            <Text style={styles.textStyles}> LAPORAN LEMBUR DRIVER </Text>
+            <Text style={styles.textStyles}> Lap.LEMBUR DRIVER </Text>
             </TouchableOpacity>
           </Col>
         </Grid>
@@ -121,9 +121,10 @@ const styles ={
     height: 150,
     borderRadius: 5,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 30,
     shadowColor: '#000',
-    shadowOffset: { width: 5, height: 3 },
+    shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
     elevation: 1,

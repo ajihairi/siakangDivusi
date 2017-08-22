@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {Text, View, Alert, Image, AsyncStorage} from 'react-native';
-import { Button, Card, CardSection, Input, Spinner} from './common';
+import {Text, View, Alert, Image, AsyncStorage, KeyboardAvoidingView,} from 'react-native';
+import {Spinner,  CardSection, Card,} from './common';
+import {Input, Icon, Button} from 'native-base';
 //import LinearGradient from 'react-native-linear-gradient';
 import {Actions} from 'react-native-router-flux';
 import MainMenu from './MainMenu';
-
+import Wallpaper from './LoginForm/Wallpaper'
 import {create} from 'apisauce'
 
 const ACCESS_TOKEN = 'access_token';
@@ -54,54 +55,56 @@ class LoginForm extends Component {
   
   render(){
     return(
-
-      <View>
-        <Image source={require('../img/siakang.png')} style={styles.imgStyle} />
-        <Text style={{alignSelf:'center', color:'#08A8D4'}}> Silahkan Masuk </Text>
-      <Card>
+      <Wallpaper>
+        <Image source={require('../img/siakang3.png')} style={styles.imgStyle} />
+        <KeyboardAvoidingView behavior='padding'
+				style={styles.container}>
+        <Text style={{alignSelf:'center',fontWeight: '400', fontSize: 16, color:'#ecf0f1', backgroundColor: 'transparent'}}> 
+          Silahkan Masuk </Text>
+        <Card>
         <CardSection>
+          <Icon Active name='person' style={{color: 'rgba(41, 128, 185,1.0)', marginRight: 5}}/>
           <Input
           placeholder="username"
-          label="Username"
           onChangeText={(username) => this.setState({username})}
           value={this.state.username}
           />
         </CardSection>
 
         <CardSection>
+        <Icon Active name='key' style={{color: 'rgba(41, 128, 185,1.0)', marginRight: 5}}/>
           <Input
             onChangeText={(password) => this.setState({password})}
             value={this.state.password}
             secureTextEntry={true}
             placeholder="password"
-            label="Password"
           />
         </CardSection>
-
-        <CardSection>
-        <Text style={styles.error}>
-          {this.state.error}
-        </Text>
-          <Button onPress={this.userLogin.bind(this)}>
-            <Text>Log In</Text>
-          </Button>
-        </CardSection>
       </Card>
-      <Text style={styles.copyStyle}> Copyright (c) PT LAPI DIVUSI 2017 </Text>
-      </View>
+        <Text style={styles.errorTextStyle}>
+        {this.state.error}
+       </Text>
+          <Button block primary onPress={this.userLogin.bind(this)} style={{marginLeft: 5, marginRight: 5}}>
+            <Text style={{color: 'white', fontSize: 16}}>Log In</Text>
+          </Button>
+        </KeyboardAvoidingView>
+      </Wallpaper>
     );
   }
 }
 
 const styles ={
+  
   errorTextStyle:{
     fontSize: 20,
     alignSelf: 'center',
     color: 'red'
   },
   imgStyle:{
-    width: 355.2,
-    height:222.8
+    width: 250,
+    height:250,
+    resizeMode: 'contain',
+    alignSelf: 'center'
   },
   copyStyle:{
     marginTop:200,
@@ -110,3 +113,13 @@ const styles ={
   }
 };
  export default LoginForm;
+ /*0.7 : semakin kecil semakin transparan */ 
+ /* <View style={styles.shapeStyle}>
+ <Input
+ onChangeText={(password) => this.setState({password})}
+ value={this.state.password}
+ secureTextEntry={true}
+ placeholder="password"
+ label="Password"
+/>
+</View>*/
