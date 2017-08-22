@@ -56,6 +56,7 @@ class LoginForm extends Component {
   render(){
     return(
       <Wallpaper>
+        <Image source={require('../img/siakang3.png')} style={styles.imgStyle} />
         <KeyboardAvoidingView behavior='padding'
 				style={styles.container}>
         <Text style={{alignSelf:'center',fontWeight: '400', fontSize: 16, color:'#ecf0f1', backgroundColor: 'transparent'}}> 
@@ -100,8 +101,10 @@ const styles ={
     color: 'red'
   },
   imgStyle:{
-    width: 355.2,
-    height:222.8
+    width: 250,
+    height:250,
+    resizeMode: 'contain',
+    alignSelf: 'center'
   },
   copyStyle:{
     marginTop:200,
