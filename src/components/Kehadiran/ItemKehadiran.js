@@ -24,7 +24,8 @@ class ItemKehadiran extends Component {
             jamMasuk,
             jamKeluar,
             totalJam,
-            status
+            status,
+            overtimeStatus
         } = this.props.library;
        
         return (
@@ -48,7 +49,7 @@ class ItemKehadiran extends Component {
                                 </Text>
                             </View>
                         </View>
-                        <Right><Image source={require('../../img/icons/check_white.png')} style={styles.imageStyle} /></Right>
+                        {overtimeStatus === null ? (<Right><Image source={require('../../img/icons/check_white.png')} style={styles.imageStyle} /></Right>) :(<Right><Image source={require('../../img/icons/check_notif_white.png')} style={styles.imageStyle} /></Right>) }
 
                     </CardItem>) : null}
                 {status === 'Tidak Hadir' ? (
@@ -71,7 +72,8 @@ class ItemKehadiran extends Component {
                                 </Text>
                             </View>
                         </View>
-                        <Right><Image source={require('../../img/icons/cross_white.png')} style={styles.imageStyle} /></Right>
+                        {overtimeStatus === null ? (<Right><Image source={require('../../img/icons/cross_white.png')} style={styles.imageStyle} /></Right>) :
+                        (<Right><Image source={require('../../img/icons/cross_notif_white.png')} style={styles.imageStyle} /></Right>) }
                     </CardItem>) : null}
                 {status === 'Libur' ? (
                     <CardItem style={styles.Libur}>
@@ -91,7 +93,9 @@ class ItemKehadiran extends Component {
                             </Text>
                         </View>
                         </View>
-                        <Right><Image source={require('../../img/icons/holiday_white.png')} style={styles.imageStyle} /></Right>
+                        {overtimeStatus === null ? (<Right><Image source={require('../../img/icons/holiday_white.png')} style={styles.imageStyle} /></Right>) :
+                        (<Right><Image source={require('../../img/icons/holiday_notif_white.png')} style={styles.imageStyle} /></Right>) }
+                        
 
                     </CardItem>) : null}
                 {status === 'Cuti' ? (
@@ -112,7 +116,9 @@ class ItemKehadiran extends Component {
                             </Text>
                         </View>
                         </View>
-                        <Right><Image source={require('../../img/icons/suitcase_black.png')} style={styles.imageStyle} /></Right>
+                        {overtimeStatus === null ? (<Right><Image source={require('../../img/icons/suitcase_black.png')} style={styles.imageStyle} /></Right>) :
+                        (<Right><Image source={require('../../img/icons/suitcase_notif_black.png')} style={styles.imageStyle} /></Right>) }
+                        
 
                     </CardItem>) : null}
                 {status === 'Perjalanan Dinas' ? (
@@ -134,7 +140,9 @@ class ItemKehadiran extends Component {
                             </View>
                         </View>
                         <Right>
-                            <Image source={require('../../img/icons/car_white.png')} style={styles.imageStyle} />
+                        {overtimeStatus === null ? (<Right><Image source={require('../../img/icons/car_white.png')} style={styles.imageStyle} /></Right>) :
+                        (<Right><Image source={require('../../img/icons/car_notif_white.png')} style={styles.imageStyle} /></Right>) }
+                           
                         </Right>
 
                     </CardItem>) : null}

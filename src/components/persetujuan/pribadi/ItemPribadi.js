@@ -37,7 +37,7 @@ class ItemPribadi extends Component {
                             {jenisPengajuan === 'Koreksi' ? (<H3 onPress={() => Actions.DetailPribadiKoreksi({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Remote' ? (<H3 onPress={() => Actions.DetailPribadiRemote({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Lembur' ? (<H3 onPress={() => Actions.DetailPribadiLembur({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
-                            {jenisPengajuan === 'Lembur Driver' ? (<H3 onPress={() => Actions.DetailPribadiDriver({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
+                            {jenisPengajuan === 'Lembur Driver' ? (<H3 onPress={() => Actions.DetailPribadiLemburDriver({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Izin Keluar Kantor' ? (<H3 onPress={() => Actions.DetailPribadiIzin({ tanggalPengajuan: tanggalPengajuan })}> {jenisPengajuan}</H3>) : null}
                             {jenisPengajuan === 'Klaim Lembur' ? (<H3  > {jenisPengajuan}</H3>) : null}
 
