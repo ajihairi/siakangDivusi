@@ -30,7 +30,7 @@ class ItemPribadi extends Component {
         return (
             <Card>
                 
-                    <CardItem style={{color:'white'}} >
+                    <CardItem style={{backgroundColor:'white'}} >
                         <View>
                             <View style={{ height: 40 }}>
                             {jenisPengajuan === 'Izin\/Cuti\/Sakit' ? (<H3 onPress={() => Actions.DetailPribadiCuti({ start_date: start_date, end_date: end_date })}> {jenisPengajuan}</H3>) : null}

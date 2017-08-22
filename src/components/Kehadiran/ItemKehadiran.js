@@ -26,7 +26,7 @@ class ItemKehadiran extends Component {
             totalJam,
             status
         } = this.props.library;
-
+       
         return (
             <Card>
                 {status === 'Hadir' ? (

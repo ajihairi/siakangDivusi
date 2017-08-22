@@ -133,7 +133,7 @@ export default class ItemDetailBawahanIzin extends Component {
                    marginRight: 4
                  }}
  
-                 onPress={() => this.props.navigation.goBack()}>
+                 onPress={()=> Actions.persetujuan()}>
                  <Text> Tolak </Text>
                </Button>
  

@@ -30,11 +30,13 @@ export default class ItemDetailKehadiran extends Component {
            overtimeStatus,
            status
         } = this.props.library;
+        const stat = {status}; 
+       
           return (
             <Container>
                  <Header>
             <Left>
-              <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Button transparent  onPress={() => Actions.keyKehadiran()}>
                 <Icon name="arrow-back" />
               </Button>
             </Left>
@@ -100,7 +102,11 @@ export default class ItemDetailKehadiran extends Component {
                                 <Text>Status Kehadiran</Text>
                             </View>
                             <View>
-                                <Text style={{marginLeft: 200, marginTop:-23}}>: {status}</Text>
+                                <Text style={{marginLeft: 200, marginTop:-23}}>:  
+                          
+        {status} 
+    
+           </Text>
                             </View>
                         </View>
                     </View>

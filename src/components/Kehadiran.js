@@ -50,7 +50,7 @@ export default class Kehadiran extends Component {
         <Container>
         <Header>
             <Left>
-              <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Button transparent onPress={() => Actions.keyMainMenu()}>
                 <Icon name="arrow-back" />
               </Button>
             </Left>
@@ -58,7 +58,7 @@ export default class Kehadiran extends Component {
               <Title>Kehadiran</Title>
             </Body>
             <Right>
-          <TouchableOpacity onPress={() => this.toggle}><Icon name='ios-menu' style={{color:'white'}}/></TouchableOpacity>
+          <TouchableOpacity onPress={this.toggle}><Icon name='ios-menu' style={{color:'white'}}/></TouchableOpacity>
           </Right>
           </Header>
           <BodyKehadiran />

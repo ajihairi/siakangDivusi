@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Text,View} from 'react-native';
-import { ListItem, Container, Content, InputGroup, Input, Picker, CheckBox, Body, Button, Item } from 'native-base';
+import { ListItem,List, Container, Content, InputGroup, Input, Picker, CheckBox, Body, Button, Item } from 'native-base';
 
 class Dinas extends Component {
     render()
@@ -25,6 +25,25 @@ class Dinas extends Component {
                         <Picker.Item label="spj-3" value="Wednesday" />
                         <Picker.Item label="dll" value="Thursday" />
                     </Picker>
+                    <List style={{ flexDirection: 'row', marginTop: 30, alignItems: 'center', justifyContent: 'center' }}>
+
+              <Button danger
+                style={{
+                  width: 150,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginRight: 4
+                }}
+
+                onPress={() => this.props.navigation.goBack()}>
+                <Text> Batal </Text>
+              </Button>
+
+              <Button primary style={{ width: 150, justifyContent: 'center', alignItems: 'center', marginLeft: 4 }}>
+                <Text> Submit </Text>
+              </Button>
+
+            </List>
 </Content>
   </Container>
       );
