@@ -25,7 +25,7 @@ class Menu extends Component{
       <Content>
         <Grid style={{marginTop:50, marginBottom:30}}>
           <Col>
-            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.applembur()}>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keyKehadiran()}>
             <Image source={require('../img/kehadiran.png')} style={styles.iconStyle}/>
             <Text style={styles.textStyles}> KEHADIRAN </Text>
             </TouchableOpacity>
@@ -59,7 +59,7 @@ class Menu extends Component{
             </TouchableOpacity>
           </Col>
           <Col>
-            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keylaporanLemburDriver()}>
+            <TouchableOpacity style={styles.buttonStyle} onPress={()=> Actions.keylaporanlemburdriver()}>
             <Image source={require('../img/laporanlemburdriver.png')} style={styles.iconStyle}/>
             <Text style={styles.textStyles}> Lap.LEMBUR DRIVER </Text>
             </TouchableOpacity>
@@ -68,7 +68,7 @@ class Menu extends Component{
         <Grid style={{marginBottom:30}}>
           <Col>
             <TouchableOpacity style={styles.buttonStyle} >
-            <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle} onPress={()=>Actions.keylaporanlembur()}/>
+            <Image source={require('../img/laporanlembur.png')} style={styles.iconStyle} onPress={()=> Actions.keylaporanlembur()}/>
             <Text style={styles.textStyles}> LAPORAN LEMBUR</Text>
             </TouchableOpacity>
           </Col>
