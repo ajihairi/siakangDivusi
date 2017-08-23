@@ -4,15 +4,16 @@ import { Container, Content, H1, ListItem, List, Body, Text, Button} from 'nativ
 import {Actions} from 'react-native-router-flux';
 class Profile extends Component{
   
-   //logout
-   async userLogout(){
-    try {
-      await AsyncStorage.removeItem('id_token');
-      Actions.keylogin();
-    } catch (error) {
-      console.log ('Asyncstorage error: ' + error.message);
-    }
+  goToGantiPassword() {
+    this.props.navigator.push({
+      screen: 'siakang.GantiPassword',
+      title: 'Ganti Password',
+      animated: true,
+      backButtonTitle: 'Back',
+      navigatorStyle: appStyle.navigator2Style
+    });
   }
+
   render(){
     return(
     <Container style={styles.splashScreens}>
@@ -66,7 +67,7 @@ class Profile extends Component{
             <Text note> 1234</Text>
             </Body>
           </ListItem>
-          <Button block success style={{margin:10}} onPress={()=> Actions.keyGantiPassword()}>
+          <Button block success style={{margin:10}} onPress={this.goToGantiPassword.bind(this)}>
             <Text>Ganti Password</Text>
             </Button>
             <Button primary transparent onPress={this.userLogout} style={{ marginTop: 20,

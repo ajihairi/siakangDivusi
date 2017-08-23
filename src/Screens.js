@@ -1,18 +1,16 @@
-import React,{Component} from 'react';
-import { View, Image, AsyncStorage, Alert } from 'react-native';
-import {
-  Container,
-  Content,
-  H1
-} from 'native-base';
-import firebase from 'firebase';
-import SplashScreen from './components/SplashScreen';
-import {
-  Header,
-  Button,
-  Spinner,
-  CardSection
-} from './components/common';
+/* Copyright (C) PT. LAPI Divusi - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Krisna Fathurahman <krisna.fathurahman@gmail.com>, December 2016
+ */
+// Export all page screen across application
+/* Legacy Code */
+// export * from './MyVoucher/RedeemPage';
+// export * from './MyAccount/MyProfilePage';
+// export * from './MyAccount/FaqPage';
+// export * from './MyAccount/TnCPage';
+
+/* eslint-disable import/prefer-default-export */
 import MainMenu from './components/MainMenu';
 import GantiPassword from './components/GantiPassword';
 import FormLemburDriver from './components/FormLemburDriver';
@@ -37,17 +35,10 @@ import DetailBawahanKoreksi from './components/persetujuan/Bawahan/Detail/Koreks
 import DetailBawahanIzin from './components/persetujuan/Bawahan/Detail/Izin/DetailBawahanIzin';
 import DetailBawahanLembur from './components/persetujuan/Bawahan/Detail/Lembur/DetailBawahanLembur';
 import DetailBawahanLemburDriver from './components/persetujuan/Bawahan/Detail/LemburDriver/DetailBawahanLemburDriver';
-
 import formPenugasanLembur from './components/formPenugasanLembur';
 import formCuti from './components/formCuti';
 import formSakit from './components/formPengajuanSakit';
 import DetailKehadiran from './components/Kehadiran/DetailKehadiran' ;
-
-import DateTimePickerTester from './components/cobacoba/DateTimePickerTester';
-import TimePicker from './components/cobacoba/TimePicker';
-
-import {Router, Scene} from 'react-native-router-flux';
-
 import DetailLemburDriver from './components/lemburdriver/DetailLemburDriver';
 import DetailLembur from './components/lembur/DetailLembur';
 import DetailSPJ from './components/spj/DetailSPJ';
@@ -59,45 +50,26 @@ import AppLemburDriver from './components/AppLemburDriver';
 import AppLembur from './components/AppLembur';
 import AppSPJ from './components/AppSPJ';
 import AppPersetujuan from './components/AppPersetujuan';
-
-import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
-import { registerScreens } from './Screens';
 import appStyle from './values/appStyle';
-import {Navigation} from 'react-native-navigation';
+import SplashScreen from './components/SplashScreen';
+import Menu from './components/Menu';
+import Profile from './components/Profile';
+
+import { Navigation } from 'react-native-navigation';
+import {Icon} from 'native-base';
 
 
-const store = configureStore();
-registerScreens(store, Provider);
+export function registerScreens(store, Provider) {
+  Navigation.registerComponent('siakang.SplashScreen', () => SplashScreen, store, Provider);
+  Navigation.registerComponent('siakang.LoginForm', () => LoginForm, store, Provider);
+  Navigation.registerComponent('siakang.Menu', () => Menu,store,Provider);
+  Navigation.registerComponent('siakang.Profile', () => Profile,store,Provider);
+  Navigation.registerComponent('siakang.LemburDriver', () => LemburDriver, store, Provider);
+  Navigation.registerComponent('siakang.GantiPassword', () => GantiPassword, store, Provider);
+  Navigation.registerComponent('siakang.Menu', () => Menu, store, Provider);
+  Navigation.registerComponent('siakang.Profile', () => Profile, store, Provider);
+  Navigation.registerComponent('siakang.MainMenu', () => MainMenu, store, Provider);
+  Navigation.registerComponent('siakang.GantiPassword', () => GantiPassword, store, Provider);
 
-class App extends Component{
 
-  constructor(props) {
-		super(props);
-		this.startApp();
-	}
-
-  startApp() {
-    Navigation.startSingleScreenApp({
-      screen: {
-        screen: 'siakang.Menu',
-        title: 'Siakang',
-        navigatorStyle: appStyle.clean
-      }
-    });
-  }
 }
-
-const styles={
-    spinnerPosition:{
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-    paddingBottom: 200
-  },
- navbarStyle:{
-  backgroundColor: 'blue'
- }
-};
-
-export default App;
